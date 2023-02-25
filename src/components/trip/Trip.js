@@ -1,0 +1,67 @@
+import "../../styles/trip.css";
+import TripData from "./TripData";
+
+import Birth1 from '../../assets/images/birth1.jpeg';
+import Birth2 from '../../assets/images/birth2.jpeg';
+import Birth3 from '../../assets/images/birth3.png';
+
+
+function Trip() {
+    return (
+        <div className="trip">
+            <h1>Recent Trips</h1>
+            <p>asddddddddddddddddddddddddddd
+            asddddddddddddddddddddddddddddddddddd
+            </p>
+            
+            <div className="tripcard">
+                <TripData
+                  image={Birth1}
+                  heading="Text Birth 1"
+                  text="There are many variations of passages of Lorem Ipsum available, 
+                  but the majority have suffered alteration in some form, by injected humour, 
+                  or randomised words which don't look even slightly believable.
+                  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't 
+                  anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on 
+                  the Internet tend to repeat predefined chunks as necessary, making this the first true
+                  generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a 
+                  handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+                  generated Lorem Ipsum is therefore always free from repetition, injected humour, 
+                  or non-characteristic words etc."
+                />
+                
+                <TripData
+                  image={Birth2}
+                  heading="Text Birth 2"
+                  text="There are many variations of passages of Lorem Ipsum available, 
+                  but the majority have suffered alteration in some form, by injected humour, 
+                  or randomised words which don't look even slightly believable.
+                  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't 
+                  anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on 
+                  the Internet tend to repeat predefined chunks as necessary, making this the first true
+                  generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a 
+                  handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+                  generated Lorem Ipsum is therefore always free from repetition, injected humour, 
+                  or non-characteristic words etc."
+                />
+                
+                <TripData
+                  image={Birth3}
+                  heading="Text Birth 3"
+                  text="There are many variations of passages of Lorem Ipsum available, 
+                  but the majority have suffered alteration in some form, by injected humour, 
+                  or randomised words which don't look even slightly believable.
+                  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't 
+                  anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on 
+                  the Internet tend to repeat predefined chunks as necessary, making this the first true
+                  generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a 
+                  handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The
+                  generated Lorem Ipsum is therefore always free from repetition, injected humour, 
+                  or non-characteristic words etc."
+                />
+            </div>
+        </div>
+    )
+}
+
+export default Trip;

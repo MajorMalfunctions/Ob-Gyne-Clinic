@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../header/Header';
 import Hero from '../Hero/Hero';
 import Destination from '../destination/Destination';
+import Trip from '../trip/Trip';
 
 function Home () {
   return (
@@ -18,6 +19,7 @@ function Home () {
         btnClass="show"
       />
       <Destination />
+      <Trip />
     </>
   )
 }
