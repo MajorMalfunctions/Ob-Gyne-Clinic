@@ -1,11 +1,23 @@
 import React from 'react'
 
-function Service  () {
+import Header from '../header/Header';
+import Hero from '../Hero/Hero';
+import Service from '../../assets/images/services.jpg';
+
+import '../../styles/service.css';
+
+function Services () {
   return (
-    <div>
-      <p>Service Page</p>
-    </div>
+    <>
+      <Hero
+        cName="hero-mid"
+        heroImg={Service}
+        title="Offered Services"
+        btnClass="hide"
+      />
+      <Header />
+    </>
   )
 }
 
-export default Service;
+export default Services;

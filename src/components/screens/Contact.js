@@ -1,11 +1,21 @@
 import React from 'react'
 
-function Contact () {
+import Header from '../header/Header';
+import Hero from '../Hero/Hero';
+import Contact from '../../assets/images/contact.png';
+
+const ContactMe = () => {
   return (
-    <div>
-      <p>Contact Page</p>
-    </div>
+    <>
+      <Hero
+        cName="hero-mid"
+        heroImg={Contact}
+        title="Contact Me"
+        btnClass="hide"
+      />
+      <Header />
+    </>
   )
 }
 
-export default Contact;
+export default ContactMe;
