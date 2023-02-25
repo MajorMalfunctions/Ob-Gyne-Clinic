@@ -11,7 +11,7 @@ import Baby4 from "../../assets/images/baby4.jpg";
 const Destination = () => {
   return (
     <div className="destination">
-      <h1>Popular Destinations</h1>
+      <h1>Popular Works</h1>
       <p>Tours Give you opportunity to see a lot,
         within  a time frame.
       </p>
