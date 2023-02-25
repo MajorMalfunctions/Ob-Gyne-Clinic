@@ -45,8 +45,8 @@ img {
 
 .nav-links{
     text-decoration: none;
-    /* color: #222; */
-    color:  orchid;
+    color: #222;
+    /* color:  orchid; */
     font-size: 1.2rem;
     font-weight: 600;
     padding: 0.7rem 1rem;
@@ -58,7 +58,8 @@ img {
 }
 
 .nav-links:hover{
-    background-color: #01959a;
+    /* background-color: #01959a; */
+    background-color: orchid;
     color: #fff;
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
