@@ -4,6 +4,7 @@ import Header from '../header/Header';
 import Hero from '../Hero/Hero';
 import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
+// import Footer from '../footer/Footer';
 
 function Home () {
   return (
@@ -20,6 +21,7 @@ function Home () {
       />
       <Destination />
       <Trip />
+      {/* <Footer /> */}
     </>
   )
 }
