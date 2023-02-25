@@ -6,6 +6,7 @@ import Home from "../screens/Home";
 import Service from "../screens/Service";
 import Contact from "../screens/Contact";
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 export default function Layout() {
   return (
@@ -17,6 +18,7 @@ export default function Layout() {
         <Route path="/service" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
      </Routes>
+     <Footer />
     </>
   )
 }
