@@ -5,10 +5,12 @@ import About from "../screens/About";
 import Home from "../screens/Home";
 import Service from "../screens/Service";
 import Contact from "../screens/Contact";
+import Header from '../header/Header';
 
 export default function Layout() {
   return (
     <>
+    <Header />
      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

@@ -1,17 +1,28 @@
 import React from 'react';
 import '../../styles/hero.css';
-import Header from '../header/Header';
 
-function Hero  () {
+function Hero (props) {
   return (
-    <div className="hero">
-      <Header />
-      <img
-        alt="HeroImg"
-        className="bgImg"
-        src="https://img.freepik.com/premium-photo/mother-newborn-child-birth-maternity-hospital-mom-hugging-her-newborn-baby-after-delivery_494619-222.jpg"
-      />
-    </div>
+    <>
+      <div className={props.cName}>
+        <img
+          alt="HeroImg"
+          className="bgImg"
+          src={props.heroImg}
+        />
+
+        <div className="hero-text">
+          <h1>{props.title}</h1>
+          <p>{props.text}</p>
+          <a
+            href={props.url}
+            className={props.btnClass}>
+            {props.buttonText}
+          </a>
+        </div>
+
+      </div>
+    </>
   )
 }
 
