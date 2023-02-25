@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { NavItems } from './NavItems';
 import '../../styles/header.css';
+import Clinic from "../../assets/images/clinic.png"
 
 class Header extends Component{
     state = { clicked: false};
@@ -13,7 +14,11 @@ class Header extends Component{
     render(){
         return (
             <nav className="NavbarItems">
-                <h1 className="navbar-logo">Clinica Baltazar</h1>
+                {/* <h1 className="navbar-logo">Clinica Baltazar</h1> */}
+
+                <div className="navbar-logo">
+                    <img className="navbar-image" src={Clinic} alt="logo" />
+                </div>
 
                 <div className="menu-icons" onClick={this.handleClick}>
                     <i className={this.state.clicked ? "fas fa-times" : "fas fa-bars"}></i>
