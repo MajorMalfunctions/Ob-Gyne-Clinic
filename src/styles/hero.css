@@ -1,0 +1,16 @@
+/* .hero {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 2000%;
+    height: 200%;
+} */
+
+.bgImg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
