@@ -66,12 +66,12 @@ img {
     .hero-text h1{
         padding: 10px  20px;
     }
-    
+
     .hero-text p{
         font-size: 1.1rem;
         padding: 0 0 2rem 0;
     }
-    
+
     .hero-text .show{
         padding: 0.6rem 1.1rem;
         border-radius: 6px;
@@ -80,5 +80,5 @@ img {
         -moz-border-radius: 6px;
         -ms-border-radius: 6px;
         -o-border-radius: 6px;
-}
+    }
 }
