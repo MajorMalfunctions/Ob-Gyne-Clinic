@@ -97,10 +97,12 @@ img {
         -moz-border-radius: 6px;
         -ms-border-radius: 6px;
         -o-border-radius: 6px;
-}
+    }
 }
 
-
+.btnClass {
+    margin-top: 2rem;
+}
 .form-container {
     margin: 4rem 6rem;
     color: #2a2a2a;

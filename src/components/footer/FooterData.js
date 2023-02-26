@@ -8,7 +8,6 @@ class FooterData extends Component{
                 <div className="des-text">
                   <h2> {this.props.heading} </h2>
                 </div>
-
             <div className="image">
               <img alt="img" src={this.props.img1} />
               <img alt="img" src={this.props.img2} />

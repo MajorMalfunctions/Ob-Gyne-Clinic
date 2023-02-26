@@ -16,10 +16,12 @@ const Footer = () => {
           <p>Copyright ©2023 Community Women and Maternal Care.</p>
         </div>
         <div>
-          <a  href="https://www.facebook.com/acemc.tac/">
+          <a  href="https://www.facebook.com/profile.php?id=100089818255354">
             <i className="fa-brands fa-facebook-square"></i>
-            <i className="fa-brands fa-instagram-square"></i>
+          </a>
+          <i className="fa-brands fa-instagram-square"></i>
             <i className="fa-brands fa-twitter-square"></i>
+          <a  href="https://www.linkedin.com/in/palmera-baltazar-25133bb8/">
             <i className="fa-brands fa-linkedin"></i>
           </a>
         </div>
@@ -124,7 +126,7 @@ const Footer = () => {
       </div>
 
       <div className="lower">
-        <p>© 2023 Clinica Baltazar Inc. | Terms & Conditions | Privacy Policy</p>
+        <p>© 2012 - 2023 Clinica Baltazar Inc. | Terms & Conditions | Privacy Policy ® All Rights Reserved</p>
       </div>
 
     </div>
