@@ -14,10 +14,8 @@ class Header extends Component{
     render(){
         return (
             <nav className="NavbarItems">
-                {/* <h1 className="navbar-logo">Clinica Baltazar</h1> */}
-
                 <div className="navbar-logo">
-                    <img className="navbar-image" src={Clinic} alt="logo" />
+                    <img className="navbar-image" src={Clinic} alt="clinica-baltazar" />
                 </div>
 
                 <div className="menu-icons" onClick={this.handleClick}>

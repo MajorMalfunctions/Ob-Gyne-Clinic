@@ -6,6 +6,7 @@ import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
 import Footer from '../footer/Footer';
 import ScrollUp from '../scrollup/ScrollUp';
+import Testimonials from '../testimonials/Testimonial';
 
 import BookForm from '../form/BookForm';
 
@@ -18,13 +19,13 @@ function Home () {
         heroImg="https://tomato.sg/wp-content/uploads/Newborn-Photoshoot-Singapore-1.jpg"
         title="Caring Women's Health & Wellness For All Stages Of Life"
         text=" Fellow, Philippine Obstetrical and Gynecological Society"
-        buttonText="Book Consultation"
         url="/"
         btnClass="show"
       />
       <BookForm />
       <Destination />
       <Trip />
+      <Testimonials />
       <Footer />
       <ScrollUp />
     </>

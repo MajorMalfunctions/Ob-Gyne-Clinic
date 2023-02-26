@@ -5,7 +5,6 @@ import Birth1 from '../../assets/images/birth1.jpeg';
 import Birth2 from '../../assets/images/birth2.jpeg';
 import Birth3 from '../../assets/images/birth3.png';
 
-
 function Trip() {
     return (
         <div className="trip">

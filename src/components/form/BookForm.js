@@ -13,7 +13,7 @@ const BookForm = () => {
   const handleBooking = (e) => {
     e.preventDefault();
     setActive(!active);
-    
+
     alert('Booking Added!');
     console.log('Booking Added!');
   }
@@ -26,7 +26,7 @@ const BookForm = () => {
                  closeOnDocumentClick
                  position="center"
                  >
-                {
+      <p>BOOK Consultation</p>
                   close => (
                     <div className="form-container">
                     <h1>Book Now!</h1>
