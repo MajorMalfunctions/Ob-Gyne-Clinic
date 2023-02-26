@@ -1,7 +1,25 @@
-import React from 'react';
+import React, {useState } from 'react';
 import '../../styles/hero.css';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 function Hero (props) {
+  const [ name, setName] = useState("");
+  const [ contact, setContact] = useState("");
+  const [ time, setTime] = useState("");
+  const [ date, setDate] = useState("");
+  const [active, setActive] = useState(false);
+  const [message, setMessage] = useState(false);
+
+  const handleBooking = (e) => {
+    e.preventDefault();
+    setActive(!active);
+    setMessage(!message)
+    alert('Booking Added!');
+    console.log('Booking Added!');
+    console.log();
+  }
+
   return (
     <>
       <div className={props.cName}>
@@ -10,17 +28,72 @@ function Hero (props) {
           className="bgImg"
           src={props.heroImg}
         />
-
         <div className="hero-text">
           <h1>{props.title}</h1>
           <p>{props.text}</p>
-          <a
-            href={props.url}
-            className={props.btnClass}>
-            {props.buttonText}
-          </a>
+          <Popup trigger=
+                {<button className="btnClass"> Online Booking </button>}
+                 nested
+                 modal
+                 closeOnDocumentClick
+                 position="center"
+                 >
+                {
+                  close => (
+                    <div className="form-container">
+                    <h1>Book Now!</h1>
+                      <form>
+                         {/* <i className="fa-regular fa-user icon fa-2x"></i> */}
+                         <label>Full Name:</label>
+                         <input
+                          name="name"
+                          id="name"
+                          type="text"
+                          placeholder="Name"
+                          value={name}
+                          onChange={e => setName(e.target.value)}
+                        />
+                        {/* <i class="fa-regular fa-phone icon fa-2x"></i> */}
+                        <label>Phone Number:</label>
+                         <input
+                           id="contact"
+                           name="contact"
+                           type="number"
+                           placeholder="Phone number"
+                           value={contact}
+                           onChange={e => setContact(e.target.value)}
+                          />
+                         {/* <i class="fa-regular fa-clock icon fa-2x"></i> */}
+                         <label>Time:</label>
+                         <input
+                           id="time"
+                           name="time"
+                           type="time"
+                           placeholder="Time"
+                           value={time}
+                           onChange={e => setTime(e.target.value)}
+                          />
+                         {/* <i class="fa-regular fa-calendar icon fa-2x"></i> */}
+                         <label>Date:</label>
+                         <input
+                            id="date"
+                            name="date"
+                            type="date"
+                            placeholder="Date"
+                            value={date}
+                            onChange={e => setDate(e.target.value)}
+                          />
+                        <br />
+                      </form><br />
+                        <button onClick={handleBooking}>Book{' '}{' '}{' '}<i class="fa-solid fa-paper-plane"> </i></button>
+                        { active ? "Booking Sent" : ""}
+                </div>
+                  )
+                }
+          </Popup>
         </div>
-
+        <div>
+    </div>
       </div>
     </>
   )
