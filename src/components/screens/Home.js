@@ -5,6 +5,7 @@ import Hero from '../Hero/Hero';
 import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
 import Footer from '../footer/Footer';
+import ScrollUp from '../scrollup/ScrollUp';
 
 import BookForm from '../form/BookForm';
 
@@ -25,6 +26,7 @@ function Home () {
       <Destination />
       <Trip />
       <Footer />
+      <ScrollUp />
     </>
   )
 }
