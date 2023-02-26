@@ -52,6 +52,12 @@ iframe {
     font-size: 1.1rem;
 }
 
+.logo {
+    height: 30px;
+    width: 30px;
+}
+
+
 @media screen and (max-width: 850px) {
     .footer {
         padding: 4rem 2rem;

@@ -48,14 +48,14 @@ img {
 .hero-text h1 {
     font-size: 3rem;
     font-weight: 800;
-    background: orchid;
+    background: #fff;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .hero-text p {
     font-size: 1.3rem;
-    color: orchid;
+    color: #fff;
     padding: 0.5rem 0 2rem 0;
 }
 

@@ -1,6 +1,11 @@
 import React from 'react'
 import "../../styles/footer.css";
 
+import ace from '../../assets/icons/ace.png';
+import rtr from '../../assets/icons/RTR.png';
+import shalom from '../../assets/icons/shalom.jpg';
+import mmh from '../../assets/icons/mmh.png';
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -11,7 +16,7 @@ const Footer = () => {
           <p>Copyright ©2023 Community Women and Maternal Care.</p>
         </div>
         <div>
-          <a  href="/">
+          <a  href="https://www.facebook.com/acemc.tac/">
             <i className="fa-brands fa-facebook-square"></i>
             <i className="fa-brands fa-instagram-square"></i>
             <i className="fa-brands fa-twitter-square"></i>
@@ -35,27 +40,78 @@ const Footer = () => {
       <div className="bottom">
         <div>
           <h4>Location</h4>
-          <a href="/">Justice Romualdez St, Downtown, Tacloban City, 6500 Leyte</a>
+          <p>Justice Romualdez St </p>
+          <p>Tacloban City, 6500 Leyte</p>
           <a href="/">Rm 9 Maternity Compound </a>
-          <a href="/">Infront Tacloban Plaza Hotel</a>
-          <a href="/">Smart:  0961 240  5300 </a>
-          <a href="/">Globe:  0906  261 3328 </a>
+          <a href="/">In  front Tacloban Plaza Hotel</a>
+          <a href="/">Smart:  0961-240-5300 </a>
+          <a href="/">Globe:  0906-261-3328 </a>
+          <a href="/">Tel:  327-8730 </a>
+          <a href="/">Tel:  321-0524 </a>
         </div>
 
         <div>
-          <h4>Community</h4>
-          <a href="/">POGS</a>
-          <a href="/">Tacloban OB-Gyne</a>
-          <a href="/">Philippine Doctors Association</a>
-          <a href="/">OB2PEDI</a>
+          <h4>Services Offered:</h4>
+          <p>Annual Gynecological Checkup</p>
+          <p>Cervical Cancer Screening (PAP SMEAR)</p>
+          <p>Clinical Breast Examination</p>
+          <p>Family Planning And Counseling</p>
+          <p>Immunization For Women</p>
+          <p>(Flu, Tetanus, Toxoid/Tdap, Cervical Cancer Prevention)</p>
+          <p>Major/Minor Surgical Procedures</p>
+          <p>Ob-Gyne Clearance</p>
+          <p>Pre & Post Operative Evaluation and Care</p>
         </div>
 
         <div>
-          <h4>Help</h4>
-          <a href="/">Support</a>
-          <a href="/">Troubleshooting</a>
-          <a href="/">Contact Us</a>
-          <a href="/">Consultation</a>
+          <h4>Affiliations:</h4>
+            <a href="https://www.facebook.com/acemc.tac/">
+              Ace Medical Center
+              {' '}
+              <img
+                className="logo"
+                src={ace}
+                alt="ace hospital"
+              />
+            </a>
+
+              <a href="https://www.facebook.com/profile.php?id=180050515382780&paipv=0&eav=AfYLLOpBHX_UPc3OHYeSQCuYltxD0Hqcy5mngcoKE6iMMVXDUj1Wjg9N5J8anUWO2aA&_rdr">
+                Mother Of Mercy Hospital
+                <img
+                  className="logo"
+                  src={mmh}
+                  alt="mmh hospital"
+                />
+              </a>
+
+              <a href="https://www.facebook.com/people/Remedios-Trinidad-Romualdez-Medical-Foundation/100063613819397/">
+                RTR Hospital
+                <img
+                  className="logo"
+                  src={rtr}
+                  alt="rtr hospital"
+                />
+              </a>
+
+               <a href="https://www.facebook.com/people/United-Shalom-Hospital-Tacloban/100075692094823/">
+                  United Shalom Hospital
+                  <img
+                    className="logo"
+                    src={shalom}
+                    alt="united shalom hospital"
+                  />
+              </a>
+        </div>
+
+        <div>
+          <h4>Schedule:</h4>
+          <a href="/">Monday: 10 AM - 04 PM</a>
+          <a href="/">Tuesday: 10 AM - 04 PM</a>
+          <a href="/">Wednesday: 10 AM - 04 PM</a>
+          <a href="/">Thursday: 10 AM - 04 PM</a>
+          <a href="/">Friday: 10 AM - 04 PM</a>
+          <a href="/">Saturday: 10 AM - 04 PM</a>
+          <a href="/">Sunday: Closed </a>
         </div>
 
         <div>
@@ -66,6 +122,11 @@ const Footer = () => {
           <a href="/">Troubleshooting</a>
         </div>
       </div>
+
+      <div className="lower">
+        <p>© 2023 Clinica Baltazar Inc. | Terms & Conditions | Privacy Policy</p>
+      </div>
+
     </div>
   )
 }

@@ -6,6 +6,8 @@ import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
 import Footer from '../footer/Footer';
 
+import BookForm from '../form/BookForm';
+
 function Home () {
   return (
     <>
@@ -14,11 +16,12 @@ function Home () {
         cName="hero"
         heroImg="https://tomato.sg/wp-content/uploads/Newborn-Photoshoot-Singapore-1.jpg"
         title="Caring Women's Health & Wellness For All Stages Of Life"
-        text=" Center For Women's Health"
+        text=" Fellow, Philippine Obstetrical and Gynecological Society"
         buttonText="Book Consultation"
         url="/"
         btnClass="show"
       />
+      <BookForm />
       <Destination />
       <Trip />
       <Footer />
