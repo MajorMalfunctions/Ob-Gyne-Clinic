@@ -45,10 +45,6 @@
     object-fit: cover;
     border-radius: 6px;
     box-shadow: -1px 1px  62px -18px rgba(0, 0, 0, 0.19);
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    -ms-border-radius: 6px;
-    -o-border-radius: 6px;
 }
 
 .image img:nth-child(2) {

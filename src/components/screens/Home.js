@@ -12,7 +12,7 @@ function Home () {
       <Header />
       <Hero
         cName="hero"
-        heroImg="https://img.freepik.com/premium-photo/mother-newborn-child-birth-maternity-hospital-mom-hugging-her-newborn-baby-after-delivery_494619-222.jpg"
+        heroImg="https://tomato.sg/wp-content/uploads/Newborn-Photoshoot-Singapore-1.jpg"
         title="Caring Women's Health & Wellness for all stages of life"
         text=" Center For Women's Health"
         buttonText="Book Consultation"
