@@ -25,7 +25,7 @@ export const NavItems = [
     },
     {
         title: "Login",
-        url: "/",
+        url: "/login",
         cName: "nav-links-mobile",
         // icon: "fa-solid fa-address-book"
     }

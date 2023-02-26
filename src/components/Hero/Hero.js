@@ -9,15 +9,13 @@ function Hero (props) {
   const [ time, setTime] = useState("");
   const [ date, setDate] = useState("");
   const [active, setActive] = useState(false);
-  const [message, setMessage] = useState(false);
 
   const handleBooking = (e) => {
     e.preventDefault();
     setActive(!active);
-    setMessage(!message)
+    
     alert('Booking Added!');
     console.log('Booking Added!');
-    console.log();
   }
 
   return (
@@ -86,7 +84,8 @@ function Hero (props) {
                         <br />
                       </form><br />
                         <button onClick={handleBooking}>Book{' '}{' '}{' '}<i class="fa-solid fa-paper-plane"> </i></button>
-                        { active ? "Booking Sent" : ""}
+                        <br />
+                        { active ? `Hello, ${name} Booked ${time} : ${date}` : ""}
                 </div>
                   )
                 }

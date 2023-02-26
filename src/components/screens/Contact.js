@@ -17,7 +17,7 @@ const ContactMe = () => {
         btnClass="hide"
       />
       <ContactUs />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }
