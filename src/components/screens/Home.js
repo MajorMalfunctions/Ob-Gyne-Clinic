@@ -1,22 +1,16 @@
 import React from 'react'
 
-import Header from '../header/Header';
 import Hero from '../Hero/Hero';
 import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
 import Footer from '../footer/Footer';
 import Testimonials from '../testimonials/Testimonial';
-
 import ScrollUp from '../scrollup/ScrollUp';
-
-import BookForm from '../form/BookForm';
-
 import Navbar from '../navbar/Navbar';
 
 function Home () {
   return (
     <>
-      {/* <Header /> */}
       <Navbar />
       <Hero
         cName="hero"
@@ -26,7 +20,6 @@ function Home () {
         url="/"
         btnClass="show"
       />
-      <BookForm />
       <Destination />
       <Trip />
       <Testimonials />

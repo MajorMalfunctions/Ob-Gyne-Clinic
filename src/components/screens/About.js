@@ -16,7 +16,7 @@ function About () {
         cName="hero-mid"
         heroImg={AboutMe}
         title="About Me"
-        // btnClass="hide"
+        btnClass="hide"
       />
       <AboutUs />
       <Footer />

@@ -27,7 +27,6 @@ const BookForm = () => {
                  position="center"
                  >
       <p>BOOK Consultation</p>
-                  close => (
                     <div className="form-container">
                     <h1>Book Now!</h1>
                       <form>
@@ -77,8 +76,6 @@ const BookForm = () => {
                         <br />
                         { active ? `Hello, ${name} Booked ${time} : ${date}` : ""}
                 </div>
-                  )
-                }
           </Popup>
     </>
   )

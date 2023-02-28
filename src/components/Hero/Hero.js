@@ -15,6 +15,7 @@ function Hero (props) {
         <div className="hero-text">
           <h1>{props.title}</h1>
           <p>{props.text}</p>
+          <BookForm className={props.btnClass} />
         </div>
         <div>
     </div>
