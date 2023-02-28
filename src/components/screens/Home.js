@@ -5,15 +5,19 @@ import Hero from '../Hero/Hero';
 import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
 import Footer from '../footer/Footer';
-import ScrollUp from '../scrollup/ScrollUp';
 import Testimonials from '../testimonials/Testimonial';
 
+import ScrollUp from '../scrollup/ScrollUp';
+
 import BookForm from '../form/BookForm';
+
+import Navbar from '../navbar/Navbar';
 
 function Home () {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
+      <Navbar />
       <Hero
         cName="hero"
         heroImg="https://tomato.sg/wp-content/uploads/Newborn-Photoshoot-Singapore-1.jpg"
