@@ -3,7 +3,7 @@
     right: 2.5rem;
     bottom: 3rem;
     bottom: -20%;
-    background-color: #dadce0;
+    background-color: #ccc;
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
     z-index: var(--z-tooltip);
@@ -14,11 +14,13 @@
   .scrollup_icon {
     font-size: 2.5rem;
     color: #000;
+    /* background-color: #000; */
   }
 
   .scrollup_icon:hover {
-    background-color: #000;
-    color: #fff;
+    /* background-color: #000; */
+    /* color: #fff; */
+    color:  orchid;
   }
 
   .show-scroll {
