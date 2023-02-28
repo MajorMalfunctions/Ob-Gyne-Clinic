@@ -16,8 +16,8 @@ import Navbar from '../navbar/Navbar';
 function Home () {
   return (
     <>
-      {/* <Header /> */}
       <Navbar />
+      <Header />
       <Hero
         cName="hero"
         heroImg="https://tomato.sg/wp-content/uploads/Newborn-Photoshoot-Singapore-1.jpg"

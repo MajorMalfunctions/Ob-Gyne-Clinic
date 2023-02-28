@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/navbar.css';
 
-import Header from '../header/Header';
+// import Header from '../header/Header';
 
 function Navbar() {
 
@@ -27,7 +27,7 @@ function Navbar() {
         <>
           <div className="progressBarContainer">
               <div className="progressBar" style={{transform: `scale(${scroll}, 1)`, opacity: `${scroll}`}} />
-          <Header />
+          {/* <Header /> */}
           </div>
         </>
     );
