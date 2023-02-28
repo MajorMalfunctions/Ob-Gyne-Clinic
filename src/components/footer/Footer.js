@@ -10,13 +10,14 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="top">
-        <div>
+        <div className="top-desc">
           <h1>Clinica Baltazar</h1>
           <p>Center For Womens Health</p>
-          <p>Copyright ©2023 Community Women and Maternal Care.</p>
+            Email Me:<a href="mailto:palmerabaltazar@yahoo.com">{' '}Palmera Baltazar</a>
         </div>
+
         <div>
-          <a  href="https://www.facebook.com/profile.php?id=100089818255354">
+          <a href="https://www.facebook.com/profile.php?id=100089818255354">
             <i className="fa-brands fa-facebook-square"></i>
           </a>
           <i className="fa-brands fa-instagram-square"></i>
@@ -106,14 +107,14 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>Schedule:</h4>
-          <a href="/">Monday: 10 AM - 04 PM</a>
-          <a href="/">Tuesday: 10 AM - 04 PM</a>
-          <a href="/">Wednesday: 10 AM - 04 PM</a>
-          <a href="/">Thursday: 10 AM - 04 PM</a>
-          <a href="/">Friday: 10 AM - 04 PM</a>
-          <a href="/">Saturday: 10 AM - 04 PM</a>
-          <a href="/">Sunday: Closed </a>
+          <h4>Clinic Hours:</h4>
+          <p>Monday: 10 AM - 04 PM</p>
+          <p>Tuesday: 10 AM - 04 PM</p>
+          <p>Wednesday: 10 AM - 04 PM</p>
+          <p>Thursday: 10 AM - 04 PM</p>
+          <p>Friday: 10 AM - 04 PM</p>
+          <p>Saturday: 10 AM - 04 PM</p>
+          <p>Sunday: Closed </p>
         </div>
 
         <div>
@@ -126,7 +127,8 @@ const Footer = () => {
       </div>
 
       <div className="lower">
-        <p>© 2012 - 2023 Clinica Baltazar Inc. | Terms & Conditions | Privacy Policy ® All Rights Reserved</p>
+        <p>Copyright © 2012 - 2023 Community Women and Maternal Care | Clinica Baltazar Inc
+        </p>
       </div>
 
     </div>

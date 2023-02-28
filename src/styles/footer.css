@@ -17,6 +17,10 @@ iframe {
     flex-wrap: wrap;
 }
 
+.top-desc a {
+    color: #fff;
+}
+
 .top i {
     color: #fff;
     font-size: 2rem;
@@ -58,6 +62,9 @@ iframe {
     margin-top: .2rem;
 }
 
+.lower {
+    margin-top: 5rem;
+}
 
 @media screen and (max-width: 850px) {
     .footer {
