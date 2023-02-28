@@ -17,8 +17,8 @@
   }
 
   .scrollup_icon:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: #ccc;
+    color: orchid;
   }
 
   /* SHOW SCROLL */
@@ -32,21 +32,20 @@
       right: 1.5rem;
       padding: 0.25rem;
     }
-  
     .scrollup__icon {
       font-size: 1.25rem;
     }
   }
-  
+
   /* FOR MEDIUM DEVICES  */
   @media screen and (max-width: 768px) {
-  
+
   }
-  
+
   @media screen and (max-width: 576px) {
-  
+
   }
-  
+
   /* FOR SMALL DEVICES  */
   @media screen and (max-width: 350px) {
   

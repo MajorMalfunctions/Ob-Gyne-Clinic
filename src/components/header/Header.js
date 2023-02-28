@@ -36,7 +36,7 @@ class Header extends Component{
                         </li>
                         );
                     })}
-                    <button>Login</button>
+                    <Link className="log-button" to="/login">Login</Link>
                 </ul>
             </nav>
           )

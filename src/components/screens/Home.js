@@ -7,7 +7,6 @@ import Footer from '../footer/Footer';
 import Testimonials from '../testimonials/Testimonial';
 import ScrollUp from '../scrollup/ScrollUp';
 import Navbar from '../navbar/Navbar';
-import BookForm from '../form/BookForm';
 
 function Home () {
   return (

@@ -28,8 +28,7 @@ function Hero (props) {
           <h1>{props.title}</h1>
           <p>{props.text}</p>
           {props.buttonText}
-          <a
-            >
+          <a>
             <Popup trigger=
                 {<button className={props.btnClass}> Online Booking </button>}
                  nested
