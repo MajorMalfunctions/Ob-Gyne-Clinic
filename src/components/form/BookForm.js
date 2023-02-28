@@ -26,7 +26,6 @@ const BookForm = () => {
                  closeOnDocumentClick
                  position="center"
                  >
-      <p>BOOK Consultation</p>
                     <div className="form-container">
                     <h1>Book Now!</h1>
                       <form>
