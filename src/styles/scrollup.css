@@ -4,11 +4,11 @@
     bottom: 3rem;
     bottom: -20%;
     background-color: #dadce0;
-    /* opacity: 0.5; */
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
     z-index: var(--z-tooltip);
     transition: .4s;
+    behavior: smooth;
 }
 
   .scrollup_icon {
@@ -21,33 +21,35 @@
     color: #fff;
   }
 
-  /* SHOW SCROLL */
   .show-scroll {
     bottom: 3rem;
   }
 
-  /* FOR LARGE DEVICES  */
   @media screen and (max-width: 992px) {
     .scrollup {
       right: 1.5rem;
       padding: 0.25rem;
     }
-  
-    .scrollup__icon {
+
+    .scrollup_icon {
       font-size: 1.25rem;
     }
   }
-  
-  /* FOR MEDIUM DEVICES  */
-  @media screen and (max-width: 768px) {
-  
-  }
-  
-  @media screen and (max-width: 576px) {
-  
-  }
-  
-  /* FOR SMALL DEVICES  */
-  @media screen and (max-width: 350px) {
-  
+
+  @keyframes scrollup {
+    0%{
+      transform: translateY(0px);
+    }
+    25%{
+      transform: translateY(20px);
+    }
+    50%{
+      transform: translateY(0px);
+    }
+    75%{
+      transform: translateY(-20px);
+    }
+    100%{
+      transform: translateY(0px);
+    }
   }

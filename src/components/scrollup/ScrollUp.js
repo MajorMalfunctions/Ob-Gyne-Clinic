@@ -8,13 +8,13 @@ const ScrollUp = () => {
     ("show-scroll");
     else scrollUp.classList.remove("show-scroll");
   });
-  
+
+
   const [Toggle, showMenu] = useState(false);
-  const [activeNave, setActiveNav] = useState("#home");
-  
+  const [ activeNav, setActiveNav ] = useState("#home");
+
   return (
-    <a href="#" className="scrollup">
-      {/* <i className="uil uil-arrow-up scrollup__icon"></i> */}
+    <a href="/" className="scrollup">
       <i class="fa-sharp fa-solid fa-arrow-up scrollup_icon"></i>
     </a>
   )
