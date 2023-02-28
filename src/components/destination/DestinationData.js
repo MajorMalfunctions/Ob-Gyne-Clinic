@@ -11,12 +11,11 @@ class DestinationData extends Component{
             </div>
 
             <div className="image">
-              <img alt="img" src={this.props.img1} />
-              <img alt="img" src={this.props.img2} />
-              <img alt="img" src={this.props.img3} />
-              <img alt="img" src={this.props.img4} />
+              <img alt="" src={this.props.img1} />
+              <img alt="" src={this.props.img2} />
+              <img alt="" src={this.props.img3} />
+              <img alt="" src={this.props.img4} />
             </div>
-
           </div>
         )
     }

@@ -1,146 +1,141 @@
-import React, { useState, useEffect } from "react";
-import { Redirect, Link, useHistory } from "react-router-dom";
-import axios from "axios";
-import Loading from "./Loading";
-import "./css/Login.css";
-import ScaleLoader from "react-spinners/ScaleLoader";
-import { useAuth } from "../auth-context";
+import React, { useState } from 'react';
 
-function Login() {
-  const history = useHistory();
-  const [isPasswordShown, setIsPasswordShown] = useState(false);
-  const [loginErr, setLoginErr] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [btnLoad, setBtnLoad] = useState(true);
+import '../../styles/login.css';
 
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
+import { FiEye, FiEyeOff, FiKey, FiUser } from "react-icons/fi";
+import { BsLock } from "react-icons/bs";
+import { FaGoogle, FaFacebookF, FaGithub, FaLinkedinIn, FaGitlab } from "react-icons/fa";
 
-  const { email, password } = form;
 
-  const togglePasswordVisiblity = () => {
-    setIsPasswordShown(!isPasswordShown);
+function Login({ setToken }) {
+   const navigate = useNavigate('');
+
+   const [ email, setEmail ] = useState('');
+   const [ password, setPassword ] = useState('');
+   const [ showPassword, setShowPassword ] = useState(false);
+   const changeIcon = showPassword === true ? false : true;
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 900);
-  }, []);
-
-  const onInputChange = (e) => {
-    const value =
-      e.target.type === "checkbox" ? e.target.checked : e.target.value;
-
-    setForm((form) => ({ ...form, [e.target.name]: value }));
-  };
-
-  const { login } = useAuth();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setBtnLoad(false);
-    console.log(form);
-
-    axios
-      .post("account/login", form)
-      .then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          localStorage.setItem("emailToken", res.data.user.email);
-          login();
-          history.push("/");
-        }
+   const handleLogin = (e) => {
+      // console.log({ email, password})
+      // e.preventDefault();
+       axios.post('http://localhost:272/api/auth/signin',
+      {
+         email: email,
+         password: password
       })
-      .catch((err) => {
-        setLoginErr(true);
-        setBtnLoad(true);
-        console.log("ERROR", err);
-      });
-  };
+      .then((result) =>  {
+         console.log(result.data)
+         // props.userAuthentication()
+         alert('SUCCESS')
+         const token =  (email, password);
+         if (token) {
+            localStorage.setItem('name', result.data.name)
+            localStorage.setItem('email', result.data.email)
+            localStorage.setItem('roles', result.data.roles)
+         }
+         if(!localStorage.setItem('token', result.data.refreshToken)) {
+               sessionStorage.setItem('session-user', result.data.name);
+               sessionStorage.setItem('session-user-email', result.data.email);
+               sessionStorage.setItem('session-user-roles', result.data.roles);
+               sessionStorage.setItem('refreshToken', result.data.refreshToken);
+               sessionStorage.setItem('accessToken', result.data.accessToken);
+            console.log('Go HOME');
+            navigate('/home')
+         }
+      })
+      .catch(error => {
+        alert('ERROR')
+        alert(error.message)
+        console.log(error)
+        console.log(error.message)
+        console.log(error.result.data.error.message)
+      })
+   }
 
-  const { loggedIn } = useAuth();
-  return loggedIn ? (
-    <Redirect to="/" />
-  ) : (
-    <>
-      {isLoading === true ? (
-        <Loading />
-      ) : (
-        <main className="form-signin">
-          <form onSubmit={handleSubmit}>
-            <h1 className="form-h1">Sign In</h1>
+   return (
+   <>
+         <h1 className="center" style={{
+               fontFamily: 'Kaushan Script',
+               marginTop: '50px',
+               marginBottom: '25px',
+               fontWeight: '900'
+            }}> LOGIN </h1>
 
-            <div className="input-group suFormField">
-              <input
-                type="email"
-                name="email"
-                value={email}
-                onChange={onInputChange}
-                className="input loginInput"
-                placeholder="Email Address"
-                required
-              />
-            </div>
-            <div className="input-group suFormField">
-              <input
-                type={isPasswordShown ? "text" : "password"}
-                name="password"
-                value={password}
-                className="input loginInput"
-                placeholder="Password"
-                onChange={onInputChange}
-                required
-              />
+      <Link to={'/register'} style={{ marginBottom: '30px', color: '#000', textAlign: 'center', display: 'block' }}> Register Here</Link>
 
-              {isPasswordShown ? (
-                <span
-                  onClick={togglePasswordVisiblity}
-                  className="material-icons-outlined loginPassword-icon"
-                >
-                  visibility
-                </span>
-              ) : (
-                <span
-                  onClick={togglePasswordVisiblity}
-                  className="material-icons-outlined loginPassword-icon"
-                >
-                  visibility_off
-                </span>
-              )}
-            </div>
-            {loginErr ? (
-              <p className="pErr text-danger">Invalid Email or Password!</p>
-            ) : null}
+         <div className="outcard">
+            Email:
+            <br />
+          <FiUser /> {" "}
+             <input
+               onChange={(e) => {
+                  setEmail(e.target.value)
+               }}
+               placeholder="john123@gmail.com"
+               value={email}
+               className="pas-inputs"
+               type="email"
+               required="true"
+               /> <br /> <br />
 
-            {btnLoad ? (
-              <button
-                className="btn btnDefault btn-purp loginBtn"
-                type="submit"
-              >
-                Log in
-              </button>
-            ) : (
-              <button className="btn btnDefault btn-purp loginBtn">
-                <ScaleLoader color="#fff" height={18} />
-              </button>
-            )}
-          </form>
-          <p className="rpP">
-            <Link to="/ResetPassword">Reset Password</Link>
-          </p>
-          <p>
-            Don't have an account?{" "}
-            <Link className="regHere" to="/SignUp">
-              REGISTER HERE
-            </Link>
-          </p>
-        </main>
-      )}
-    </>
-  );
+            Password:  <br />
+            <FiKey /> {" "}
+               <input
+                  type={showPassword ? "text" : "password"}
+                  required="true"
+                  placeholder="**********"
+                  onChange={(e) => {
+                     setPassword(e.target.value)
+                  }}
+                  value={password}
+                  className="pas-inputs"
+               /> {" "} {" "}
+               <span
+                    onClick={() => {
+                       togglePassword(changeIcon);
+                    }}
+                 >
+                    {changeIcon ? <FiEye /> : <FiEyeOff />}
+                 </span>
+
+                  <br />
+                  <br />
+                     <Link to={'/forgot-password'} style={{
+                           marginTop: '5px',
+                           textAlign: 'center',
+                           display: 'block',
+                           marginLeft: '300px',
+                           color: '#000',
+                           fontSize: '15px'
+                        }}> <BsLock style={{ marginBottom: '3px'}}/>Forgot Password?</Link>
+                  <br />
+
+               <button onClick={handleLogin} className="btns"> LOGIN </button>
+                  <br />
+
+               <center style={{ textAlign: 'center', justifyContent: 'center', alignContent: 'center', alignItems: 'center'}}>Login Using:</center> <br />
+               <center>
+                  {" "}<FaGoogle size="30px" color="#000" />{" "}
+
+                  {" "}<FaLinkedinIn size="36px" color="#000" />{" "}
+
+                  {" "}<FaGithub size="30px" color="#000" /> {" "}
+
+                  {" "}<FaGitlab size="30px" color="#000" /> {" "}
+
+                 {" "} <FaFacebookF  size="30px" color="#000" /> {" "}
+
+               </center>
+                  <br />
+         </div>
+   </>
+   )
 }
 
 export default Login;

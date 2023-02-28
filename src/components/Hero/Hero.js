@@ -9,6 +9,7 @@ function Hero (props) {
     const [ time, setTime] = useState("");
     const [ date, setDate] = useState("");
     const [active, setActive] = useState(false);
+
     const handleBooking = (e) => {
       e.preventDefault();
       setActive(!active);
@@ -16,6 +17,7 @@ function Hero (props) {
       alert('Booking Added!');
       console.log('Booking Added!');
     }
+
   return (
     <>
       <div className={props.cName}>
@@ -27,6 +29,22 @@ function Hero (props) {
         <div className="hero-text">
           <h1>{props.title}</h1>
           <p>{props.text}</p>
+          {/* <span className="props.btnClass">
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter.typeString('Fellow, Philippine Obstetrical and Gynecological Society')
+                  .callFunction(() => {
+                    console.log('String typed out!');
+                  })
+                  .pauseFor(1500)
+                  // .deleteAll()
+                  .callFunction(() => {
+                    console.log('All strings were deleted');
+                  })
+                  .start();
+              }}
+            />
+          </span> */}
           {props.buttonText}
           <a>
             <Popup trigger=
@@ -39,7 +57,6 @@ function Hero (props) {
                     <div className="form-container">
                     <h1>Book Now!</h1>
                       <form>
-                         {/* <i className="fa-regular fa-user icon fa-2x"></i> */}
                          <label>Full Name:</label>
                          <input
                           name="name"
@@ -49,7 +66,6 @@ function Hero (props) {
                           value={name}
                           onChange={e => setName(e.target.value)}
                         />
-                        {/* <i class="fa-regular fa-phone icon fa-2x"></i> */}
                         <label>Phone Number:</label>
                          <input
                            id="contact"
@@ -59,7 +75,6 @@ function Hero (props) {
                            value={contact}
                            onChange={e => setContact(e.target.value)}
                           />
-                         {/* <i class="fa-regular fa-clock icon fa-2x"></i> */}
                          <label>Time:</label>
                          <input
                            id="time"
@@ -69,7 +84,6 @@ function Hero (props) {
                            value={time}
                            onChange={e => setTime(e.target.value)}
                           />
-                         {/* <i class="fa-regular fa-calendar icon fa-2x"></i> */}
                          <label>Date:</label>
                          <input
                             id="date"

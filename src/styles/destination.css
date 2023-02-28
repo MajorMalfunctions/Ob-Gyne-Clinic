@@ -37,6 +37,7 @@
     display: flex;
     justify-content: space-between;
     z-index: -99;
+    overflow: hidden;
 }
 
 .image img {
@@ -45,13 +46,16 @@
     object-fit: cover;
     border-radius: 6px;
     box-shadow: -1px 1px  62px -18px rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease-in-out;
 }
 
 .image img:nth-child(2) {
+    transition: 0.3s ease-in-out;
     position: absolute;
     right: 0;
     top: -10%;
 }
+
 
 @media screen and (max-width: 850px) {
     .destination {
@@ -63,22 +67,22 @@
         display: flex;
         margin-top: 2.5rem;
     }
-    
+
     .first-des-reverse {
         display: flex;
         flex-direction: column-reverse;
         margin-top: 4.5rem;
     }
-    
+
     .des-text {
         width: 100%;
     }
-    
+
     .image {
         width: 100%;
         margin: 1.8rem 0;
     }
-    
+
     .image img {
         height: 250px;
     }

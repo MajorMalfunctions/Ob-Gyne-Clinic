@@ -5,7 +5,7 @@ import Destination from '../destination/Destination';
 import Trip from '../trip/Trip';
 import Footer from '../footer/Footer';
 import Testimonials from '../testimonials/Testimonial';
-import ScrollUp from '../scrollup/ScrollUp';
+import ScrollUp from '../scrollUp/ScrollUp';
 import Navbar from '../navbar/Navbar';
 
 function Home () {
@@ -16,7 +16,7 @@ function Home () {
         cName="hero"
         heroImg="https://tomato.sg/wp-content/uploads/Newborn-Photoshoot-Singapore-1.jpg"
         title="Caring Women's Health & Wellness For All Stages Of Life"
-        text=" Fellow, Philippine Obstetrical and Gynecological Society"
+        text="Fellow, Philippine Obstetrical and Gynecological Society"
         url="/"
         btnClass="show"
       />
