@@ -59,11 +59,16 @@ img {
     padding: 0.5rem 0 2rem 0;
 }
 
+.button .show{
+    padding: 2rem 6rem;
+}
+
 .hero-text .show {
     text-decoration: none;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 1rem 2rem;
     border-radius: 6px;
+    /* background: transparent; */
     font-size: 1.1rem;
     font-weight: bold;
     letter-spacing: 2px;
@@ -97,9 +102,6 @@ img {
     }
 }
 
-.btnClass {
-    margin-top: 2rem;
-}
 .form-container {
     margin: 4rem 6rem;
     color: #2a2a2a;
@@ -122,6 +124,7 @@ img {
     border: 1px solid #2a2a2a;
 }
 
+
 .form-container button {
     display: inline;
     color: #fff;
@@ -130,7 +133,7 @@ img {
 
 .form-container button:hover {
     color: #2a2a2a;
-    background-color: #ccc;
+    /* background-color: #ccc; */
     border: 2px solid #2a2a2a;
 }
 

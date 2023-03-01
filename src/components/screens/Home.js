@@ -7,7 +7,7 @@ import Footer from '../footer/Footer';
 import Testimonials from '../testimonials/Testimonial';
 import ScrollUp from '../scrollUp/ScrollUp';
 import Navbar from '../navbar/Navbar';
-
+import '../../styles/hero.css';
 function Home () {
   return (
     <>
