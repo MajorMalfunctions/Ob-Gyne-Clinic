@@ -1,12 +1,12 @@
 import React from 'react'
 
 import Hero from '../Hero/Hero';
-import Destination from '../destination/Destination';
-import Trip from '../trip/Trip';
-import Footer from '../footer/Footer';
-import Testimonials from '../testimonials/Testimonial';
-import ScrollUp from '../scrollUp/ScrollUp';
-import Navbar from '../navbar/Navbar';
+import Destination from '../Destination/Destination';
+import Trip from '../Trip/Trip';
+import Footer from '../Footer/Footer';
+import Testimonials from '../Testimonials/Testimonial';
+import ScrollUp from '../ScrollUp/ScrollUp';
+import Navbar from '../Navbar/Navbar';
 import '../../styles/hero.css';
 function Home () {
   return (

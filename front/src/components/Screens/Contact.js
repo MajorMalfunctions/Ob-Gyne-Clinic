@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Header from '../header/Header';
+import Header from '../Header/Header';
 import Hero from '../Hero/Hero';
 import Contact from '../../assets/images/contact.png';
-import ContactUs from  '../contact/Contact';
-import Footer from '../footer/Footer';
+import ContactUs from  '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
 const ContactMe = () => {
   return (

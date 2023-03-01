@@ -1,12 +1,12 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
-import About from "../screens/About";
-import Home from "../screens/Home";
-import Service from "../screens/Service";
-import Contact from "../screens/Contact";
+import About from "../Screens/About";
+import Home from "../Screens/Home";
+import Service from "../Screens/Service";
+import Contact from "../Screens/Contact";
 
-import Login from "../screens/Login";
+import Login from "../Screens/Login";
 
 export default function Layout() {
   return (

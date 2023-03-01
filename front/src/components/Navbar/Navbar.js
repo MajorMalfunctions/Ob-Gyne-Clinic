@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/navbar.css';
 
-import Header from '../header/Header';
+import Header from '../Header/Header';
 
 function Navbar() {
 

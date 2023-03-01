@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Header from '../header/Header';
-import Footer from '../footer/Footer';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import Hero from '../Hero/Hero';
 import AboutMe from '../../assets/images/about.jpg';
-import AboutUs from '../about/AboutUs';
+import AboutUs from '../About/AboutUs';
 import '../../styles/hero.css'
 
 import '../../styles/about.css';
