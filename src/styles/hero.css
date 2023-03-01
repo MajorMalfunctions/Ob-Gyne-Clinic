@@ -100,6 +100,14 @@ img {
         -ms-border-radius: 6px;
         -o-border-radius: 6px;
     }
+    .form-container {
+        margin: 2rem 1rem;
+    }
+
+    .form-container form {
+        padding-top: 1rem;
+        width: 50%;
+    }
 }
 
 .form-container {
@@ -150,11 +158,11 @@ label {
 
 @media screen and (max-width: 850px) {
     .form-container {
-        margin: 4rem 2rem;
+        margin: 2rem 1rem;
     }
 
     .form-container form {
-        padding-top: 2rem;
-        width: 90%;
+        padding-top: 1rem;
+        width: 50%;
     }
 }
