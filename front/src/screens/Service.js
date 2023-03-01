@@ -1,12 +1,12 @@
 import React from 'react'
 
-import Header from '../Header/Header';
-import Hero from '../Hero/Hero';
-import Service from '../../assets/images/service.jpg';
+import Header from '../components/Header/Header';
+import Hero from '../components/Hero/Hero';
+import Service from '../assets/images/service.jpg';
 
-import '../../styles/service.css';
-import Footer from '../Footer/Footer';
-import ServiceArea from '../Services/Services';
+import '../styles/services.css';
+import Footer from '../components/Footer/Footer';
+import ServiceArea from '../pages/Services/Services';
 
 function Services () {
   return (

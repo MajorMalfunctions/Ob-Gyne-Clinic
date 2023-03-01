@@ -1,6 +1,6 @@
 import './styles/App.css';
 
-import Layout from  './components/Layout/Layout';
+import Layout from  './screens/Layout/Layout';
 
 const App = () => {
   return (
