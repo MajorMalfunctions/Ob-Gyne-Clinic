@@ -4,7 +4,7 @@ function ServicesData(props) {
     return (
         <div className="services-card">
             <div className="image-container">
-                <img src={props.image} alt="image" />
+                <img src={props.image} alt="services" />
                 <h2 class="centered">{props.heading}
                 </h2>
             </div>
