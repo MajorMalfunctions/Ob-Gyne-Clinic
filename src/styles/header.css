@@ -82,7 +82,7 @@ img {
 }
 
 .log-button{
-    display: none;
+    /* display: none; */
     padding: 0.5rem 1rem;
     white-space: nowrap;
     border-radius: 0.3rem;
@@ -158,8 +158,6 @@ img {
         transition: none;
         cursor: pointer;
     }
-
-
 
     .log-button{
         display: block;
