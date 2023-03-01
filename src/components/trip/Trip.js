@@ -8,8 +8,8 @@ import Birth3 from '../../assets/images/birth3.png';
 function Trip() {
     return (
         <div className="trip">
-            <h1>Recent Trips</h1>
-            <p>Recent Testimonials From Customers</p>
+            <h1>Recent Activities</h1>
+            <p>Recent Clinic Operations</p>
 
             <div className="tripcard">
                 <TripData
