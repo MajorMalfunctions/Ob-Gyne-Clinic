@@ -46,7 +46,7 @@ function Hero (props) {
             />
           </span> */}
           {props.buttonText}
-          <a>
+            <button  className={props.btnClass}>
             <Popup trigger=
                 {<button className={props.btnClass}> Online Booking </button>}
                  nested
@@ -100,7 +100,7 @@ function Hero (props) {
                         { active ? `Hello, ${name} Booked ${time} : ${date}` : ""}
                 </div>
           </Popup>
-          </a>
+            </button>
         </div>
         <div>
     </div>
