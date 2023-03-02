@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.delete("/user/delete/:id", [authJwt.verifyToken, verifySignUp.checkRolesExisted], controller.deleteById);
 
 
-  app.get("/test/all", controller.allAccess);
+  app.get("api/test/all", controller.allAccess);
 
   app.get(
     "/test/patient",

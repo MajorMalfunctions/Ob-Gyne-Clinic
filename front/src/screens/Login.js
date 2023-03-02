@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import '../styles/login.css';
 import { Link, useNavigate} from  'react-router-dom';
-import axios from 'axios';
+import AuthContext from "../utils/AuthProvider";
+import axios from '../utils/axios';
 
 const Login = () =>  {
    const navigate = useNavigate();
+   const { setAuth } = useContext(AuthContext);
+   const userRef = useRef();
+   const errRef = useRef();
+
+   const [errMsg, setErrMsg] = useState('');
+   const [success, setSuccess] = useState(false);
 
    const [ email, setEmail ] = useState('');
    const [ password, setPassword ] = useState('');
@@ -20,39 +28,68 @@ const Login = () =>  {
     // const handleOnChange = () => {
     //   setChecked(!checked);
     // };
+    useEffect(() => {
+      userRef.current.focus();
+  }, [])
 
-   const handleLogin = (e) => {
+    useEffect(() => {
+        setErrMsg('');
+    }, [email, password])
+
+    const handleLogin = async (e) => {
       e.preventDefault();
-      navigate('/')
-      setLoading(true);
-      console.log({ email, password})
-      axios.post('http://localhost:5050/auth/signin',
-      {
-        email: email,
-        password: password
-      })
 
-   .then(resp => {
-    const token =  (email, password);
-    localStorage.setItem("accessToken", resp.data.accessToken);
-    localStorage.setItem("refreshToken", resp.data.refreshToken)
-    localStorage.setItem("email", resp.data.email);
-    console.log(resp);
-        setLoading(false);
-         }).catch(error => {
-        console.log(error.message)
-        setLoading(false);
-      });
-   }
+      try {
+          const response = await axios.post('/api/signin',
+              JSON.stringify({ email, password }),
+              {
+                  headers: { 'Content-Type': 'application/json' },
+                  withCredentials: true
+              }
+          );
+          console.log(JSON.stringify(response?.data));
+          const accessToken = response?.data?.accessToken;
+          const refreshToken = response?.data?.refreshToken;
+          const roles = response?.data?.roles;
+          setAuth({ email, password, roles, accessToken, refreshToken });
+          setEmail('');
+          setPassword('');
+          setSuccess(true);
+      } catch (err) {
+          if (!err?.response) {
+              setErrMsg('No Server Response');
+          } else if (err.response?.status === 400) {
+              setErrMsg('Missing Email or Password');
+          } else if (err.response?.status === 401) {
+              setErrMsg('Unauthorized');
+          } else {
+              setErrMsg('Login Failed');
+          }
+          errRef.current.focus();
+      }
+  }
+
 
   return(
-    <div className="login-wrapper">
+    <>
+                {success ? (
+                <section>
+                    <h1>You are logged in!</h1>
+                    <br />
+                    <p>
+                        <a href="#">Go to Home</a>
+                    </p>
+                </section>
+            ) : (
+          <div className="login-wrapper">
+              <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       <h2>Please Log In</h2>
       <form>
 
         <div className="input-icons">
             <i class="fa fa-user icon"></i>
               <input
+              ref={userRef}
                 class="input-field"
                 required
                 type="email"
@@ -99,6 +136,8 @@ const Login = () =>  {
         <p>  <Link to="/register">Register Here!</Link></p>
       </form>
     </div>
+     )}
+    </>
   )
 }
 

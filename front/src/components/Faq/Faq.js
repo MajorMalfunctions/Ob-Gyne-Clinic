@@ -3,10 +3,10 @@ import '../../styles/faq.css';
 
 function Faq() {
     return (
-      <div>
+      <div className="faq-container">
           <h1> Frequently Asked Questions </h1>
-        <h3>Accordion Component - <a href="https://www.cluemediator.com" target="_blank">Clue Mediator</a></h3>
-        <Accordion title="What is Lorem Ipsum?">
+          <div className="accordion">
+          <Accordion className="accordion" title="What is Lorem Ipsum?">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </Accordion>
         <Accordion isExpand={true} title="Why do we use it?">
@@ -18,6 +18,10 @@ function Faq() {
         <Accordion title="Where can I get some?">
           There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.
         </Accordion>
+        <Accordion title="Where can I get some?">
+          There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.
+        </Accordion>
+          </div>
       </div>
     );
   }

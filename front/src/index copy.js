@@ -4,7 +4,7 @@ import './styles/index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import store from "./store";
-import setupInterceptors from "";
+import setupInterceptors from "./redux/services/setupInterceptors";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

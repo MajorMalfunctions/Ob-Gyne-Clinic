@@ -45,9 +45,9 @@ if (process.env.NODE_ENV === 'production') {
 // CORS
 app.use(
     cors({
-      origin: '*',
+      // origin: '*',
       // origin: "http://localhost:3000",
-      credentials:  true
+      // credentials:  true
     })
 );
 
@@ -74,7 +74,7 @@ app.use(session({
 app.use(methodOverride());
 // app.use((corsOptions));
 app.use(express.json());
-app.use(express.urlencoded({extend:false}))
+app.use(express.urlencoded({extend:true}))
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -86,7 +86,7 @@ app.get('/', (req, res) => {
 
 // R O U T E S
 require("./routes/auth.routes")(app);
-// require("./routes/user.routes")(app);
+require("./routes/user.routes")(app);
 require("./routes/patients.routes")(app);
 require("./routes/booking.routes")(app);
 // require("./routes/upload.routes")(app);
