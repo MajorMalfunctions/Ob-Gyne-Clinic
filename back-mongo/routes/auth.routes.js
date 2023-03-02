@@ -13,7 +13,7 @@ module.exports = function(app) {
   app.post(
     "/auth/signup",
     [
-      verifySignUp.checkDuplicateUsernameOrEmail,
+      verifySignUp.checkDuplicateFullnameOrEmail,
       verifySignUp.checkRolesExisted
     ],
     controller.signup

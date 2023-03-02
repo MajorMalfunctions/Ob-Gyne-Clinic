@@ -1,4 +1,4 @@
-const { authJwt } = require("../middlewares");
+const { verifySignUp, authJwt } = require("../middlewares");
 const controller = require("../controllers/user.controller");
 
 module.exports = function(app) {
@@ -10,19 +10,79 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/api/test/all", controller.allAccess);
+  app.get("/user/findAll", [authJwt.verifyToken, authJwt.isAdmin], controller.findAll);
 
-  app.get("/api/test/user", [authJwt.verifyToken], controller.userBoard);
+  app.get("/user/getUser/:id", [authJwt.verifyToken], controller.getUserById);
+
+  app.put("/user/update/:id", [authJwt.verifyToken, verifySignUp.checkDuplicateFullnameOrEmail], controller.updateById);
+
+  app.delete("/user/delete/:id", [authJwt.verifyToken, verifySignUp.checkRolesExisted], controller.deleteById);
+
+
+  app.get("/test/all", controller.allAccess);
 
   app.get(
-    "/api/test/mod",
+    "/test/patient",
+    [authJwt.verifyToken],
+    controller.patientBoard
+  );
+
+  app.get(
+    "/test/mod",
     [authJwt.verifyToken, authJwt.isModerator],
     controller.moderatorBoard
   );
 
   app.get(
-    "/api/test/admin",
+    "/test/admin",
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
+
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // app.get("/test/all", controller.allAccess);
+
+  // app.get("/test/user", [authJwt.verifyToken], controller.userBoard);
+
+  // app.get(
+  //   "/test/mod",
+  //   [authJwt.verifyToken, authJwt.isModerator],
+  //   controller.moderatorBoard
+  // );
+
+  // app.get(
+  //   "/test/admin",
+  //   [authJwt.verifyToken, authJwt.isAdmin],
+  //   controller.adminBoard
+  // );

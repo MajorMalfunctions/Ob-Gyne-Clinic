@@ -1,4 +1,4 @@
-const { verifySignUp } = require("../middlewares");
+const { verifySignUp, authJwt } = require("../middlewares");
 const controller = require("../controllers/patients.controller");
 
 module.exports = function(app) {
@@ -10,17 +10,19 @@ module.exports = function(app) {
     next();
   });
 
+  // CREATE NEW PATIENT
+  app.get("/create", [authJwt.verifyToken, authJwt.isModerator], controller.create)
+
   // GET ALL PATIENT LIST
   app.get("/patients", [authJwt.verifyToken, authJwt.isAdmin],
-   controller.allPatients)
+   controller.getPatients)
 
   // GET PATIENT
-  app.get("/singlePatient/:id", [authJwt.verifyToken, authJwt.isModerator], controller.singlePatient)
+  app.get("/singlePatient/:id", [authJwt.verifyToken, authJwt.isModerator], controller.getOne)
 
   // UPDATE PATIENT
-  app.put("/updatePatient/:id", [authJwt.verifyToken, authJwt.isModerator], controller.updatePatient)
+  app.put("/updatePatient/:id", [authJwt.verifyToken, authJwt.isModerator], controller.updateOne)
 
   // DELETE PATIENT
-  app.delete("/deletePatient/:id", [authJwt.verifyToken, authJwt.isAdmin],  controller.deletePatient)
-
+  app.delete("/deletePatient/:id", [authJwt.verifyToken, authJwt.isAdmin],  controller.deleteOne)
 };

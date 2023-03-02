@@ -1,71 +1,77 @@
-import mongoose from "mongoose";
-import colors from "colors";
+const mongoose = require ("mongoose");
+const colors = require ("colors");
 
-// Connect to DB
 mongoose.set('strictQuery', false);
 mongoose.Promise = global.Promise;
 
-const connectDB = async () => {
-    let conn;
-    let initial();
-    if (process.env.NODE_ENV === "development") {
-        conn = await mongoose.connect(
-            process.env.DB_URL,
-            {}
-        );
-    } else if (process.env.NODE_ENV === "production") {
-        conn = await mongoose.connect(
-            process.env.DB_URL,
-            {}
-        );
-    } else {
-        conn = await mongoose.connect(
-            process.env.DB_URL,
-            {}
-        );
-    }
-        console.log(
-        `MongoDB connected: ${conn.connection.host}`.cyan.underline.bold
-    );
+const db = require("../models");
+const Role = db.role;
 
-    return conn;
+const connectDB = async () => {
+  let conn;
+  initial();
+  if (process.env.NODE_ENV === "development") {
+      conn = await mongoose.connect(
+          process.env.DB_DEV,
+          {}
+    );console.log(
+        `You Are in DEVELOPMENT Environment Workspace`.magenta.underline.italic
+    );
+  } else if (process.env.NODE_ENV === "production") {
+      conn = await mongoose.connect(
+          process.env.DB_PROD,
+          {}
+          );console.log(
+            `Production Workspace`.yellow.underline.italic
+        );
+} else if (process.env.NODE_ENV === "test") {
+      conn = await mongoose.connect(
+          process.env.DB_TEST,
+          {}
+          );console.log(
+            `Testing Workspace`
+        );
+  }
+      console.log(
+      `MongoDB connected: ${conn.connection.host}`.cyan.underline.bold
+  );
+    // console.log(`Error: ${error.message}`.underline.bold)
+  return conn;
 };
 
 function initial() {
-    Role.estimatedDocumentCount((err, count) => {
-        if (!err && count === 0) {
-        new Role({
-            name: "user"
-        }).save(err => {
-            if (err) {
-            console.log("error", err);
-            }
-
-            console.log("added 'user' to roles collection");
-        });
-
-        new Role({
-            name: "moderator"
-        }).save(err => {
-            if (err) {
-            console.log("error", err);
-            }
-
-            console.log("added 'moderator' to roles collection");
-        });
-
-        new Role({
-            name: "admin"
-        }).save(err => {
-            if (err) {
-            console.log("error", err);
-            }
-
-            console.log("added 'admin' to roles collection");
-        });
+  Role.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
+      new Role({
+        name: "patient"
+        // id: 1
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
         }
-    });
-}
+        console.log('Added PATIENT To Roles Collection');
+      });
 
-export default connectDB;
+      new Role({
+        name: "moderator"
+        // id:  2
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+        console.log('Added MODERATOR To Roles Collection');
+      });
 
+      new Role({
+        name: "admin"
+      }).save(err => {
+        if (err) {
+          console.log("error", err);
+        }
+        console.log('Added ADMIN To Roles Collection');
+      });
+    }
+  });
+};
+
+module.exports = connectDB;

@@ -7,7 +7,9 @@ import Footer from '../components/Footer/Footer';
 import Testimonials from '../components/Testimonials/Testimonial';
 import ScrollUp from '../components/ScrollUp/ScrollUp';
 import Navbar from '../components/Navbar/Navbar';
+import Faq from '../components/Faq/Faq';
 import '../styles/hero.css';
+
 function Home () {
   return (
     <>
@@ -23,6 +25,7 @@ function Home () {
       <Destination />
       <Trip />
       <Testimonials />
+      <Faq />
       <Footer />
       <ScrollUp />
     </>

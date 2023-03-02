@@ -2,21 +2,42 @@ import React, {useState } from 'react';
 import '../../styles/hero.css';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Hero (props) {
+  const navigate=useNavigate();
+
     const [ name, setName] = useState("");
     const [ contact, setContact] = useState("");
     const [ time, setTime] = useState("");
     const [ date, setDate] = useState("");
     const [active, setActive] = useState(false);
 
-    const handleBooking = (e) => {
+    const handleBooking = async (e) => {
       e.preventDefault();
-      setActive(!active);
 
-      alert('Booking Added!');
-      console.log('Booking Added!');
-    }
+      const config = {
+        header: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      try {
+        const { data } = await axios.post(
+          "http://localhost:5050/booking/create",
+          { name, time, date },
+          config
+        );
+        console.log('Booking Added!');
+        localStorage.setItem("user", data);
+        alert('Booking Added!');
+
+        navigate("/contact");
+      } catch (error) {
+    };
+
+  }
 
   return (
     <>

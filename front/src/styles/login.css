@@ -1,60 +1,152 @@
-
-input[type="email"],
-input[type="password"],
-fieldset {
-  /* border: 1px solid #333; */
-  /* -moz-box-shadow: none; */
-  box-sizing: border-box;
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid #2a2a2a;
+  width: 30%;
+  height: 55vh;
+  padding: 2.5rem 6.5rem;
+  margin: 0 auto;
+  margin-top: 15rem;
+  background-color: rgba(red, green, blue, alpha);
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
 }
 
-input:required:invalid {
-  box-shadow: 0 0 2px 1px red;
+.login-wrapper form {
+  padding: 1rem 3rem;
 }
 
-input:focus:invalid {
-  box-shadow: none;
+p {
+  margin-top: .8rem;
+}
+form p {
+  /* margin: 1rem 2rem 1rem 2rem; */
+  /* margin-top: 2rem; */
 }
 
-input:required:valid {
-  box-shadow: 0 0 2px 1px green;
+form input {
+  line-height: 2.4rem;
+  padding: .4rem;
+  border-radius: 10px;
+  width: 100%;
 }
 
-.outcard {
-  padding: 25px;
-  margin-left: 25%;
-  width: 50%;
-  box-shadow: 0 1px 2px 1px #ddd;
-  border-radius: 3px;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-  /* font-family: Kaushan Script; */
+input {
+  border: 2px solid #ccc;
+  width: 100%;
 }
 
-.pas-inputs{
-  margin-left: 1%;
-  width: 90%;
+button {
+  border-radius: 10px 10px;
   color: #000;
-  border: 1px solid #ccc; 
-  border-radius: 3px;
-  padding: 10px 10px;
+  margin-top: 2rem;
+  width: 8rem;
+  margin: 2rem 4rem;
+  padding: .5rem  1rem;
+  cursor: pointer;
 }
 
-.btns {
-    background-color: #c3c3c3;
-    color: #fff;
-    /* border-color: 2px solid #000; */
-    width: 30%;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    padding: 5px 5px;
-    font-size: 1rem;
+input[type=email],
+input[type=password] {
+    width: 100%;
+    padding: 12px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
-  
-.btns:hover {
-  background-color: #000;
-  color: #fff;
+
+label p {
+  margin-left: .7rem;
 }
-  
-  .center{
-     text-align: center;
+
+.checkbox {
+  display: flex;
+  display: inline;
+}
+
+.checkbox #checkbox {
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+.pass-icon {
+  position: relative;
+}
+
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+  margin-top: 1.3rem;
+  margin-left: .5rem;
+  width: 70px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+
+.icons {
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+span icons {
+  margin-top: 3rem;
+  padding-top: 3rem;
+  }.input-icons icons {
+    margin-top: 3rem;
+    padding-top: 3rem;
+}
+
+span icons {
+margin-top: 3rem;
+padding-top: 3rem;
+}
+
+input-field icons {
+  margin-top: 3rem;
+  padding-top: 3rem;
   }
+
+.checkbox {
+  position: absolute;
+  display: inline-block;
+
+}
+
+.pwd-container {
+  position: relative;
+  width: 295px;
+}
+
+.pwd-container input {
+  padding: 5px 30px 5px 10px;
+  font-size: 1rem;
+}
+
+.pwd-container icon {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  right: 8px;
+  top: 8px;
+}

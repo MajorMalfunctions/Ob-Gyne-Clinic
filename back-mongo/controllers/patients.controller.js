@@ -1,57 +1,56 @@
-const express = require('express');
-const app = express();
-// Express route
-const studentExpressRoute = express.Router();
-// User schema
-let StudentSchema = require('../model/student.model');
-// Get users
-studentExpressRoute.route('/').get((req, res) => {
-    StudentSchema.find((error, data) => {
-        if (error) {
-            return next(error)
-        } else {
-            res.json(data)
-        }
-    })
-})
-// Create user
-studentExpressRoute.route('/create-student').post((req, res, next) => {
-    StudentSchema.create(req.body, (error, data) => {
-        if (error) {
-            return next(error)
-        } else {
-            res.json(data)
-        }
-    })
-});
+const db = require("../models");
+const Patient = db.patient;
 
-// Get single user
-studentExpressRoute.route('/get-student/:id').get((req, res) => {
-    StudentSchema.findById(req.params.id, (error, data) => {
+// Get Patients
+exports.getPatients = (req, res) => {
+    PatientsSchema.find((error, data) => {
         if (error) {
             return next(error)
         } else {
             res.json(data)
         }
     })
-})
+};
 
-// Update user
-studentExpressRoute.route('/update-student/:id').put((req, res, next) => {
-    StudentSchema.findByIdAndUpdate(req.params.id, {
+// Create Patient
+exports.create = (req, res, next) => {
+    PatientsSchema.create(req.body, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+};
+
+// Get Single Patient
+exports.getOne = (req, res) => {
+    PatientsSchema.findById(req.params.id, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+};
+
+// Update Patient
+exports.updateOne = (req, res, next) => {
+    PatientsSchema.findByIdAndUpdate(req.params.id, {
         $set: req.body
     }, (error, data) => {
         if (error) {
             return next(error);
         } else {
             res.json(data)
-            console.log('Student successfully updated!')
+            console.log('Patient successfully updated!')
         }
     })
-})
-// Delete student
-studentExpressRoute.route('/remove-student/:id').delete((req, res, next) => {
-    StudentSchema.findByIdAndRemove(req.params.id, (error, data) => {
+};
+
+// Delete Patient
+exports.deleteOne = (req, res, next) => {
+    PatientsSchema.findByIdAndRemove(req.params.id, (error, data) => {
         if (error) {
             return next(error);
         } else {
@@ -60,5 +59,4 @@ studentExpressRoute.route('/remove-student/:id').delete((req, res, next) => {
             })
         }
     })
-})
-module.exports = studentExpressRoute;
+}
