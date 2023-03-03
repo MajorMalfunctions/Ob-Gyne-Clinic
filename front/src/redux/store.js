@@ -1,7 +1,13 @@
-import { createStore } from 'redux'
-import userReducer from './reducers/userReducer';
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from '../redux/auth/authSlice';
+import bookingReducer from '../redux/booking/bookingSlice'
+// import blogReducer from '../redux/blog/blogReducer'
 
-const store = createStore(userReducer)
 
-
-export default store;
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    booking: bookingReducer,
+    // blog: blogReducer
+  },
+})

@@ -1,49 +1,82 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/login.css';
+import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate} from  'react-router-dom';
-import axios from 'axios';
+import { toast } from 'react-toastify';
+import Spinner from "../utils/spinner";
+import { register, reset } from '../redux/auth/authSlice'
 
 
 const Register = () =>  {
-  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    fullname: '',
+    email: '',
+    password: '',
+  })
 
-   const [ name, setName ] =  useState("");
-   const [ email, setEmail ] = useState('');
-   const [ password, setPassword ] = useState('');
-   const [ loading, setLoading ] = useState(false);
+  const { name, email, password } = formData
 
-   const handleRegister = (e) => {
-    e.preventDefault();
-    navigate('/')
-    setLoading(true);
-    console.log({ email, password})
-    axios.post('http://localhost:5050/auth/signup',
-    { email: email, password: password })
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
 
- .then(resp => {
-      setLoading(false);
-       localStorage.setItem("accessToken", 'token');
-       localStorage.setItem('refreshToken', 'refreshToken')
-       }).catch(error => {
-      console.log(error.message)
-      setLoading(false);
-    });
- }
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message)
+    }
+
+    if (isSuccess || user) {
+      navigate('/')
+    }
+
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+
+  const onChange = (e) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
+  }
+  
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    if (email !== password) {
+      toast.error('Passwords do not match')
+    } else {
+      const userData = {
+        name,
+        email,
+        password,
+      }
+
+      dispatch(register(userData))
+    }
+  }
+
+  if (isLoading) {
+    return <Spinner />
+  }
+
 
   return(
     <div className="login-wrapper">
       <h2>Register Now!</h2>
-      <form>
+      <form onSubmit={onSubmit}>
       <label>
           <p>Full Name:</p>
           <input
             required
             type="text"
+            name="fullname"
+            id="fullname"
             placeholder="Full Name"
             value={name}
-            onChange={(e) => {
-               setName(e.target.value)
-            }}
+            onChange={onChange}
           />
         </label>
 
@@ -51,12 +84,15 @@ const Register = () =>  {
           <p>Email:</p>
           <input
             required
+            name="email"
+            id="email"
             type="email"
             placeholder="Email Address"
             value={email}
-            onChange={(e) => {
-               setEmail(e.target.value)
-            }}
+            onChange={onChange}
+            // onChange={(e) => {
+            //    setEmail(e.target.value)
+            // }}
           />
         </label>
 
@@ -64,16 +100,19 @@ const Register = () =>  {
           <p>Password:</p>
           <input
             required
+            name="password"
+            id="password"
             type="password"
             placeholder="***********"
             value={password}
-            onChange={(e) => {
-               setPassword(e.target.value)
-            }}
+            onChange={onChange}
+            // onChange={(e) => {
+            //    setPassword(e.target.value)
+            // }}
             />
         </label>
         <div>
-          <button onClick={handleRegister}  type="submit">Submit</button>
+          <button onClick={onSubmit}  type="submit">Submit</button>
         </div>
 
         <p>  <Link to="/login">Login Now!</Link></p>

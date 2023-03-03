@@ -41,7 +41,7 @@ const Login = () =>  {
       e.preventDefault();
 
       try {
-          const response = await axios.post('/api/auth/signin',
+          const response = await axios.post('/api/signin',
               JSON.stringify({ email, password }),
               {
                   headers: { 'Content-Type': 'application/json' },
@@ -119,6 +119,18 @@ const Login = () =>  {
           </div>
 
         </div>
+
+         {/* <div className="checkbox">
+         <input name="remember"
+            type="checkbox"
+            id="checkbox"
+            value={checked}
+            checked="agree"
+            onChange={handleOnChange}
+            // onChange={(e) => { setChecked(e.target.value)}}  />
+          <label htmlFor="remember">Keep Me Signin</label>
+         </div> */}
+
         <div>
           <button value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} type="submit" disabled={loading}>Login {' '}{' '}<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
         </div>
