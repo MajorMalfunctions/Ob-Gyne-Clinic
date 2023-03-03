@@ -10,31 +10,31 @@ module.exports = function(app) {
     next();
   });
 
-  app.get("/user/findAll", [authJwt.verifyToken, authJwt.isAdmin], controller.findAll);
+  app.get("/api/user/findAll", [authJwt.verifyToken, authJwt.isAdmin], controller.findAll);
 
-  app.get("/user/getUser/:id", [authJwt.verifyToken], controller.getUserById);
+  app.get("/api/user/getUser/:id", [authJwt.verifyToken], controller.getUserById);
 
-  app.put("/user/update/:id", [authJwt.verifyToken, verifySignUp.checkDuplicateFullnameOrEmail], controller.updateById);
+  app.put("/api/user/update/:id", [authJwt.verifyToken, verifySignUp.checkDuplicateFullnameOrEmail], controller.updateById);
 
-  app.delete("/user/delete/:id", [authJwt.verifyToken, verifySignUp.checkRolesExisted], controller.deleteById);
+  app.delete("/api/user/delete/:id", [authJwt.verifyToken, verifySignUp.checkRolesExisted], controller.deleteById);
 
 
-  app.get("api/test/all", controller.allAccess);
+  app.get("/api/test/all", controller.allAccess);
 
   app.get(
-    "/test/patient",
+    "/api/test/patient",
     [authJwt.verifyToken],
     controller.patientBoard
   );
 
   app.get(
-    "/test/mod",
+    "/api/test/moderator",
     [authJwt.verifyToken, authJwt.isModerator],
     controller.moderatorBoard
   );
 
   app.get(
-    "/test/admin",
+    "/api/test/admin",
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );

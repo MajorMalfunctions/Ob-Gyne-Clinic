@@ -1,28 +1,28 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const timeinSchema = new Schema({
+const BookingSchema = new Schema({
   name: {
     type: String,
     ref: "User"
   },
   time: {
     type: String,
-    ref: "Timesheet"
+    ref: "Patient"
   },
   date: {
     type: Date,
     default: Date.now()
   },
   published: Boolean,
-  attendance:  {
-    type:  Boolean,
-    default: false,
-    ref: "Attendance"
-  }
+  // attendance:  {
+  //   type:  Boolean,
+  //   default: false,
+  //   ref: "Attendance"
+  // }
 }, {timestamps: true});
 
 
-const timeinModel = mongoose.model('Timein', timeinSchema, "Timein");
+const bookingModel = mongoose.model('Booking', BookingSchema, "Booking");
 
-module.exports = timeinModel;
+module.exports = bookingModel;
