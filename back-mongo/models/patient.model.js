@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const ip = require('ip');
 
 
-let PatientSchema = new Schema({
+const PatientSchema = new mongoose.Schema({
   // _id: new Schema.Types.ObjectId,
     // name: {
     //   firstName: String,
@@ -60,4 +60,5 @@ let PatientSchema = new Schema({
     }
 );
 
-module.exports = mongoose.model("Patient", PatientSchema, "PatientSchema");
+const Patient = mongoose.model("Patient", PatientSchema, "Patient");
+module.exports = Patient;

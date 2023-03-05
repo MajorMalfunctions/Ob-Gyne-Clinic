@@ -39,7 +39,7 @@ iframe {
     flex-wrap: wrap;
 }
 
-.bottom div {
+.bottom div{
     display: flex;
     flex-direction: column;
 }
@@ -70,12 +70,26 @@ iframe {
     .footer {
         padding: 4rem 2rem;
     }
-    
+
     .footer i {
         margin: 1rem 1rem 0 0;
     }
-    
-    .bottom-div {
+
+    .top {
+        font-size: .8rem;
+    }
+
+    .top-desc h1{
+        font-size: 2.5rem;
+        font-weight: 800;
+    }
+
+    .bottom div{
         width: 50%;
+        font-size: .8rem;
+    }
+
+    .lower {
+        font-size: .8rem;
     }
 }

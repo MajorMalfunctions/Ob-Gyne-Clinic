@@ -25,7 +25,7 @@ function Hero (props) {
 
       try {
         const { data } = await axios.post(
-          "http://localhost:5050/booking/create",
+          "http://localhost:5050/api/booking/create",
           { name, time, date },
           config
         );
@@ -67,7 +67,6 @@ function Hero (props) {
             />
           </span> */}
           {props.buttonText}
-            <button  className={props.btnClass}>
             <Popup trigger=
                 {<button className={props.btnClass}> Online Booking </button>}
                  nested
@@ -121,7 +120,6 @@ function Hero (props) {
                         { active ? `Hello, ${name} Booked ${time} : ${date}` : ""}
                 </div>
           </Popup>
-            </button>
         </div>
         <div>
     </div>
