@@ -175,7 +175,8 @@ img {
 
 
     .nav-links:hover{
-        background: #01959a;
+        background: orchid;
+        /* width: 50%; */
         transition: none;
         cursor: pointer;
     }

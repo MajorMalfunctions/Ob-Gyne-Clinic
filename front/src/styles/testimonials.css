@@ -1,7 +1,7 @@
-.testimonial__container {
-    /* width: 800px; */
+.testimonial_container {
+    /* width: 150%; */
     margin-bottom: 3rem;
-    margin: 4rem 6rem;
+    /* margin: 4rem 6rem; */
     padding: 1.5rem 2rem;
     z-index: -99;
 }
@@ -10,19 +10,15 @@ h1 {
   font-size: 3rem;
 }
 
-  .testimonial__card {
+  .testimonial_card {
     /*margin: 4rem 6rem;
     */
-    width: 30%;
+    width: 100%;
     background-color: #fafafa;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 2.5rem 2rem;
     border-radius: 1.5rem;
     margin-bottom: 2rem;
-    -webkit-border-radius: 1.5rem;
-    -moz-border-radius: 1.5rem;
-    -ms-border-radius: 1.5rem;
-    -o-border-radius: 1.5rem;
 }
 
   .testimonial__subtitle {

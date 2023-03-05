@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate} from  'react-router-dom';
 import { toast } from 'react-toastify';
 import Spinner from "../utils/spinner";
-import { register, reset } from '../redux/auth/authSlice'
+import { register, reset } from '../utils/redux/auth/authSlice'
 
 
 const Register = () =>  {

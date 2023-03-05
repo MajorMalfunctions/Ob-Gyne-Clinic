@@ -2,14 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import authReducer from "./slices/authSlice";
 import userReducer from "./slices/userSlice";
 import bookingReducer from "./slices/bookingSlice";
-// import blogReducer from "./slices/bookingSlice";
-import messageReducer from "./slices/messageSlice";
+import blogReducer from "./slices/bookingSlice";
+import messageReducer from "./slices/message";
 
 const reducer = {
   auth: authReducer,
   user: userReducer,
   booking: bookingReducer,
-  // blog: blogReducer,
+  blog: blogReducer,
   message: messageReducer
 }
 

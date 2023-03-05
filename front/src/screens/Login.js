@@ -1,131 +1,111 @@
-
-
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import '../styles/login.css';
-import { Link, useNavigate} from  'react-router-dom';
-import AuthContext from "../utils/AuthProvider";
+import { Link, useNavigate} from 'react-router-dom';
 import axios from '../utils/axios';
+// import Spinner from "../utils/spinner";
+import { toast } from 'react-toastify';
 
 const Login = () =>  {
    const navigate = useNavigate();
-   const { setAuth } = useContext(AuthContext);
-   const userRef = useRef();
-   const errRef = useRef();
-
-   const [errMsg, setErrMsg] = useState('');
-   const [success, setSuccess] = useState(false);
 
    const [ email, setEmail ] = useState('');
    const [ password, setPassword ] = useState('');
-  //  const [ checked, setChecked ] = useState(false);
-   const [ loading, setLoading ] = useState(false);
-   const [ showPassword, setShowPassword ] = useState(false);
-   const changeIcon = showPassword === true ? false : true;
+   const [ checked, setChecked ] = useState(false);
+  //  const [ showPassword, setShowPassword ] = useState(false);
+  //  const changeIcon = showPassword === true ? false : true;
+   const [error, setError] = useState("");
 
-   const togglePassword = () => {
-      setShowPassword(!showPassword);
+  //  const togglePassword = () => {
+  //     setShowPassword(!showPassword);
+  //   };
+
+    const handleOnChange = () => {
+      setChecked(!checked);
     };
-
-    // const handleOnChange = () => {
-    //   setChecked(!checked);
-    // };
-    useEffect(() => {
-      userRef.current.focus();
-  }, [])
-
-    useEffect(() => {
-        setErrMsg('');
-    }, [email, password])
 
     const handleLogin = async (e) => {
       e.preventDefault();
-
-      try {
-          const response = await axios.post('/api/auth/signin',
-              JSON.stringify({ email, password }),
-              {
-                  headers: { 'Content-Type': 'application/json' },
-                  withCredentials: true
-              }
-          );
-          console.log(JSON.stringify(response?.data));
-          const accessToken = response?.data?.accessToken;
-          const refreshToken = response?.data?.refreshToken;
-          const roles = response?.data?.roles;
-          setAuth({ email, password, roles, accessToken, refreshToken });
-          setEmail('');
-          setPassword('');
-          setSuccess(true);
-      } catch (err) {
-          if (!err?.response) {
-              setErrMsg('No Server Response');
-          } else if (err.response?.status === 400) {
-              setErrMsg('Missing Email or Password');
-          } else if (err.response?.status === 401) {
-              setErrMsg('Unauthorized');
-          } else {
-              setErrMsg('Login Failed');
+      await axios.post(
+        'http://localhost:5050/api/auth/signin',
+        {
+          email: email,
+          password: password,
+        },
+        {
+          headers: {
+            // "x-access-token": "token-value",
+            "Content-Type": "application/json"
+          },
+        })
+        .then((res) =>  {
+          // alert('SUCCESS')
+          toast.success('Login Success')
+          const token =  (email, password);
+          if (token) {
+            console.log('Success')
+            console.log(res.data)
+            localStorage.setItem('accessToken', res.data.accessToken)
+            localStorage.setItem('refreshToken', res.data.refreshToken)
+            sessionStorage.setItem('session-user', res.email);
+            navigate('/')
           }
-          errRef.current.focus();
-      }
-  }
+       })
+       .catch(err => {
+        toast.error('Login Failed')
+        //  alert(error.message)
+         console.log(err.message)
+         navigate("/login");
+       })
+    }
 
 
   return(
     <>
-                {success ? (
-                <section>
-                    <h1>You are logged in!</h1>
-                    <br />
-                    <p>
-                        <a href="#">Go to Home</a>
-                    </p>
-                </section>
-            ) : (
-          <div className="login-wrapper">
-              <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-      <h2>Please Log In</h2>
-      <form>
+      <div className="login-screen">
+        <form onSubmit={handleLogin} className="login-screen_form">
+        <h2 className="login-title">Login</h2>
+        {error && <span className="error-message">{error}</span>}
 
-        <div className="input-icons">
-            <i class="fa fa-user icon"></i>
-              <input
-              ref={userRef}
-                class="input-field"
-                required
-                type="email"
-                placeholder="juantamad@mail.com"
-                value={email}
-                onChange={(e) => {
-                   setEmail(e.target.value)
-                }}
-              />
+          <div className="form-group">
+              {/* <i class="fa fa-user icon"></i> */}
+              <label htmlFor="email">Email:</label>
+                <input
+                  required
+                  type="email"
+                  placeholder="juantamad@mail.com"
+                  value={email}
+                  onChange={(e) => {
+                     setEmail(e.target.value)
+                  }}
+                />
+          </div>
 
-          <div className="pwd-container">
-            <i class="fa fa-lock icon"></i>
+          <div className="form-group">
+          <label htmlFor="password">Password  :</label>
+            {/* <i class="fa fa-lock icon"></i> */}
                   <input
-                    class="input-field"
                     required
-                    type={showPassword ? "text" : "password"}
+                    type="password"
+                    // type={showPassword ? "text" : "password"}
                     placeholder="***********"
                     value={password}
                     onChange={(e) => {
-                       setPassword(e.target.value)
+                        setPassword(e.target.value)
                     }}
                     />
-                <span onClick={() => {togglePassword(changeIcon);}}>
-                   {changeIcon ? <i class="fa fa-eye" icons/> : <i class="fa fa-eye-slash" icons/>}
-                </span>
+                {/* <span onClick={() => {togglePassword(changeIcon);}}>
+                    {changeIcon ? <i class="fa fa-eye" icons/> : <i class="fa fa-eye-slash" icons/>}
+                </span> */}
           </div>
 
-        </div>
-        <div>
-          <button value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} type="submit" disabled={loading}>Login {' '}{' '}<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-        </div>
-        <p>  <Link to="/register">Register Here!</Link></p>
-      </form>
+          <p className="login-subtexts"> Forgot Password? <Link to="/forgot-password" className="login-forgot">Forgot!</Link></p>
+
+          <button onClick={handleLogin} type="submit" className="btn btn-primary">Login {' '}{' '}<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+            <br />
+            <br />
+          <p className="login-subtext">Not A Member Yet?  <Link to="/register">Register Here!</Link></p>
+        </form>
     </div>
-     )}
     </>
   )
 }

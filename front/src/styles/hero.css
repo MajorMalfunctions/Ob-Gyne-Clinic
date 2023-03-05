@@ -68,13 +68,15 @@ img {
     background-color: #fff;
     /* padding: 1rem 2rem; */
     border-radius: 6px;
-    width: 10%;
+    /* width: 10%; */
     /*background: transparent;
-    */font-size: 1rem;
-    height: 3.5rem;
+    */
+    font-size: 1rem;
+    height: 3rem;
     font-weight: bold;
-    /*letter-spacing: 2px;
-    */color: #222;
+    color: #222;
+    letter-spacing: 1px;
+    padding: 5px;
     cursor: pointer;
 }
 
@@ -90,6 +92,9 @@ img {
     .form-container form {
         padding-top: 1rem;
         width: 50%;
+    }
+    .hero-text .show {
+        font-size: .5rem;
     }
 }
 
