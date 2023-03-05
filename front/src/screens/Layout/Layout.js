@@ -9,7 +9,6 @@ import Service from "../Service";
 import Contact from "../Contact";
 
 import Login from "../Login";
-// import Signup from "../Signup";
 import Register from "../Register";
 import Forgot from "../Forgot";
 import Reset from "../Reset";
@@ -25,7 +24,6 @@ export default function Layout() {
           <Route path="/service" element={<Service />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<Forgot />} />
           <Route path="/reset-password/:resetToken" element={<Reset />} />

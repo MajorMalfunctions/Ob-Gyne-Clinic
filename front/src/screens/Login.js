@@ -24,7 +24,8 @@ const Login = () =>  {
     };
 
     const handleLogin = async (e) => {
-      e.preventDefault();
+      // e.preventDefault();
+        if (validate()) {
       await axios.post(
         'http://localhost:5050/api/auth/signin',
         {
@@ -39,7 +40,7 @@ const Login = () =>  {
         })
         .then((res) =>  {
           // alert('SUCCESS')
-          toast.success('Login Success')
+          toast.success('Login Success');
           const token =  (email, password);
           if (token) {
             console.log('Success')
@@ -50,12 +51,28 @@ const Login = () =>  {
             navigate('/')
           }
        })
+       .then((res) => {
+        navigate("/login")
+       })
        .catch(err => {
         toast.error('Login Failed')
         //  alert(error.message)
          console.log(err.message)
-         navigate("/login");
        })
+      }
+    }
+
+    const validate = () => {
+        let result = true;
+        if (email === '' || email === null) {
+            result = false;
+            toast.warning('Please Enter Email Address');
+        }
+        if (password === '' || password === null) {
+            result = false;
+            toast.warning('Please Enter Password');
+        }
+        return result;
     }
 
 
