@@ -1,45 +1,71 @@
-import { useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import React from 'react'
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const [authenticated, setAuthenticated] = useState(null);
+  const navigate = useNavigate()
 
-useEffect(() => {
-  const loggedInUser = localStorage.getItem("authenticated");
-  if (loggedInUser) {
-    setAuthenticated(loggedInUser);
-    }
-  }, []);
+  const handleLogout = () => {
+    navigate("/login");
+  }
 
-  if (!authenticated) {
-    // Redirect
-    return <Navigate replace to="/" />;
-  } else {
   return (
     <div>
-        <h2>Welcome to Dashboard</h2>
+      <h1>Welcome To Dashboard</h1>
+      <button onClick={handleLogout}>Logout</button>
     </div>
-    );
-  }
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard
+
+
+
+
+
+
+
+
+// import { useEffect, useState } from "react";
+// import { Navigate } from "react-router-dom";
+
+// const Dashboard = () => {
+//   const [ authenticated, setAuthenticated ] = useState(null);
+
+// useEffect(() => {
+//   const loggedInUser = localStorage.getItem("authenticated");
+//   if (loggedInUser) {
+//     setAuthenticated(loggedInUser);
+//     }
+//   }, []);
+
+//   if (!authenticated) {
+//     return <Navigate replace to="/dashboard" />;
+//   } else {
+//   return (
+//     <div>
+//         <h2>Welcome to Dashboard</h2>
+//     </div>
+//     );
+//   }
+// };
+
+// export default Dashboard;
 
 
 // import React from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import { getUser, removeUserSession } from '../utils/common';
- 
+
 // const Dashboard = props => {
 //   const history = useNavigate();
 //   const user = getUser();
- 
+
 //   // handle click event of logout button
 //   const handleLogout = () => {
 //     removeUserSession();
 //     history('/login');
 //   }
- 
+
 //   return (
 //     <div>
 //       Welcome {user.name}!<br /><br />
@@ -47,5 +73,5 @@ export default Dashboard;
 //     </div>
 //   );
 // }
- 
+
 // export default Dashboard;

@@ -47,6 +47,7 @@ body {
 .form-group label,
 .form-group input {
   width: 100%;
+  text-align: left;
   margin-bottom: 0.5rem;
 }
 
@@ -64,7 +65,7 @@ body {
 }
 
 .form-group input:focus {
-  border-bottom: 3px solid coral;
+  border-bottom: 3px solid orchid;
 }
 
 .btn {
@@ -80,7 +81,7 @@ body {
 }
 
 .btn-primary {
-  background-color: coral;
+  background-color: orchid;
   color: #fff;
 }
 
