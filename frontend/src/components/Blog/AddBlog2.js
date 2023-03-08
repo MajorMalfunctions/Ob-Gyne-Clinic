@@ -8,6 +8,7 @@ const AddBlog = () => {
     description: "",
     published: false
   };
+
   const [ blog, setBlog ] = useState(initialBlogState);
   const [ submitted, setSubmitted ] = useState(false);
 

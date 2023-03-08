@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/App.css";
@@ -13,24 +14,40 @@ import BoardPatient from "./components/common/BoardPatient";
 import BoardModerator from "./components/common/BoardModerator";
 import BoardAdmin from "./components/common/BoardAdmin";
 
+import { logout } from "./redux/actions/auth";
+import AuthVerify from "./redux/AuthVerify";
+import EventBus from "./components/common/EventBus";
+
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
   const [showAdminBoard, setShowAdminBoard] = useState(false);
-  const [currentUser, setCurrentUser] = useState(undefined);
+  // const [currentUser, setCurrentUser] = useState(undefined);
+
+  const { user: currentUser } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+
+  const logOut = useCallback(() => {
+    dispatch(logout());
+  }, [dispatch]);
 
   useEffect(() => {
-    const user = AuthService.getCurrentUser();
-
-    if (user) {
-      setCurrentUser(user);
-      setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
-      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
+    if (currentUser) {
+      setShowModeratorBoard(currentUser.roles.includes("ROLE_MODERATOR"));
+      setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
+    } else {
+      setShowModeratorBoard(false);
+      setShowAdminBoard(false);
     }
-  }, []);
 
-  const logOut = () => {
-    AuthService.logout();
-  };
+    EventBus.on("logout", () => {
+      logOut();
+    });
+
+    return () => {
+      EventBus.remove("logout");
+    };
+  }, [currentUser, logOut]);
 
   return (
     <div>
@@ -47,7 +64,7 @@ const App = () => {
 
           {showModeratorBoard && (
             <li className="nav-item">
-              <Link to={"/mod"} className="nav-link">
+              <Link to={"/moderator"} className="nav-link">
                 Moderator Board
               </Link>
             </li>
@@ -112,6 +129,8 @@ const App = () => {
           <Route path="/admin" element={<BoardAdmin/>} />
         </Routes>
       </div>
+
+      {/* <AuthVerify logOut={logOut}/> */}
     </div>
   );
 };
