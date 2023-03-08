@@ -22,6 +22,9 @@ import Admin from "../Admin";
 import Moderator from "../Moderator";
 import Patient from "../Patient";
 
+import Booking from '../../components/Booking/Booking';
+import AddBooking from '../../components/Booking/AddBooking';
+import BookingList from '../../components/Booking/BookingList';
 
 export default function Layout() {
   return (
@@ -43,6 +46,11 @@ export default function Layout() {
           <Route path="/reset-password/:resetToken" element={<Reset />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFound />} />
+
+          {/* <Route exact path={["/", "/booking"]} element={<BookingList />} />
+          <Route exact path="/add" element={<AddBooking />} />
+          <Route path="/booking/:id" element={<Booking />} /> */}
+
         </Routes>
       <ToastContainer />
     </>

@@ -112,7 +112,6 @@ const Login = (props) => {
             name="password"
             type="password"
             id="password"
-            // autoComplete="true"
             placeholder="Enter password"
             value={password}
             onChange={onChangePassword}
@@ -138,7 +137,6 @@ const Login = (props) => {
             </div>
           )}
 
-        <br />
         <br />
         <p className="register-subtext">Not Yet A Member?  <Link to="/register">Register Here!</Link></p>
         <CheckButton style={{ display: "none" }} ref={checkBtn} />

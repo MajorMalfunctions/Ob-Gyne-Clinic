@@ -1,116 +1,161 @@
-import { useState } from "react";
-import axios from "axios";
-import { Link, useNavigate} from 'react-router-dom';
-import "../styles/register.css";
-import { toast } from 'react-toastify';
-import Form from '../utils/Forms';
-import Spinner from '../utils/Spinner'
-import Error from '../utils/Error'
+import React, { useState, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
+import { isEmail } from "validator";
+
+import { register } from "../redux/actions/auth";
+
+const required = (value) => {
+  if (!value) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This field is required!
+      </div>
+    );
+  }
+};
+
+const validEmail = (value) => {
+  if (!isEmail(value)) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        This is not a valid email.
+      </div>
+    );
+  }
+};
+
+const vFullname = (value) => {
+  if (value.length < 8 || value.length > 20) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The Fullname must be between 8 and 20 characters.
+      </div>
+    );
+  }
+};
+
+const vpassword = (value) => {
+  if (value.length < 6 || value.length > 40) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        The password must be between 6 and 40 characters.
+      </div>
+    );
+  }
+};
 
 const Register = () => {
-  const navigate = useNavigate();
-  // const { loading, userInfo, error } = useSelector((state) => state.auth)
+  const form = useRef();
+  const checkBtn = useRef();
 
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [successful, setSuccessful] = useState(false);
 
-  const handleRegister = async (e) => {
-       e.preventDefault();
-    await axios.post(
-      'http://localhost:5050/api/auth/signup',{
-        fullname: fullname,
-        email: email,
-        password: password,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json"
-        },
-      })
-      .then((res) =>  {
-        console.log(res.data)
-        console.log(res.message)
-        toast.success('success', { position: toast.POSITION.TOP_CENTER})
-        const token =  (fullname, email, password);
-        if (token) {
-          localStorage.setItem('accessToken', res.data.user)
-          localStorage.setItem('accessToken', res.data.accessToken)
-          navigate('/profile')
-        }
-        console.log(res.status)
-        console.log(res.data)
+  const { message } = useSelector(state => state.message);
+  const dispatch = useDispatch();
 
-        // if (res.status(400).send({  message: "Email Alreay Exists"})){
-        // }  else {
-        //   res.status(200).send({ message: 'success'})
-        //   console.log('success')
-        // }
-     })
-     .catch(error => {
-      //  toast.error('error')
-      alert('ERROR')
-      alert(error.message)
-      console.log(error)
-      console.log(error.message)
-      console.log(error.res.data.err.message)
-      navigate("/register");
-     })
+  const onChangeFullname = (e) => {
+    const fullname = e.target.value;
+    setFullname(fullname);
+  };
 
-  }
+  const onChangeEmail = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+  };
+
+  const onChangePassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+
+    setSuccessful(false);
+
+    form.current.validateAll();
+
+    if (checkBtn.current.context._errors.length === 0) {
+      dispatch(register(fullname, email, password))
+        .then(() => {
+          setSuccessful(true);
+        })
+        .catch(() => {
+          setSuccessful(false);
+        });
+    }
+  };
 
   return (
-    <div className="register-screen">
-    {/* {error && <Error>{error}</Error>} */}
-      <form onSubmit={handleRegister} className="register-screen_form">
-        <h3 className="register-screen_title">Register</h3>
+    <div className="col-md-12">
+      <div className="card card-container">
+      <img
+          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          alt="profile-img"
+          className="profile-img-card"
+        />
+        <Form onSubmit={handleRegister} ref={form}>
+          {!successful && (
+            <div>
+              <div className="form-group">
+                <label htmlFor="fullname">Fullname</label>
+                <Input
+                  type="text"
+                  className="form-control"
+                  name="fullname"
+                  value={fullname}
+                  onChange={onChangeFullname}
+                  validations={[required, vFullname]}
+                />
+              </div>
 
-        <div className="form-group">
-          <label htmlFor="fullname">Fullname:</label>
-          <input
-            type="text"
-            required
-            id="name"
-            placeholder="Enter fullname"
-            value={fullname}
-            onChange={(e) => setFullname(e.target.value)}
-          />
-        </div>
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <Input
+                  type="text"
+                  className="form-control"
+                  name="email"
+                  value={email}
+                  onChange={onChangeEmail}
+                  validations={[required, validEmail]}
+                />
+              </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            required
-            id="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <Input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  value={password}
+                  onChange={onChangePassword}
+                  validations={[required, vpassword]}
+                />
+              </div>
 
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            required
-            id="password"
-            autoComplete="true"
-            placeholder="Enter password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {/* <button type="submit" className="btn btn-primary" disabled={loading}> */}
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
-        {/* {loading ? <Spinner /> : 'Login'} */}
-        {/* {error && <div className="error">{error}</div>} */}
-        <br />
-        <br />
-        <p className="register-subtext">Already A Member?  <Link to="/login">Login Here!</Link></p>
-      </form>
+              <div className="form-group">
+                <button className="btn btn-primary btn-block">Sign Up</button>
+              </div>
+            </div>
+          )}
+
+          {message && (
+            <div className="form-group">
+              <div className={ successful ? "alert alert-success" : "alert alert-danger" } role="alert">
+                {message}
+              </div>
+            </div>
+          )}
+          <CheckButton style={{ display: "none" }} ref={checkBtn} />
+        </Form>
+      </div>
     </div>
   );
 };

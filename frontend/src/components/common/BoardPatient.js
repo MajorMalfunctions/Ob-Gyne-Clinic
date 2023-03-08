@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import UserService from "../../redux/services/auth.service";
+import UserService from "../../redux/services/user.service";
 
 const BoardPatient = () => {
   const [content, setContent] = useState("");

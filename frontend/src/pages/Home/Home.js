@@ -36,8 +36,8 @@ const Home = () => {
       <Trip />
       <Testimonials />
       <Faq />
-      <ScrollUp />
       <Footer />
+      <ScrollUp />
     </>
   )
 }
