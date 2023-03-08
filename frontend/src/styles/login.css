@@ -22,19 +22,19 @@
   font-size: 0.7rem;
 }
 
-.login-subtext {
-  font-size: 0.7rem;
+p .register-subtexts{
+  color: #000;
+}
+
+.register-subtexts {
+  font-size: .7rem;
   display: block;
   margin: 0.5rem 0;
   margin-bottom: 2rem;
+  float: right;
+  color: #000;
 }
 
-.login-subtexts {
-  font-size: 0.7rem;
-  display: block;
-  /* margin: 0.5rem 0; */
-  float: right;
-}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -47,6 +47,7 @@ body {
 .form-group label,
 .form-group input {
   width: 100%;
+  text-align: left;
   margin-bottom: 0.5rem;
 }
 
@@ -64,7 +65,7 @@ body {
 }
 
 .form-group input:focus {
-  border-bottom: 3px solid coral;
+  border-bottom: 3px solid orchid;
 }
 
 .btn {
@@ -80,7 +81,7 @@ body {
 }
 
 .btn-primary {
-  background-color: coral;
+  background-color: orchid;
   color: #fff;
 }
 

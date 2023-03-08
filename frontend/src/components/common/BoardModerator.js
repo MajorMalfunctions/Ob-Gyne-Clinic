@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import UserService from "../services/user.service";
+import UserService from "../redux/services/auth.service";
 
-const BoardPatient = () => {
+const BoardModerator = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getPatientBoard().then(
+    UserService.getModeratorBoard().then(
       (response) => {
         setContent(response.data);
       },
@@ -32,4 +32,4 @@ const BoardPatient = () => {
   );
 };
 
-export default BoardPatient;
+export default BoardModerator;

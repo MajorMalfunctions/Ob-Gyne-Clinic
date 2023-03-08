@@ -1,21 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit'
-import authReducer from "./slices/authSlice";
-import userReducer from "./slices/userSlice";
-import bookingReducer from "./slices/bookingSlice";
-// import blogReducer from "./slices/bookingSlice";
-import messageReducer from "./slices/messageSlice";
+import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import thunk from "redux-thunk";
+import rootReducer from "./reducers";
 
-const reducer = {
-  auth: authReducer,
-  user: userReducer,
-  booking: bookingReducer,
-  // blog: blogReducer,
-  message: messageReducer
-}
+const middleware = [thunk];
 
-const store = configureStore({
-  reducer: reducer,
-  devTools: true,
-})
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
 export default store;

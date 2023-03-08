@@ -18,7 +18,6 @@ function Hero (props) {
       console.log('Booking Added!');
     }
 
-
   return (
     <>
       <div className={props.cName}>

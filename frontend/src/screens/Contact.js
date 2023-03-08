@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
@@ -7,6 +8,15 @@ import ContactUs from  '../pages/Contact/Contact';
 import Footer from '../components/Footer/Footer';
 
 const ContactMe = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken')
+     if(!token){
+       navigate("/");
+     }
+ }, [])
+
   return (
     <>
       <Header />

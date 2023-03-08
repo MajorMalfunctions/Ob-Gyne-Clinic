@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -10,6 +11,16 @@ import '../styles/hero.css'
 import '../styles/about.css';
 
 function About () {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken')
+     if(!token){
+       navigate("/");
+     }
+ }, [])
+
+
   return (
     <>
       <Header />
