@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import Hero from '../components/Hero/Hero';
 import Destination from '../components/Destination/Destination';
@@ -10,7 +11,16 @@ import Navbar from '../components/Navbar/Navbar';
 import Faq from '../components/Faq/Faq';
 import '../styles/hero.css';
 
-function Home () {
+const Home = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken')
+     if(!token){
+       navigate("/");
+     }
+ }, [])
+
   return (
     <>
       <Navbar />

@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-import UserService from "../redux/services/auth.service";
+import UserService from "../redux/services/user.service";
 
-const BoardModerator = () => {
+const Home = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    UserService.getModeratorBoard().then(
+    UserService.getPublicContent().then(
       (response) => {
         setContent(response.data);
       },
       (error) => {
         const _content =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
+          (error.response && error.response.data) ||
           error.message ||
           error.toString();
 
@@ -32,4 +30,4 @@ const BoardModerator = () => {
   );
 };
 
-export default BoardModerator;
+export default Home;

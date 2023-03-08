@@ -1,3 +1,31 @@
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+// import App from './App';
+// import { AuthContextProvider } from './context/authContext';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <AuthContextProvider>
+//     <App />
+//     </AuthContextProvider>
+//   </React.StrictMode>
+// );
+
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './styles/index.css';
+import App from './App';
+import { BrowserRouter } from 'react-router-dom';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
 // import React from "react";
 // import { createRoot } from "react-dom/client";
 // import { Provider } from "react-redux";
@@ -15,18 +43,7 @@
 //   </Provider>,
 // );
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
 
 // import React from 'react';
 // import ReactDOM from 'react-dom/client';

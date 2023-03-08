@@ -31,11 +31,11 @@ const Footer = () => {
       <>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.22398395185!2d125.00188575075424!3d11.244926891965452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x330870d196766547%3A0xaa76e70c06d2bee1!2sCLINICA%20BALTAZAR%20CENTER%20FOR%20WOMEN&#39;S%20HEALTH!5e0!3m2!1sen!2sph!4v1677300444838!5m2!1sen!2sph" 
-          width="600" 
-          height="450" 
-          // style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+          width="600"
+          height="450"
+          // style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </>

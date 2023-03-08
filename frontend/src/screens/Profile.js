@@ -1,3 +1,32 @@
+import { useNavigate, navigate } from "react-router-dom";
+import { useAuth } from "../context/Auth";
+
+const Profile = () => {
+    const auth = useAuth()
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        auth.logout()
+        navigate("/")
+    }
+
+    return (
+        <div>
+            Welome {auth.user}
+            <button onClick={handleLogout}>Logout</button>
+        </div>
+    )
+}
+
+
+
+export default Profile;
+
+
+
+
+
+
 // import React, { useEffect } from 'react';
 // import { Link } from 'react-router-dom';
 // import { useDispatch, useSelector } from 'react-redux';

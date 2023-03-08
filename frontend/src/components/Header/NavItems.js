@@ -1,7 +1,7 @@
 export const NavItems = [
     {
         title: "Home",
-        url: "/",
+        url: "/home",
         cName: "nav-links",
         icon: "fa-solid fa-house-user"
     },
@@ -12,7 +12,7 @@ export const NavItems = [
         icon: "fa-solid fa-circle-info"
     },
     {
-        title: "Service",
+        title: "Services",
         url: "/service",
         cName: "nav-links",
         icon: "fa-solid fa-briefcase"

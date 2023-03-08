@@ -33,7 +33,7 @@ const Register = () => {
         const token =  (fullname, email, password);
         if (token) {
           localStorage.setItem('accessToken', res.data.accessToken)
-          navigate('/')
+          navigate('/profile')
         }
         // if (email !== password) {
         //   toast.error("Passwords do not match")

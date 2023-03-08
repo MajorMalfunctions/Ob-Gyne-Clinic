@@ -25,20 +25,19 @@ const Login = () => {
       })
       .then((res) =>  {
         console.log(res.data)
-        toast.success('success', { position: toast.POSITION.TOP_CENTER})
         const token =  (email, password);
         if (token) {
           localStorage.setItem("user", JSON.stringify(res.data));
           localStorage.setItem('accessToken', res.data.accessToken);
           localStorage.setItem('refreshToken', res.data.refreshToken);
-          localStorage.setItem('name', res.fullname)
           sessionStorage.setItem('session-user', res.email);
         }
         if (email === password) {
           toast.error("Passwords do not match")
         } else {
           // toast.success('Auth Success')
-          navigate('/home')
+        toast.success('success', { position: toast.POSITION.TOP_CENTER})
+          navigate('/profile')
         }
      })
      .catch(err => {
@@ -46,7 +45,7 @@ const Login = () => {
       //  alert('ERROR')
       //  alert(err.message)
        console.log(err)
-       navigate("/");
+       navigate("/login");
      })
 
   }
@@ -80,13 +79,14 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <p className="register-subtexts">Forgot Password?<Link to="/forgot-password">Forgot</Link></p>
 
         <button onClick={handleLogin} type="submit" className="btn btn-primary">
           Login
         </button>
         <br />
         <br />
-        <p className="register-subtext">Already A Member?  <Link to="/">Login Here!</Link></p>
+        <p className="register-subtext">Not Yet A Member?  <Link to="/register">Register Here!</Link></p>
       </form>
     </div>
   );

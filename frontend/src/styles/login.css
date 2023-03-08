@@ -22,19 +22,19 @@
   font-size: 0.7rem;
 }
 
-.login-subtext {
-  font-size: 0.7rem;
+p .register-subtexts{
+  color: #000;
+}
+
+.register-subtexts {
+  font-size: .7rem;
   display: block;
   margin: 0.5rem 0;
   margin-bottom: 2rem;
+  float: right;
+  color: #000;
 }
 
-.login-subtexts {
-  font-size: 0.7rem;
-  display: block;
-  /* margin: 0.5rem 0; */
-  float: right;
-}
 
 body {
   font-family: Arial, Helvetica, sans-serif;

@@ -12,7 +12,7 @@ function Hero (props) {
     const [ contact, setContact] = useState("");
     const [ time, setTime] = useState("");
     const [ date, setDate] = useState("");
-    const [active, setActive] = useState(false);
+    const [ active, setActive ] = useState(false);
 
     const handleBooking = async (e) => {
       e.preventDefault();
@@ -69,7 +69,6 @@ function Hero (props) {
           {props.buttonText}
             <Popup trigger=
                 {<button className={props.btnClass}> Online Booking </button>}
-                 nested
                  modal
                  closeOnDocumentClick
                  position="center"
@@ -79,6 +78,7 @@ function Hero (props) {
                       <form>
                          <label>Full Name:</label>
                          <input
+                          required
                           name="name"
                           id="name"
                           type="text"
@@ -88,6 +88,7 @@ function Hero (props) {
                         />
                         <label>Phone Number:</label>
                          <input
+                          required
                            id="contact"
                            name="contact"
                            type="number"
@@ -97,6 +98,7 @@ function Hero (props) {
                           />
                          <label>Time:</label>
                          <input
+                          required
                            id="time"
                            name="time"
                            type="time"
@@ -106,6 +108,7 @@ function Hero (props) {
                           />
                          <label>Date:</label>
                          <input
+                            required
                             id="date"
                             name="date"
                             type="date"
@@ -115,7 +118,7 @@ function Hero (props) {
                           />
                         <br />
                       </form><br />
-                        <button onClick={handleBooking}>Book{' '}{' '}{' '}<i class="fa-solid fa-paper-plane"> </i></button>
+                        <button onClick={handleBooking} className="book-btn">Book{' '}{' '}{' '}<i class="fa-solid fa-paper-plane"> </i></button>
                         <br />
                         { active ? `Hello, ${name} Booked ${time} : ${date}` : ""}
                 </div>
