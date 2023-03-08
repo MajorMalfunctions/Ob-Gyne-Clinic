@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import UserService from "../redux/services/user.service";
+import UserService from "../../redux/services/user.service";
 
 const Home = () => {
   const [content, setContent] = useState("");

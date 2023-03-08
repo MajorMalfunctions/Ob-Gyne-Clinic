@@ -6,6 +6,8 @@ import rtr from '../../assets/icons/RTR.png';
 import shalom from '../../assets/icons/shalom.jpg';
 import mmh from '../../assets/icons/mmh.png';
 
+import Foot from  './Foot';
+
 const Footer = () => {
   return (
     <div className="footer">
@@ -125,12 +127,7 @@ const Footer = () => {
           <a href="/">Troubleshooting</a>
         </div>
       </div>
-
-      <div className="lower">
-        <p>Copyright © 2012 - 2023 Community Women and Maternal Care | Clinica Baltazar Inc
-        </p>
-      </div>
-
+      <Foot />
     </div>
   )
 }
