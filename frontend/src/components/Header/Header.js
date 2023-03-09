@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Navigate } from 'react-router-dom';
 import { NavItems } from './NavItems';
 import '../../styles/header.css';
 import Clinic from "../../assets/images/clinic.png"
+import { toast } from 'react-toastify';
+
 
 class Header extends Component{
     state = { clicked: false};
+    state = { redirect: false};
 
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
+    }
+
+    handleLogout = () => {
+        toast.success('Logout Success', { position: toast.POSITION.TOP_CENTER})
+        localStorage.clear();
+        window.location.reload();
+        // localStorage.removeItem('roles')
     }
 
     render(){
@@ -36,7 +46,7 @@ class Header extends Component{
                         </li>
                         );
                     })}
-                    <Link className="log-button" to="/login">Login</Link>
+                    <button onClick={this.handleLogout} className="log-button" to="/">Logout</button>
                 </ul>
             </nav>
           )

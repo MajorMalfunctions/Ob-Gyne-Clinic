@@ -127,7 +127,7 @@ const Footer = () => {
           <a href="/">Troubleshooting</a>
         </div>
       </div>
-      <Foot />
+      {/* <Foot /> */}
     </div>
   )
 }

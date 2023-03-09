@@ -3,6 +3,8 @@ export const REGISTER_FAIL = "REGISTER_FAIL";
 
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGIN_USER = "LOGIN USER";
+
 
 export const REFRESH_TOKEN = "REFRESH_TOKEN";
 
@@ -25,3 +27,8 @@ export const RETRIEVE_BLOGS = "RETRIEVE_BLOGS";
 export const UPDATE_BLOG = "UPDATE_BLOG";
 export const DELETE_BLOG = "DELETE_BLOG";
 export const DELETE_ALL_BLOGS = "DELETE_ALL_BLOGS";
+
+export const SET_AUTHENTICATED = 'SET_AUTHENTICATED';
+export const SET_USER = 'SET_USER';
+export const USER_SET_DETAILS = 'USER_SET_DETAILS';
+

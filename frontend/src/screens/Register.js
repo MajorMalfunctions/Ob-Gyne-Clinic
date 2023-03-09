@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link, Navigate, useNavigate} from 'react-router-dom';
 
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
@@ -7,6 +8,7 @@ import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
 import { register } from "../redux/actions/auth";
+import '../styles/register.css';
 
 const required = (value) => {
   if (!value) {
@@ -153,6 +155,7 @@ const Register = () => {
               </div>
             </div>
           )}
+          <p className="register-subtext">Already A Member?  <Link to="/">Login Here!</Link></p>
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
       </div>

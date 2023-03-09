@@ -3,9 +3,9 @@ import axios from "axios";
 import { Link, useNavigate} from 'react-router-dom';
 import "../styles/register.css";
 import { toast } from 'react-toastify';
-import Form from '../utils/Forms';
-import Spinner from '../utils/Spinner'
-import Error from '../utils/Error'
+import Form from './Forms';
+import Spinner from './Spinner'
+import Error from './Error'
 
 const Register = () => {
   const navigate = useNavigate();

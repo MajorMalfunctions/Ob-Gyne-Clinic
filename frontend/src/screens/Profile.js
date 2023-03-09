@@ -1,6 +1,9 @@
 import React from "react";
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate, Navigate, useEffect } from 'react-router-dom';
 import { useSelector } from "react-redux";
+
+import Navbar from "../components/Navbar/Navbar";
+import '../styles/profile.css';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -8,19 +11,19 @@ const Profile = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
 
   const handleLogout = () => {
-    localStorage.removeItem('user')
-    localStorage.removeItem('accessToken')
-    localStorage.removeItem('refreshToken')
-    navigate('/login');
+    localStorage.clear();
+    window.location.reload();
+    // localStorage.removeItem('user')
+    navigate('/');
   };
 
   if (!currentUser) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   };
-
 
   return (
     <div className="container">
+      <Navbar />
           <br />
       <br />
       <br />
@@ -56,6 +59,14 @@ const Profile = () => {
           currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
       </ul>
 
+      <p>
+        <strong>isLoggedIn:</strong> {currentUser.isLoggedIn}
+      </p>
+
+      <p>
+        <strong>Authenticated:</strong> {currentUser.isAuthenticated}
+      </p>
+
         <button onClick={handleLogout}>Logout</button>
 
     </div>
@@ -63,36 +74,6 @@ const Profile = () => {
 };
 
 export default Profile;
-
-// import React, { useState, useEffect } from 'react'
-
-// import { useNavigate } from "react-router-dom";
-
-// const Profile = () => {
-//     const navigate = useNavigate()
-//     const [user, setUser] = useState([])
-
-//     const handleLogout = () => {
-//         localStorage.removeItem('user')
-//         localStorage.removeItem('accessToken')
-//         localStorage.removeItem('refreshToken')
-//         navigate("/login");
-//         console.log('Logout Successfull')
-//     }
-
-//     return (
-//         <div>
-//             Welome {user.fullname}
-//             <button onClick={handleLogout}>Logout</button>
-//         </div>
-//     )
-// }
-
-
-
-// export default Profile;
-
-
 
 
 

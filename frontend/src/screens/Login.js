@@ -31,7 +31,10 @@ const Login = (props) => {
 
   const [ email, setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
-  const [ loading, setLoading ] = useState("");
+  const [ checked, setChecked ] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
+  const [ isLoggedin, setIsLoggedin ] = useState(false);
+
 
   const dispatch = useDispatch();
 
@@ -48,100 +51,126 @@ const Login = (props) => {
     setPassword(password);
   };
 
+  const onChangeChecked = (e) => {
+    const checked = e.target.value;
+    setChecked(checked);
+  };
+
   const handleLogin = (e) => {
     e.preventDefault();
-
-    setLoading(true);
+    setIsLoading(true);
 
     form.current.validateAll();
     console.log(email);
     if (checkBtn.current.context._errors.length === 0) {
       dispatch(login(email, password))
         .then((res) => {
-          localStorage.setItem("user", JSON.stringify(res.data));
-          localStorage.setItem('accessToken', res.data.accessToken);
-          localStorage.setItem('refreshToken', res.data.refreshToken);
-          navigate("/profile");
+          setIsLoggedin(true);
+          // localStorage.setItem('refreshToken', res.data.refreshToken);
+          toast.success('success', { position: toast.POSITION.TOP_CENTER})
           window.location.reload();
+          navigate("/home");
         })
         .catch(() => {
-          setLoading(false);
+          setIsLoading(false);
         });
     } else {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
+  // const logout = () => {
+  //   localStorage.clear();
+  //   setIsLoggedin(false);
+  // };
 
   if (isLoggedIn) {
-    return <Navigate to="/profile" />;
+    return <Navigate to="/home" />;
   };
 
   return (
-    <div className="login-screen">
-      <Form onSubmit={handleLogin}  ref={form} className="login-screen_form">
-        <h3 className="login-screen_title">Login</h3>
+    <>
+      <div className="login-screen">
+        {!isLoggedin ? (
+        <>
+          <Form onSubmit={handleLogin}  ref={form} className="login-screen_form">
+          {/* <h3 className="login-screen_title">Login</h3> */}
 
-        {/* <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-        </div> */}
+          <div className="card card-container">
+            <img
+              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+              alt="profile-img"
+              className="profile-img-card"
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="email">Email:</label>
-          <Input
-            required
-            name="email"
-            type="email"
-            id="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={onChangeEmail}
-            validations={[required]}
-            // onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <Input
+              required
+              name="email"
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={onChangeEmail}
+              validations={[required]}
+              // onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
-        <div className="form-group">
-          <label htmlFor="password">Password:</label>
-          <Input
-            required
-            name="password"
-            type="password"
-            id="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={onChangePassword}
-            validations={[required]}
-            // onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <p className="register-subtexts">Forgot Password?<Link to="/forgot-password">Forgot</Link></p>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <Input
+              required
+              name="password"
+              type="password"
+              id="password"
+              placeholder="Enter password"
+              value={password}
+              onChange={onChangePassword}
+              validations={[required]}
+              // onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <p className="register-subtexts">Forgot Password?<Link className="dir-link" to="/forgot-password">Forgot</Link></p>
 
-        <button type="submit" disabled={loading} className="btn btn-primary">
-          {/* {loading && (
-                <span className="spinner-border spinner-border-sm"></span>
-                // <span> {Spinner} </span>
-          )} */}
-            {loading ? <Spinner /> : 'Login'}
-        </button>
-
-        {message && (
-            <div className="form-group">
-              <div className="alert alert-danger" role="alert">
-                {message}
+              <div class="form-check">
+                <Input
+                    value={checked}
+                    onChange={onChangeChecked}
+                    type="checkbox"
+                    checked={checked}
+                    class="form-check-input"
+                    id="checkbox" />
+                <label class="checkbox-label" for="checkbox">Remember Me</label>
               </div>
-            </div>
-          )}
 
-        <br />
-        <p className="register-subtext">Not Yet A Member?  <Link to="/register">Register Here!</Link></p>
-        <CheckButton style={{ display: "none" }} ref={checkBtn} />
-      </Form>
-    </div>
+          <button type="submit" disabled={isLoading} className="btn btn-secondary">
+              {isLoading ? <Spinner /> : 'Login'}
+          </button>
+
+
+          {message && (
+              <div className="form-group">
+                <div className="alert alert-danger" role="alert">
+                  {message}
+                </div>
+              </div>
+            )}
+
+          <br />
+          <br />
+          <p className="register-subtext">Not Yet A Member?  <Link to="/register">Register Here!</Link></p>
+          <CheckButton style={{ display: "none" }} ref={checkBtn} />
+          </Form>
+        </>
+        ) : (
+            <>
+           </>
+        )}
+      </div>
+    </>
   );
 };
 

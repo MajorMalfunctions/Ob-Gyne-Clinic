@@ -17,43 +17,33 @@ import Reset from "../Reset";
 import Dashboard from "../Dashboard";
 import NotFound from "../NotFound";
 
+import PrivateRoutes from '../../routes/PrivateRoutes';
+import ProtectedRoute from '../../routes/ProtectedRoutes';
 import Protected from '../../routes/Protected';
 
 export default function Layout() {
+    const [ user, setUser ]  =  useState(null);
   return (
     <>
         <Routes>
-          <Route exact path="/home" element={
-            <Protected>
-              <Home />
-            </Protected>
-          }/>
-
+          <Route path="/" element={<Home /> }/>
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
           <Route path="/contact" element={<Contact />} />
-
-          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/forgot-password" element={<Forgot />} />
           <Route path="/reset-password/:resetToken" element={<Reset />} />
-
-          <Route path="/Profile" element={
-            <Protected>
-              <Profile />
-            </Protected>
-          } />
-
-          <Route path="/dashboard" element={<Dashboard />} />
-
           <Route
             path="/dashboard"
             element={
-              <Protected>
-                <Dashboard />
+              <Protected user={user}>
+                <Dashboard user={user}/>
               </Protected>
             } />
-
           <Route path="*" element={<NotFound />} />
         </Routes>
       <ToastContainer />

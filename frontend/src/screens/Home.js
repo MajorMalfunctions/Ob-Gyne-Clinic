@@ -14,12 +14,12 @@ import '../styles/hero.css';
 const Home = () => {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = localStorage.getItem('accessToken')
-     if(!token){
-       navigate("/");
-     }
- }, [])
+  // useEffect(() => {
+  //   const token = localStorage.getItem('accessToken')
+  //    if(!token){
+  //      navigate("/login");
+  //    }
+  // }, [])
 
   return (
     <>

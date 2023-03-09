@@ -1,7 +1,7 @@
 export const NavItems = [
     {
         title: "Home",
-        url: "/",
+        url: "/home",
         cName: "nav-links",
         icon: "fa-solid fa-house-user"
     },
@@ -28,13 +28,19 @@ export const NavItems = [
         url: "/blog",
         // url: "https://www.healthline.com/find-care/articles/obgyns/what-is-an-obgyn#overview",
         cName: "nav-links",
-        icon: "fa-solid fa-address-book"
+        icon: "fa fa-bullhorn"
     },
     {
-        title: "Login",
-        url: "/login",
+        title: "Profile",
+        url: "/profile",
+        cName: "nav-links",
+        icon: "fa-solid fa-user"
+    },
+    {
+        title: "Logout",
+        url: "/logout",
         cName: "nav-links-mobile",
-        // icon: "fa-solid fa-address-book"
+        icon: "fa-solid fa-address-book"
     }
 ]
 

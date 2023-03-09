@@ -21,6 +21,9 @@ const login = (email, password) => {
         localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem('accessToken', response.data.accessToken);
         localStorage.setItem('refreshToken', response.data.refreshToken);
+        localStorage.setItem('roles', response.data.roles);
+        localStorage.setItem('isLoggedIn', true);
+        localStorage.setItem('isAuthenticated', true);
       }
 
       return response.data;
@@ -36,6 +39,10 @@ const logout = () => {
 const getCurrentUser = () => {
   return JSON.parse(localStorage.getItem("user"));
 };
+
+// const getCurrentUser = () => {
+//   return JSON.parse(localStorage.getItem("user"));
+// };
 
 export default {
   register,

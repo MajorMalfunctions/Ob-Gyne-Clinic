@@ -4,7 +4,10 @@ import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
     LOGOUT,
-    REFRESH_TOKEN
+    REFRESH_TOKEN,
+    SET_AUTHENTICATED,
+    SET_USER,
+    LOGIN_USER
   } from "../actions/types";
 
   const user = JSON.parse(localStorage.getItem("user"));
@@ -12,6 +15,9 @@ import {
   const initialState = user
     ? { isLoggedIn: true, user }
     : { isLoggedIn: false, user: null };
+    // ? { isAuthenticated: true, user }
+    // : { isAuthenticated: false, user: null}
+      // { isAuth: false, user: null }
 
   export default function (state = initialState, action) {
     const { type, payload } = action;
@@ -39,16 +45,26 @@ import {
           isLoggedIn: false,
           user: null,
         };
-      case LOGOUT:
-        return {
-          ...state,
-          isLoggedIn: false,
-          user: null,
-        };
+        case LOGIN_USER:
+          return {
+           ...state,
+           authenticated: true,
+          };
+        case LOGOUT:
+          return {
+            ...state,
+            isLoggedIn: true,
+            user: null,
+          };
         case REFRESH_TOKEN:
           return {
             ...state,
-            user: { ...user, accessToken: payload },
+          user: { ...user, accessToken: payload },
+        };
+        case SET_AUTHENTICATED:
+          return {
+            ...state,
+            isAuth: true
           }
       default:
         return state;
