@@ -7,6 +7,8 @@ Spinner
 Loader
 Notifier
 Page Access
+Calendar Events
+
                      toast.success('Success');
 
 Backend

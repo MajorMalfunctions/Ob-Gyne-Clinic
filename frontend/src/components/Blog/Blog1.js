@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { updateBooking, deleteBooking } from "../../redux/actions/booking";
-import BookingDataService from "../../redux/services/booking.service";
+import { updateBlog, deleteBlog } from "../../redux/actions/blog";
+import BlogService from "../../redux/services/blog.service";
 
-const Booking = (props) => {
-  const initialBookingState = {
+const Blog1 = (props) => {
+  const initialBlogState = {
     id: null,
     title: "",
     description: "",
     published: false
   };
-  const [currentBooking, setCurrentBooking] = useState(initialBookingState);
+  const [currentBlog, setCurrentBlog] = useState(initialBlogState);
   const [message, setMessage] = useState("");
 
   const dispatch = useDispatch();
 
-  const getBooking = id => {
-    BookingDataService.get(id)
+  const getBlog = id => {
+    BlogService.get(id)
       .then(response => {
-        setCurrentBooking(response.data);
+        setCurrentBlog(response.data);
         console.log(response.data);
       })
       .catch(e => {
@@ -27,30 +27,28 @@ const Booking = (props) => {
   };
 
   useEffect(() => {
-    getBooking(props.match.params.id);
+    getBlog(props.match.params.id);
   }, [props.match.params.id]);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setCurrentBooking({ ...currentBooking, [name]: value });
+    setCurrentBlog({ ...currentBlog, [name]: value });
   };
 
   const updateStatus = status => {
     const data = {
-      id: currentBooking.id,
-      name: currentBooking.name,
-      time: currentBooking.time,
-      date: currentBooking.date,
-      // description: currentBooking.description,
+      id: currentBlog.id,
+      title: currentBlog.title,
+      description: currentBlog.description,
       published: status
     };
 
-    dispatch(updateBooking(currentBooking.id, data))
+    dispatch(updateBlog(currentBlog.id, data))
       .then(response => {
         console.log(response);
 
-        setCurrentBooking({ ...currentBooking, published: status });
-        setMessage("The Status Was Updated Successfully!");
+        setCurrentBlog({ ...currentBlog, published: status });
+        setMessage("The status was updated successfully!");
       })
       .catch(e => {
         console.log(e);
@@ -58,21 +56,21 @@ const Booking = (props) => {
   };
 
   const updateContent = () => {
-    dispatch(updateBooking(currentBooking.id, currentBooking))
+    dispatch(updateBlog(currentBlog.id, currentBlog))
       .then(response => {
         console.log(response);
 
-        setMessage("The Booking Was Updated Successfully!");
+        setMessage("The Blog Was Updated Successfully!");
       })
       .catch(e => {
         console.log(e);
       });
   };
 
-  const removeBooking = () => {
-    dispatch(deleteBooking(currentBooking.id))
+  const removeBlog = () => {
+    dispatch(deleteBlog(currentBlog.id))
       .then(() => {
-        props.history.push("/Bookings");
+        props.history.push("/blogs");
       })
       .catch(e => {
         console.log(e);
@@ -81,42 +79,29 @@ const Booking = (props) => {
 
   return (
     <div>
-      {currentBooking ? (
+      {currentBlog ? (
         <div className="edit-form">
-          <h4>Booking</h4>
+          <h4>Blog</h4>
           <form>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="title">Title</label>
               <input
-                type="name"
+                type="text"
                 className="form-control"
-                id="name"
-                name="name"
-                value={currentBooking.name}
+                id="title"
+                name="title"
+                value={currentBlog.title}
                 onChange={handleInputChange}
               />
             </div>
-
             <div className="form-group">
-              <label htmlFor="time">Time</label>
+              <label htmlFor="description">Description</label>
               <input
-                type="time"
+                type="text"
                 className="form-control"
-                id="time"
-                name="time"
-                value={currentBooking.time}
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="date">Date</label>
-              <input
-                type="date"
-                className="form-control"
-                id="date"
-                name="date"
-                value={currentBooking.date}
+                id="description"
+                name="description"
+                value={currentBlog.description}
                 onChange={handleInputChange}
               />
             </div>
@@ -125,11 +110,11 @@ const Booking = (props) => {
               <label>
                 <strong>Status:</strong>
               </label>
-              {currentBooking.published ? "Published" : "Pending"}
+              {currentBlog.published ? "Published" : "Pending"}
             </div>
           </form>
 
-          {currentBooking.published ? (
+          {currentBlog.published ? (
             <button
               className="badge badge-primary mr-2"
               onClick={() => updateStatus(false)}
@@ -145,7 +130,7 @@ const Booking = (props) => {
             </button>
           )}
 
-          <button className="badge badge-danger mr-2" onClick={removeBooking}>
+          <button className="badge badge-danger mr-2" onClick={removeBlog}>
             Delete
           </button>
 
@@ -161,11 +146,11 @@ const Booking = (props) => {
       ) : (
         <div>
           <br />
-          <p>Please click on a Booking...</p>
+          <p>Please click on a Blog...</p>
         </div>
       )}
     </div>
   );
 };
 
-export default Booking;
+export default Blog1;

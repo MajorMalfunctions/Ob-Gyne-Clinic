@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import UserService from "../../redux/services/user.service";
+import EventBus from "./EventBus";
 
 const BoardPatient = () => {
   const [content, setContent] = useState("");
@@ -19,6 +20,10 @@ const BoardPatient = () => {
           error.toString();
 
         setContent(_content);
+
+        if (error.response && error.response.status === 401) {
+          EventBus.dispatch("logout");
+        }
       }
     );
   }, []);
