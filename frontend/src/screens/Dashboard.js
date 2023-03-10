@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
-import Sidebar from '../components/Sidebar/Sidebar';
 
 const Dashboard = () => {
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    localStorage.removeItem('user')
-    localStorage.removeItem('accessToken')
-    localStorage.removeItem('refreshToken')
-    navigate("/");
+    localStorage.clear();
+    window.location.reload();
+    // localStorage.removeItem('user')
+    navigate('/');
   }
 
   useEffect(() => {
@@ -21,7 +20,6 @@ const Dashboard = () => {
 
   return (
     <>
-      <Sidebar />
       <h1>Welcome To Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
     </>
