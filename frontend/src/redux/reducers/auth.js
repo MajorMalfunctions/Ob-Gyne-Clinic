@@ -53,7 +53,7 @@ import {
         case LOGOUT:
           return {
             ...state,
-            isLoggedIn: true,
+            isLoggedIn: false,
             user: null,
           };
         case REFRESH_TOKEN:

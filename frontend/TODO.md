@@ -30,6 +30,20 @@ Chatbot
   }}
 />
 
+    const { user: currentUser } = this.props;
+
+    if (!currentUser) {
+      return <Redirect to="/login" />;
+    }
+
+
+export { default as Sidebar } from './Sidebar.jsx';
+
+				<span className="mx-3 text-muted d-none d-md-inline">Good Morning</span>
+				<span className="text-muted d-none d-md-inline">
+					{moment().format('MMMM Do YYYY, h:mm a')}
+				</span>
+
 const [cartItems, setCartItems] = useState([]);
 
 <Route

@@ -44,7 +44,11 @@ export default function Layout() {
             </Protected>
           } />
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={
+              <Protected>
+                <Dashboard />
+              </Protected>
+            } />
 
           <Route
             path="/dashboard"

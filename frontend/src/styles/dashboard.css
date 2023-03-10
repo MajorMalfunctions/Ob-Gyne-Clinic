@@ -1,0 +1,76 @@
+.dashboard-container {
+    font-family: 'IBM Plex Sana Thai Looped', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    display: flex;
+}
+
+.body_container {
+    flex: 1;
+    background: #ccc;
+}
+
+.sidebar_container {
+    background: #999;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sidebar {
+    width: 18rem;
+    height: 90%;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+}
+
+.lines_icon {
+    display: flex;
+    align-self: flex-end;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.profile {
+    display: flex;
+    width: 4rem;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.profile img {
+    width: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.groups {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

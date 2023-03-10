@@ -5,7 +5,6 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGIN_USER = "LOGIN USER";
 
-
 export const REFRESH_TOKEN = "REFRESH_TOKEN";
 
 export const LOGOUT = "LOGOUT";

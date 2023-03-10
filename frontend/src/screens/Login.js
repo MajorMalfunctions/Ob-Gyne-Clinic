@@ -33,8 +33,7 @@ const Login = (props) => {
   const [ password, setPassword ] = useState("");
   const [ checked, setChecked ] = useState(false);
   const [ isLoading, setIsLoading ] = useState(false);
-  const [ isLoggedin, setIsLoggedin ] = useState(false);
-
+  const [ isLoggedin, setIsLoggedIn ] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -65,13 +64,14 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       dispatch(login(email, password))
         .then((res) => {
-          setIsLoggedin(true);
           // localStorage.setItem('refreshToken', res.data.refreshToken);
+          setIsLoggedIn(true);
           toast.success('success', { position: toast.POSITION.TOP_CENTER})
-          window.location.reload();
           navigate("/home");
+          window.location.reload();
         })
         .catch(() => {
+          toast.error('error', { position: toast.POSITION.TOP_CENTER })
           setIsLoading(false);
         });
     } else {
@@ -98,7 +98,8 @@ const Login = (props) => {
 
           <div className="card card-container">
             <img
-              src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRPow1EO0DUzktzjwrr0b0EmklsxLjvv34v8WzN77E9m7aYuydiCSlGLM4o8XSZoET-n0&usqp=CAU"
+              // src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
               alt="profile-img"
               className="profile-img-card"
             />
@@ -146,9 +147,11 @@ const Login = (props) => {
                 <label class="checkbox-label" for="checkbox">Remember Me</label>
               </div>
 
-          <button type="submit" disabled={isLoading} className="btn btn-secondary">
-              {isLoading ? <Spinner /> : 'Login'}
-          </button>
+          <div className="form-group">
+              <button type="submit" disabled={isLoading} className="btn btn-primary btn-block">
+                {isLoading ? <Spinner /> : 'Login'}
+              </button>
+          </div>
 
 
           {message && (
