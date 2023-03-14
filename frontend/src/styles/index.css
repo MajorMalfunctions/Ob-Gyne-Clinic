@@ -7,10 +7,10 @@
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f9f9f9;
-  color: #000;
- }
- 
-h1,
+  /* color: #000; */
+}
+
+/* h1,
 h2 {
   font-weight: 600;
 }
@@ -96,7 +96,7 @@ form input {
   height: 48px;
   line-height: 1;
   padding: 15px 28px;
-}
+} */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -111,14 +111,14 @@ form input {
   max-width: 95%;
   margin: auto;
 }
-footer {
+/* footer {
   margin-top: 50px;
   padding: 10px;
 }
 footer .icon {
   font-size: 20px;
   margin-left: 10px;
-}
+} */
 .link {
   margin-top: 20px;
   color: blue;

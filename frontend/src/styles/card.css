@@ -1,6 +1,7 @@
 .blog {
     margin: 50px 0;
     display: flex;
+    margin-top: 10rem;
   }
 
   .blog .boxItems {

@@ -38,6 +38,27 @@ function Faq() {
             <Accordion title="How will I know if I am in labor?">
             The thought of labor can bring anxiety to many parents, especially the first timers. The good news is, labor is hard to miss! If your pregnancy is full term, meaning 37 weeks or more, you should watch for contractions which are when your uterus slowly tightens and then releases over about 30 seconds to a minute. If the contractions are painful and recurring, start to time them from the start of one contraction to the start of the next. Once you have a contraction about every five minutes for at least an hour, then it is time to call your obstetrician!
             </Accordion>
+
+            <Accordion title="When can I hear the baby’s heartbeat the first time?">
+            You can usually hear the baby’s heartbeat with the doppler at 12 weeks or so.
+            </Accordion>
+
+            <Accordion title="Do I need to be on a special diet during pregnancy?">
+            No, but you do need an extra 200-300 calories per day – this equals to an extra glass of milk. Do not eat swordfish, shark, raw oysters, mackerel, limit tuna consumption to 2-3 servings per week. Limit caffeine intake to 300 mg per day –which is a cup of coffee or a can of soda a day.
+            </Accordion>
+
+            <Accordion title="What are symptoms of a bladder infection?">
+            Stinging or burning with urination, pelvic pressure, backache or flank pain, mild fever.
+            </Accordion>
+
+            <Accordion title="What are symptoms of a vaginal infection?">
+            Yeast: white cottage cheese like discharge, vaginal itching or burning
+            Bacterial: white, gray or yellow discharge, vaginal odor especially after sex, sometimes pelvic discomfort
+            </Accordion>
+
+            <Accordion title="What is the 4-D ultrasound?">
+            This is an ultrasound that provides a clear look at the baby. 4-D just means that the scan is in real time.
+            </Accordion>
           </div>
 
       </div>

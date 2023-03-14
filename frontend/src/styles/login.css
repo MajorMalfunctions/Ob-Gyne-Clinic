@@ -186,7 +186,7 @@ body {
   align-items: flex-start;
   text-align: left;
   color: orchid;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-right: 5.5rem;
 }
 

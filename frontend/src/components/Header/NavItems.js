@@ -25,7 +25,7 @@ export const NavItems = [
     },
     {
         title: "Blog",
-        url: "/blogs",
+        url: "/blog",
         // url: "https://www.healthline.com/find-care/articles/obgyns/what-is-an-obgyn#overview",
         cName: "nav-links",
         icon: "fa fa-bullhorn"

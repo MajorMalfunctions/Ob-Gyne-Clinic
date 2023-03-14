@@ -11,7 +11,7 @@ import Navbar from '../components/Navbar/Navbar';
 // import Header from '../components/Header/Header';
 
 import Faq from '../components/Faq/Faq';
-import Consult from '../components/Consult/Consult';
+// import Consult from '../components/Consult/Consult';
 import '../styles/hero.css';
 
 const Home = () => {
