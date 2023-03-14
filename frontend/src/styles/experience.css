@@ -4,8 +4,14 @@
     text-align: center;
 }
 
+h1 {
+    /* font-size: 150px; */
+}
+
 .experience h1 {
-    font-size: 3rem;
+    font-size:  50px;
+    /* font-size: larger; */
+    font-weight: bolder;
 }
 
 .first-exp {

@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   margin-top: 1rem;
-} */
+}
 
 .edit-form {
   border: 2px solid saddlebrown;
@@ -81,7 +81,6 @@ button {
 .form-group{
   align-items: center;
   text-align: center;
-  /* margin-left: ; */
 }
 
 .submit-form {
@@ -119,4 +118,4 @@ label {
   margin: 0 auto;
   display: flex-start;
   margin-left: 1100px;
-}
+} */

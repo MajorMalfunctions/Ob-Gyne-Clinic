@@ -4,6 +4,9 @@ const patientsRoutes = require ("./patients.routes");
 const uploadRoutes = require ("./upload.routes");
 const userRoutes = require ("./user.routes");
 const blogRoutes = require ("./blog.routes");
+const categoriesRoutes = require ("./categories.routes");
+const postsRoutes = require ("./posts.routes");
+
 
 
 module.exports = {
@@ -12,5 +15,7 @@ module.exports = {
     patientsRoutes,
     uploadRoutes,
     userRoutes,
-    blogRoutes
+    blogRoutes,
+    categoriesRoutes,
+    postsRoutes
 }

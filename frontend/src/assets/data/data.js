@@ -29,8 +29,8 @@ export const nav = [
 export const category = [
     {
       id: 1,
-      category: "Life",
-      title: "Stay Calm And Surf",
+      category: "Womens",
+      title: "Women's Health & Wellness",
       cover: "../assets/images/blogs/",
     },
     {
@@ -80,9 +80,9 @@ export const category = [
 export const blog = [
     {
       id: 1,
-      title: "POST NO.1 CONTAINING A YOUTUBE VIDEO",
-      desc: "Quisque at tellus nec magna viverra euismod. Maecenas lobortis, nisl et sodales blandit, neque mi ullamcorper eros, id efficitur ex velit in ante. Suspendisse elementum congue lacus quis gravida. Nunc eu hendrerit risus. Quisque blandit, orci non maximus vulputate, ligula ante ornare enim, ac interdum lorem leo varius mauris. Aliquam non sem vel orci malesuada sagittis. Vivamus id ullamcorper tellus. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras et sapien a arcu feugiat mattis. Suspendisse sed magna quis turpis rhoncus venenatis.",
-      category: "Nature",
+      title: "National Women's Month",
+      desc: "Hello Mommies...Come & Join us as we the Philippine Obstetrical and Gynecological Society-Region 8 Chapter (POGS-R8) celebrates the NATIONAL BUNTIS Day on March 10, 2023, Friday, @ the Mayor Hall, Palo Leyte @ 7:00AM to 12:00 PMSearch for Ginang Buntis Tiktoker is open to all low risk pregnant moms. Registration is free and on site.Lots of prizes and freebies await...See you there!",
+      category: "Womens",
       cover: "../images/blogs/b1.jpg",
       date: "APRIL 05, 2018",
     },
@@ -158,6 +158,22 @@ export const blog = [
       desc: "Magnis modipsae que lib voloratati andigen daepedor quiate ut reporemni aut labor. Laceaque quiae sitiorem ut restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent accullignis lomnus. We don't want to overload you with hundreds of styles you don't want, or need. We give you a strong base to express your own creativity.",
       category: "Fashion",
       cover: "../images/blogs/b10.jpg",
+      date: "February 20, 2018",
+    },
+    {
+      id: 11,
+      title: "TEACH YOUR DRAGON HOW TO FLY",
+      desc: "Magnis modipsae que lib voloratati andigen daepedor quiate ut reporemni aut labor. Laceaque quiae sitiorem ut restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent accullignis lomnus. We don't want to overload you with hundreds of styles you don't want, or need. We give you a strong base to express your own creativity.",
+      category: "Fashion",
+      cover: "../images/blogs/b6.jpg",
+      date: "February 20, 2018",
+    },
+    {
+      id: 12,
+      title: "TEACH YOUR DRAGON HOW TO FLY",
+      desc: "Magnis modipsae que lib voloratati andigen daepedor quiate ut reporemni aut labor. Laceaque quiae sitiorem ut restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent accullignis lomnus. We don't want to overload you with hundreds of styles you don't want, or need. We give you a strong base to express your own creativity.",
+      category: "Fashion",
+      cover: "../images/blogs/b7.jpg",
       date: "February 20, 2018",
     },
 ]

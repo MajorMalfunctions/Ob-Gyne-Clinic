@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../../styles/experience.css";
 import ExperienceData from './ExperienceData';
 
 import Baby1 from "../../assets/images/baby1.jpg";
