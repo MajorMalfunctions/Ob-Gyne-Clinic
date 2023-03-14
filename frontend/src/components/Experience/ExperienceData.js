@@ -1,6 +1,5 @@
 import { Component } from "react";
 import '../../styles/experience.css';
-
 class ExperienceData extends Component{
     render(){
         return (

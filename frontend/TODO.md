@@ -3,6 +3,7 @@
 Dashboard
 Faqs
 About
+Gallery
 Blog
 Breakpoints - css
 Spinner

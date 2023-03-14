@@ -8,7 +8,7 @@ import Home from "../Home";
 import Service from "../Service";
 import Contact from "../Contact";
 
-import Blog from "../../pages/Blog/Blog";
+import Blog from "../Blog";
 
 import Login from "../Login";
 import Register from "../Register";
@@ -33,6 +33,7 @@ import EditPatient from '../../components/Patient/EditPatient';
 import PatientList from '../../components/Patient/PatientList';
 import Patient from '../../components/Patient/Patient';
 
+import Create from '../../components/Create/Create';
 
 export default function Layout() {
   return (
@@ -72,8 +73,8 @@ export default function Layout() {
           <Route path="/patient/create" element={<AddPatient />} />
           <Route path="/patient/:id" element={<EditPatient />} />
           <Route path="/patient" element={<Patient />} />
-          <Route path="/patient" element={<Patient />} />
 
+          <Route path="/create" element={<Create />} />
 
           <Route path="/Profile" element={
             <Protected>

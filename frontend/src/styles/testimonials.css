@@ -65,12 +65,15 @@ p {
 
 .swiper-pagination-bullet {
     /* background-color: var(--text-color-dark) !important; */
-    color: #000;
+    /* color: #000; */
+    color: orchid;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: #000 !important;
-    color: black;
+    /* background-color: #000 !important; */
+    background-color: orchid !important;
+    /* color: black; */
+    color: orchid;
 }
 
 @media screen and (max-width: 992px) {
