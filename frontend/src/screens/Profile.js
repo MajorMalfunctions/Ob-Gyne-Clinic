@@ -1,18 +1,28 @@
 import React from "react";
-import { useNavigate, Navigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useNavigate, Navigate, Link } from 'react-router-dom';
+import '../styles/profile.css';
 
 import Navbar from "../components/Navbar/Navbar";
+import { useDispatch, useSelector } from "react-redux";
 
-import '../styles/profile.css';
+import { logout } from "../redux/actions/auth";
 
 const Profile = () => {
   const navigate = useNavigate();
 
   const { user: currentUser } = useSelector((state) => state.auth);
 
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  console.log(state);
+  const user = useSelector((state) => state.auth);
+
+  const handleSignOut = () => {
+    dispatch(logout());
+    navigate('/');
+  };
+
   const handleLogout = () => {
-// localStorage.removeItem('user')
     localStorage.clear();
     window.location.reload();
     navigate('/');
@@ -82,6 +92,17 @@ const Profile = () => {
       </p>
 
         <button className="logs" onClick={handleLogout}>Logout</button>
+
+        <button
+                  edge="end"
+                  color="inherit"
+                  // className={classes.authButton}
+                  onClick={() => handleSignOut()}
+                >
+                  <Link to="/">
+                    SignOut
+                  </Link>
+                </button>
 
     </div>
     </>

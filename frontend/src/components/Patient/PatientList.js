@@ -1,46 +1,60 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  retrieveTutorials,
-  findTutorialsByTitle,
-  deleteAllTutorials,
-} from "../slices/tutorials";
+  retrievePatients,
+  // findPatientsById,
+  findPatientsByName,
+  deleteAllPatients,
+} from "../../redux/actions/patient";
+
 import { Link } from "react-router-dom";
+import "../../styles/patient.css";
 
-const PatientsList = () => {
-  const [currentTutorial, setCurrentTutorial] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(-1);
-  const [searchTitle, setSearchTitle] = useState("");
+const PatientList = () => {
+  const [ currentPatient, setCurrentPatient ] = useState(null);
+  const [ currentIndex, setCurrentIndex ] = useState(-1);
+  const [ searchName, setSearchName ] = useState("");
+  // const [ searchId, setSearchId ] = useState("");
 
-  const tutorials = useSelector(state => state.tutorials);
+  const patient = useSelector(state => state.patient);
   const dispatch = useDispatch();
 
-  const onChangeSearchTitle = e => {
-    const searchTitle = e.target.value;
-    setSearchTitle(searchTitle);
+  useEffect(() => {
+    dispatch(retrievePatients());
+  }, []);
+
+  // const onChangeSearchId = e => {
+  //   const searchId = e.target.value;
+  //   setSearchId(searchId);
+  // };
+
+  const onChangeSearchName = e => {
+    const searchName = e.target.value;
+    setSearchName(searchName);
   };
 
-  const initFetch = useCallback(() => {
-    dispatch(retrieveTutorials());
-  }, [dispatch])
+  // const initFetch = useCallback(() => {
+  //   dispatch(retrievePatients());
+  // }, [dispatch])
 
-  useEffect(() => {
-    initFetch()
-  }, [initFetch])
+  // useEffect(() => {
+  //   initFetch()
+  // }, [initFetch])
 
   const refreshData = () => {
-    setCurrentTutorial(null);
+    setCurrentPatient(null);
     setCurrentIndex(-1);
   };
 
-  const setActiveTutorial = (tutorial, index) => {
-    setCurrentTutorial(tutorial);
+  const setActivePatient = (patient, index) => {
+    setCurrentPatient(patient);
     setCurrentIndex(index);
   };
 
-  const removeAllTutorials = () => {
-    dispatch(deleteAllTutorials())
+  const removeAllPatients = () => {
+    dispatch(deleteAllPatients())
       .then(response => {
+        console.log(response);
         refreshData();
       })
       .catch(e => {
@@ -48,10 +62,15 @@ const PatientsList = () => {
       });
   };
 
-  const findByTitle = () => {
+  const findByName = () => {
     refreshData();
-    dispatch(findTutorialsByTitle({ title: searchTitle }));
+    dispatch(findPatientsByName(searchName));
   };
+
+  // const findById = () => {
+  //   refreshData();
+  //   dispatch(findPatientsById({ id: searchId }));
+  // };
 
   return (
     <div className="list row">
@@ -60,71 +79,101 @@ const PatientsList = () => {
           <input
             type="text"
             className="form-control"
-            placeholder="Search by title"
-            value={searchTitle}
-            onChange={onChangeSearchTitle}
+            placeholder="Search by Id"
+            value={searchName}
+            onChange={onChangeSearchName}
           />
           <div className="input-group-append">
             <button
               className="btn btn-outline-secondary"
               type="button"
-              onClick={findByTitle}
+              onClick={findByName}
             >
               Search
             </button>
           </div>
         </div>
       </div>
-      <div className="col-md-6">
-        <h4>Tutorials List</h4>
 
+      <div className="col-md-6">
+        <h4>Patients List</h4>
         <ul className="list-group">
-          {tutorials &&
-            tutorials.map((tutorial, index) => (
+          {patient &&
+            patient.map((patient, index) => (
               <li
                 className={
                   "list-group-item " + (index === currentIndex ? "active" : "")
                 }
-                onClick={() => setActiveTutorial(tutorial, index)}
+                onClick={() => setActivePatient(patient, index)}
                 key={index}
               >
-                {tutorial.title}
+                {patient.name}
               </li>
             ))}
         </ul>
 
         <button
           className="m-3 btn btn-sm btn-danger"
-          onClick={removeAllTutorials}
+          onClick={removeAllPatients}
         >
           Remove All
         </button>
       </div>
       <div className="col-md-6">
-        {currentTutorial ? (
+        {currentPatient ? (
           <div>
-            <h4>Tutorial</h4>
+            <h4>Patient</h4>
             <div>
               <label>
-                <strong>Title:</strong>
+                <strong>Name:</strong>
               </label>{" "}
-              {currentTutorial.title}
+              {currentPatient.name}
             </div>
             <div>
               <label>
-                <strong>Description:</strong>
+                <strong>Email:</strong>
               </label>{" "}
-              {currentTutorial.description}
+              {currentPatient.email}
+            </div>
+            <div>
+              <label>
+                <strong>Mobile:</strong>
+              </label>{" "}
+              {currentPatient.mobile}
+            </div>
+            <div>
+              <label>
+                <strong>Age:</strong>
+              </label>{" "}
+              {currentPatient.age}
+            </div>
+            <div>
+              <label>
+                <strong>Address:</strong>
+              </label>{" "}
+              {currentPatient.address}
+            </div>
+            <div>
+              <label>
+                <strong>Birthday:</strong>
+              </label>{" "}
+              {currentPatient.dob}
+            </div>
+            <div>
+              <label>
+                <strong>Avatar:</strong>
+              </label>{" "}
+              {currentPatient.avatar}
             </div>
             <div>
               <label>
                 <strong>Status:</strong>
               </label>{" "}
-              {currentTutorial.published ? "Published" : "Pending"}
+              {currentPatient.published ? "Published" : "Pending"}
             </div>
 
             <Link
-              to={"/tutorials/" + currentTutorial.id}
+              to={"/patients/" + currentPatient.id}
               className="badge badge-warning"
             >
               Edit
@@ -133,7 +182,7 @@ const PatientsList = () => {
         ) : (
           <div>
             <br />
-            <p>Please click on a Tutorial...</p>
+            <p>Please click on a Patient...</p>
           </div>
         )}
       </div>
@@ -141,4 +190,4 @@ const PatientsList = () => {
   );
 };
 
-export default PatientsList;
+export default PatientList;

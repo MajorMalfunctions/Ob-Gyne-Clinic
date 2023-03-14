@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
+import React from 'react'
+// import { useNavigate } from "react-router-dom";
 
 import Hero from '../components/Hero/Hero';
 import Experience from '../components/Experience/Experience';
 import Destination from '../components/Destination/Destination';
-import Trip from '../components/Recent/Trip';
+import Trip from '../components/Recent/Recent';
 import Footer from '../components/Footer/Footer';
 import Testimonials from '../components/Testimonials/Testimonial';
 import ScrollUp from '../components/ScrollUp/ScrollUp';
@@ -14,7 +14,7 @@ import Consult from '../components/Consult/Consult';
 import '../styles/hero.css';
 
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   const token = localStorage.getItem('accessToken')

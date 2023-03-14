@@ -11,7 +11,6 @@ import {
   export const createBooking = (name, time, date) => async (dispatch) => {
     try {
       const res = await BookService.create({ name, time, date });
-
       dispatch({
         type: CREATE_BOOKING,
         payload: res.data,

@@ -1,14 +1,14 @@
 // import axios from "../../utils/axios";
 import axios from "axios";
-const API_URL = "http://localhost:5050/api/booking/";
+const API_URL = "http://localhost:5050/api/booking";
 
 
 const getAll = () => {
-  return axios.get(API_URL + "findAll");
+  return axios.get(API_URL + "/findAll");
 };
 
 const get = id => {
-  return axios.get(API_URL + "/:id");
+  return axios.get(API_URL + `/${id}`);
 };
 
 const create = data => {
@@ -16,15 +16,15 @@ const create = data => {
 };
 
 const update = (id, data) => {
-  return axios.put(API_URL + "/:id", data);
+  return axios.put(API_URL + `/${id}`, data);
 };
 
 const remove = id => {
-  return axios.delete(API_URL + "/:id");
+  return axios.delete(API_URL + `/${id}`);
 };
 
 const removeAll = () => {
-  return axios.delete(API_URL + "/:id");
+  return axios.delete(API_URL + "/booking");
 };
 
 // const findByTitle = title => {

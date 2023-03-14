@@ -1,43 +1,43 @@
 import {
-    CREATE_BOOKING,
-    RETRIEVE_BOOKINGS,
-    UPDATE_BOOKING,
-    DELETE_BOOKING,
-    DELETE_ALL_BOOKINGS,
+    CREATE_PATIENT,
+    RETRIEVE_PATIENTS,
+    UPDATE_PATIENT,
+    DELETE_PATIENT,
+    DELETE_ALL_PATIENTS,
   } from "../actions/types";
 
   const initialState = [];
 
-  const patientReducer = (bookings = initialState, action) => {
+  const patientReducer = (patients = initialState, action) => {
     const { type, payload } = action;
 
     switch (type) {
-      case CREATE_BOOKING:
-        return [...bookings, payload];
+      case CREATE_PATIENT:
+        return [...patients, payload];
 
-      case RETRIEVE_BOOKINGS:
+      case RETRIEVE_PATIENTS:
         return payload;
 
-      case UPDATE_BOOKING:
-        return bookings.map((booking) => {
-          if (booking.id === payload.id) {
+      case UPDATE_PATIENT:
+        return patients.map((patient) => {
+          if (patient.id === payload.id) {
             return {
-              ...bookings,
+              ...patients,
               ...payload,
             };
           } else {
-            return booking;
+            return patient;
           }
         });
 
-      case DELETE_BOOKING:
-        return bookings.filter(({ id }) => id !== payload.id);
+      case DELETE_PATIENT:
+        return patients.filter(({ id }) => id !== payload.id);
 
-      case DELETE_ALL_BOOKINGS:
+      case DELETE_ALL_PATIENTS:
         return [];
 
       default:
-        return bookings;
+        return patients;
     }
   };
 

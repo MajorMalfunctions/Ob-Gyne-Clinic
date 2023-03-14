@@ -64,7 +64,7 @@ const BookingList = () => {
             placeholder="Search Name"
             value={searchName}
             onChange={onChangeSearchName}
-          />{" "}
+          />
           <div className="input-group-append">
             <button
               className="btn btn-outline-secondary"
@@ -76,9 +76,9 @@ const BookingList = () => {
           </div>
         </div>
       </div>
+
       <div className="col-md-6">
         <h4>Bookings List</h4>
-
         <ul className="list-group">
           {booking &&
             booking.map((booking, index) => (

@@ -42,7 +42,6 @@ const Booking = (props) => {
       name: currentBooking.name,
       time: currentBooking.time,
       date: currentBooking.date,
-      // description: currentBooking.description,
       published: status
     };
 
@@ -73,7 +72,7 @@ const Booking = (props) => {
   const removeBooking = () => {
     dispatch(deleteBooking(currentBooking.id))
       .then(() => {
-        props.history.push("/Bookings");
+        props.history.push("/bookings");
       })
       .catch(e => {
         console.log(e);

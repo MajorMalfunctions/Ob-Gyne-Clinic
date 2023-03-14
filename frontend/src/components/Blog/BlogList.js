@@ -111,7 +111,7 @@ const BlogsList = () => {
       <div className="col-md-6">
         {currentBlog ? (
           <div>
-            <h4>Blog</h4>
+            <h4>Blogs</h4>
             <div>
               <label>
                 <strong>Image:</strong>

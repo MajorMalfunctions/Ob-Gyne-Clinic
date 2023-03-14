@@ -4,7 +4,8 @@ const user = JSON.parse(localStorage.getItem("user"));
 
 const INITIAL_STATE = {
   details: null,
-  isAuthenticated: false
+  isAuthenticated: false,
+  users: []
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -22,6 +23,26 @@ switch (type) {
             ...state,
             isAuthenticated: true
         }
+        case "ADD_USER":
+            return {
+              users: [action.payload, ...state.users]
+            };
+          case "EDIT_USER":
+            const updatedUserDetail = action.payload;
+            const updatedUser = state.users.map((user) => {
+              if (user.id === updatedUserDetail.id) {
+                return updatedUserDetail;
+              } else {
+                return user;
+              }
+            });
+            return { users: updatedUser };
+          case "REMOVE_USER":
+            return {
+              users: state.users.filter((user) => {
+                return user.id !== action.payload;
+              })
+            };
         default:
             return state;
         }

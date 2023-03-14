@@ -1,36 +1,44 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createTutorial } from "../slices/tutorials";
+import { createPatient } from "../../redux/actions/patient";
 
 const AddPatient = () => {
-  const initialTutorialState = {
+  const initialPatientState = {
     id: null,
-    title: "",
-    description: "",
-    published: false
+    name: "",
+    email: "",
+    mobile: "",
+    age: "",
+    address: "",
+    dob: "",
+    avatar: "",
   };
-  const [tutorial, setTutorial] = useState(initialTutorialState);
-  const [submitted, setSubmitted] = useState(false);
+  const [ patient, setPatient ] = useState(initialPatientState);
+  const [ submitted, setSubmitted ] = useState(false);
 
   const dispatch = useDispatch();
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setTutorial({ ...tutorial, [name]: value });
+    setPatient({ ...patient, [name]: value });
   };
 
-  const saveTutorial = () => {
-    const { title, description } = tutorial;
+  const savePatient = () => {
+    const { name, email, mobile, age, address, dob, avatar } = patient;
 
-    dispatch(createTutorial({ title, description }))
+    dispatch(createPatient({ name, email, mobile, age, address, dob, avatar }))
       .unwrap()
       .then(data => {
         console.log(data);
-        setTutorial({
+        setPatient({
           id: data.id,
-          title: data.title,
-          description: data.description,
-          published: data.published
+          name: data.name,
+          email: data.email,
+          mobile: data.mobile,
+          age: data.age,
+          address: data.address,
+          dob: data.dob,
+          avatar: data.avatar
         });
         setSubmitted(true);
       })
@@ -39,8 +47,8 @@ const AddPatient = () => {
       });
   };
 
-  const newTutorial = () => {
-    setTutorial(initialTutorialState);
+  const newPatient = () => {
+    setPatient(initialPatientState);
     setSubmitted(false);
   };
 
@@ -49,39 +57,117 @@ const AddPatient = () => {
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
-          <button className="btn btn-success" onClick={newTutorial}>
+          <button className="btn btn-success" onClick={newPatient}>
             Add
           </button>
         </div>
       ) : (
         <div>
           <div className="form-group">
-            <label htmlFor="title">Title</label>
+            <label htmlFor="name">Fullname:</label>
             <input
               type="text"
               className="form-control"
-              id="title"
+              id="name"
               required
-              value={tutorial.title || ''}
+              value={patient.name || ''}
               onChange={handleInputChange}
-              name="title"
+              name="name"
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="description">Description</label>
+            <label htmlFor="email">Email</label>
             <input
-              type="text"
+              type="email"
               className="form-control"
-              id="description"
+              id="email"
               required
-              value={tutorial.description || ''}
+              value={patient.email || ''}
               onChange={handleInputChange}
-              name="description"
+              name="email"
             />
           </div>
 
-          <button onClick={saveTutorial} className="btn btn-success">
+          <div className="form-group">
+            <label htmlFor="mobile">Mobile</label>
+            <input
+              type="mobile"
+              className="form-control"
+              id="mobile"
+              required
+              value={patient.mobile || ''}
+              onChange={handleInputChange}
+              name="mobile"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="age">Age</label>
+            <input
+              type="number"
+              className="form-control"
+              id="age"
+              required
+              value={patient.age || ''}
+              onChange={handleInputChange}
+              name="age"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="age">Age</label>
+            <input
+              type="number"
+              className="form-control"
+              id="age"
+              required
+              value={patient.age || ''}
+              onChange={handleInputChange}
+              name="age"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              className="form-control"
+              id="address"
+              required
+              value={patient.address || ''}
+              onChange={handleInputChange}
+              name="address"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="dob">Birthday</label>
+            <input
+              type="date"
+              className="form-control"
+              id="dob"
+              required
+              value={patient.dob || ''}
+              onChange={handleInputChange}
+              name="dob"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="dob">Avatar</label>
+            <input
+              type="upload"
+              className="form-control"
+              id="avatar"
+              required
+              value={patient.avatar || ''}
+              onChange={handleInputChange}
+              name="avatar"
+            />
+          </div>
+
+          <button onClick={savePatient} className="btn btn-success">
             Submit
           </button>
         </div>

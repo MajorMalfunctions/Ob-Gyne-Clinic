@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -7,7 +7,6 @@ import About from "../About";
 import Home from "../Home";
 import Service from "../Service";
 import Contact from "../Contact";
-// import Blog from "../../components/Blog/Blog";
 
 import Login from "../Login";
 import Register from "../Register";
@@ -26,6 +25,12 @@ import BlogList from '../../components/Blog/BlogList';
 
 import NotFound from "../NotFound";
 import Protected from '../../routes/Protected';
+
+import AddPatient from '../../components/Patient/AddPatient';
+import EditPatient from '../../components/Patient/EditPatient';
+import PatientList from '../../components/Patient/PatientList';
+import Patient from '../../components/Patient/Patient';
+
 
 export default function Layout() {
   return (
@@ -51,12 +56,19 @@ export default function Layout() {
           <Route path="/booking/findAll" element={<BookingList />} />
           <Route path="/booking/create" element={<AddBooking />} />
           <Route path="/booking" element={<Booking />} />
-          <Route path="/booking/:id" element={<Booking />} />
+          <Route path="/booking/:id" element={<BookingList />} />
 
           <Route path="/blog/findAll" element={<BlogList />} />
           <Route path="/blog/create" element={<AddBlog />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Blog />} />
+
+          <Route path="/patient/findAll" element={<PatientList />} />
+          <Route path="/patient/create" element={<AddPatient />} />
+          <Route path="/patient/:id" element={<EditPatient />} />
+          <Route path="/patient" element={<Patient />} />
+          <Route path="/patient" element={<Patient />} />
+
 
           <Route path="/Profile" element={
             <Protected>

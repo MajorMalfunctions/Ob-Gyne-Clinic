@@ -11,7 +11,6 @@ export const LOGOUT = "LOGOUT";
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
 export const LOGOUT_ERROR = "LOGOUT_ERROR";
 
-
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 
@@ -41,3 +40,8 @@ export const ALERT_SUCCESS = "ALERT_SUCCESS";
 export const ALERT_ERROR = "ALERT_ERROR";
 export const ALERT_CLOSE = "ALERT_CLOSE";
 
+export const CREATE_PATIENT = "CREATE_PATIENT";
+export const RETRIEVE_PATIENTS = "RETRIEVE_PATIENTS";
+export const UPDATE_PATIENT = "UPDATE_PATIENT";
+export const DELETE_PATIENT = "DELETE_PATIENT";
+export const DELETE_ALL_PATIENTS = "DELETE_ALL_PATIENTS";
