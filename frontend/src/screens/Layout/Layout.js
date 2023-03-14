@@ -8,6 +8,8 @@ import Home from "../Home";
 import Service from "../Service";
 import Contact from "../Contact";
 
+import Blog from "../../pages/Blog/Blog";
+
 import Login from "../Login";
 import Register from "../Register";
 import Profile from "../Profile";
@@ -19,9 +21,9 @@ import Booking from '../../components/Booking/Booking';
 import AddBooking from '../../components/Booking/AddBooking';
 import BookingList from '../../components/Booking/BookingList';
 
-import Blog from '../../components/Blog/Blog';
-import AddBlog from '../../components/Blog/AddBlog';
-import BlogList from '../../components/Blog/BlogList';
+// import Blog from '../../components/Blog/Blog';
+// import AddBlog from '../../components/Blog/AddBlog';
+// import BlogList from '../../components/Blog/BlogList';
 
 import NotFound from "../NotFound";
 import Protected from '../../routes/Protected';
@@ -58,10 +60,13 @@ export default function Layout() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/booking/:id" element={<BookingList />} />
 
-          <Route path="/blog/findAll" element={<BlogList />} />
+          <Route path="/blog" element={<Blog />} />
+
+
+          {/* <Route path="/blog/findAll" element={<BlogList />} />
           <Route path="/blog/create" element={<AddBlog />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/blog/:id" element={<Blog />} /> */}
 
           <Route path="/patient/findAll" element={<PatientList />} />
           <Route path="/patient/create" element={<AddPatient />} />

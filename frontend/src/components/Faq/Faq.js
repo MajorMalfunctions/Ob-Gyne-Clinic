@@ -4,7 +4,7 @@ import '../../styles/faq.css';
 function Faq() {
     return (
       <div className="faq-container">
-          <h1> Frequently Asked Questions </h1>
+          <h1> Pregnancy FAQs </h1>
           <h6> Most Recent Questions </h6>
           <div className="accordion">
           <Accordion className="accordion" title="What is Lorem Ipsum?">

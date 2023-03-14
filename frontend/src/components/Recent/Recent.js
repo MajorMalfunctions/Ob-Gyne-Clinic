@@ -9,12 +9,12 @@ function Recent() {
     return (
         <div className="recent">
             <h1>Recent Activities</h1>
-            <p>Recent Clinic Operations</p>
+            <p>What We Can Do For You!</p>
 
             <div className="recent-card">
                 <RecentData
                   image={Birth1}
-                  heading="Text Birth 1"
+                  heading="Pregnancy"
                   text="There are many variations of passages of Lorem Ipsum available, 
                   but the majority have suffered alteration in some form, by injected humour, 
                   or randomised words which don't look even slightly believable.
@@ -23,7 +23,7 @@ function Recent() {
 
                 <RecentData
                   image={Birth2}
-                  heading="Text Birth 2"
+                  heading="Gynecology"
                   text="There are many variations of passages of Lorem Ipsum available, 
                   but the majority have suffered alteration in some form, by injected humour, 
                   or randomised words which don't look even slightly believable.
@@ -32,7 +32,16 @@ function Recent() {
 
                 <RecentData
                   image={Birth3}
-                  heading="Text Birth 3"
+                  heading="Lifestyle"
+                  text="There are many variations of passages of Lorem Ipsum available, 
+                  but the majority have suffered alteration in some form, by injected humour, 
+                  or randomised words which don't look even slightly believable.
+                  If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't"
+                />
+
+                <RecentData
+                  image={Birth3}
+                  heading="Surgical"
                   text="There are many variations of passages of Lorem Ipsum available, 
                   but the majority have suffered alteration in some form, by injected humour, 
                   or randomised words which don't look even slightly believable.
