@@ -1,0 +1,35 @@
+.container {
+    margin-top: 3rem;
+}
+
+.jumbotron {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+button {
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 50%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.logs {
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    position: center;
+    margin-left: 600px;
+}
+
+button:hover {
+    background-color: #000;
+    color: #fff;
+    border-radius: 3px solid orchid;
+    -webkit-border-radius: 3px solid orchid;
+    -moz-border-radius: 3px solid orchid;
+    -ms-border-radius: 3px solid orchid;
+    -o-border-radius: 3px solid orchid;
+}

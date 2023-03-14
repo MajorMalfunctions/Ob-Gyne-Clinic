@@ -1,0 +1,132 @@
+@keyframes spinner {
+  0% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+.spin::before {
+  animation: 1.5s linear infinite spinner;
+  animation-play-state: inherit;
+  border: solid 5px #cfd0d1;
+  border-bottom-color: #1c87c9;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px dotted #FFF;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted #FF3D00;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+} 
+
+/* Input.spinner {
+    padding: 0.6rem 0;
+  }
+
+.spinners {
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+}
+  .spinner-circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: orchid;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    padding: 0.5rem 1rem;
+  }
+
+  .spinner-circle:before {
+    z-index: 5;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    width: 25px;
+    height: 25px;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    animation: loading 1s linear infinite;
+    -webkit-animation: loading 1s linear infinite;
+}
+
+  .spinner-circle:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 3px dashed #fff;
+    width: 25px;
+    height: 25px;
+    border-left: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    animation: loading 1s ease infinite;
+    z-index: 10;
+  }
+
+  @keyframes loading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } */

@@ -1,0 +1,92 @@
+.experience {
+    margin: 4rem 6rem;
+    align-items: center;
+    text-align: center;
+}
+
+.experience h1 {
+    font-size: 3rem;
+}
+
+.first-exp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.5rem;
+}
+
+.first-exp-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4.5rem;
+}
+
+.exp-text {
+    width: 45%;
+    text-align: start;
+    font-size: 1.1rem;
+}
+
+.exp-text h2 {
+    padding-bottom: 1rem;
+}
+
+.image {
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    z-index: -99;
+    overflow: hidden;
+}
+
+.image img {
+    width: 49%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: -1px 1px  62px -18px rgba(0, 0, 0, 0.19);
+    transition: 0.3s ease-in-out;
+}
+
+.image img:nth-child(2) {
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    right: 0;
+    top: -10%;
+}
+
+
+@media screen and (max-width: 850px) {
+    .destination {
+        margin: 4rem 2rem;
+    }
+
+    .first-exp {
+        flex-direction: column-reverse;
+        display: flex;
+        margin-top: 2.5rem;
+    }
+
+    .first-exp-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 4.5rem;
+    }
+
+    .exp-text {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        margin: 1.8rem 0;
+    }
+
+    .image img {
+        height: 250px;
+    }
+}
+
