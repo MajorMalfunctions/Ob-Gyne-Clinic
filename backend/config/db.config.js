@@ -29,12 +29,12 @@ const connectDB = async () => {
           process.env.DB_TEST,
           {}
           );console.log(
-            `You Are in TEST Environment Workspace`.magenta.underline.italic
+            `You Are in TEST Environment Workspace`.yellow.underline.italic
             // `You Are in TEST Environment Workspace`.rainbow.underline.italic
         );
   }
       console.log(
-      `MongoDB connected: ${conn.connection.host}`.cyan.underline.bold
+      `MongoDB connected: ${conn.connection.host}`.green.underline.bold
   );
     // console.log(`Error: ${error.message}`.underline.bold)
   return conn;

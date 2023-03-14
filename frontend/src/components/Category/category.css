@@ -1,5 +1,5 @@
 .category {
-    margin-top: 50px;
+    margin-top: 120px;
     position: relative;
   }
   .category .box {
@@ -61,13 +61,13 @@
     transition: 0.5s;
     padding: 2px;
   }
-  
+
   .control-btn .next {
     position: absolute;
     top: 40%;
     right: 20px;
   }
-  
+
   .control-btn .prev {
     position: absolute;
     top: 40%;
@@ -77,5 +77,3 @@
   .control-btn .icon {
     font-size: 25px;
   }
-  /*---------------control-btn-------------*/
-  

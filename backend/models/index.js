@@ -13,6 +13,10 @@ db.patient = require ("./patient.model");
 db.refreshToken = require("./refreshToken.model");
 db.todo = require("./todo.model");
 
+db.category = require("./category.model");
+db.post = require("./post.model");
+
+
 // db.upload = require ("./upload.model");
 
 db.ROLES = ["patient", "moderator", "admin"];
