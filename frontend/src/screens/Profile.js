@@ -3,6 +3,8 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 import Navbar from "../components/Navbar/Navbar";
+import Sidebar from "../components/Sidebar/Sidebar";
+
 import '../styles/profile.css';
 
 const Profile = () => {
@@ -23,7 +25,6 @@ const Profile = () => {
 
   return (
     <div className="container">
-      <Navbar />
           <br />
       <br />
       <br />
