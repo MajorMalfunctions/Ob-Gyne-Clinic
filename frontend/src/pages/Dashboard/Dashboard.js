@@ -6,7 +6,6 @@ import '../../styles/dashboard.css';
 
 import { logout } from "../../redux/actions/auth";
 import { clearMessage } from "../../redux/actions/message";
-import Sidebar from "../../components/Sidebar/Sidebar";
 
 // import Sidebar from "../components/Sidebar/Sidebar";
 
@@ -36,7 +35,6 @@ const Dashboard = (user) => {
 
   return (
     <>
-      <Sidebar />
       <div className="dashboard-container">
         <p>Dashboard</p>
       </div>

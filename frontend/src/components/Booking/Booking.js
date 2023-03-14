@@ -6,8 +6,9 @@ import BookingDataService from "../../redux/services/booking.service";
 const Booking = (props) => {
   const initialBookingState = {
     id: null,
-    title: "",
-    description: "",
+    name: "",
+    time: "",
+    date: "",
     published: false
   };
   const [currentBooking, setCurrentBooking] = useState(initialBookingState);

@@ -7,12 +7,14 @@ import {
 } from "../../redux/actions/booking";
 import { Link } from "react-router-dom";
 
+import "../../styles/booking.css";
+
 const BookingList = () => {
   const [ currentBooking, setCurrentBooking ] = useState(null);
   const [ currentIndex, setCurrentIndex ] = useState(-1);
   const [ searchName, setSearchName ] = useState("");
 
-  const bookings = useSelector(state => state.bookings);
+  const booking = useSelector(state => state.booking);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,16 +53,18 @@ const BookingList = () => {
   };
 
   return (
-    <div className="list row">
+    <div className="booking_container">
+      <div className="list row">
       <div className="col-md-8">
         <div className="input-group mb-3">
           <input
+            // className="search_bar"
             type="text"
             className="form-control"
-            placeholder="Search by title"
+            placeholder="Search Name"
             value={searchName}
             onChange={onChangeSearchName}
-          />
+          />{" "}
           <div className="input-group-append">
             <button
               className="btn btn-outline-secondary"
@@ -76,8 +80,8 @@ const BookingList = () => {
         <h4>Bookings List</h4>
 
         <ul className="list-group">
-          {bookings &&
-            bookings.map((booking, index) => (
+          {booking &&
+            booking.map((booking, index) => (
               <li
                 className={
                   "list-group-item " + (index === currentIndex ? "active" : "")
@@ -91,13 +95,15 @@ const BookingList = () => {
         </ul>
 
         <button
-          className="m-3 btn btn-sm btn-danger"
+          id="del-btn"
+          className="m-4 btn btn-sm btn-danger"
           onClick={removeAllBookings}
         >
           Remove All
         </button>
       </div>
-      <div className="col-md-6">
+
+      <div className="col-md-5">
         {currentBooking ? (
           <div>
             <h4>Name</h4>
@@ -139,6 +145,7 @@ const BookingList = () => {
             <p>Please click on a Booking...</p>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

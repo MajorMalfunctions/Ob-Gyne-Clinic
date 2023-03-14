@@ -144,10 +144,6 @@ const Login = (props) => {
                 /> {" "} {" "} {" "} {" "}
                 {" "} {" "} <label className="checkbox-label" for="checkbox">Remember Me</label>
 
-              {/* <button type="submit" disabled={isLoading} className="btn-login">
-                <span> {isLoading ? <Spinner /> : 'Login'} </span>
-              </button> */}
-
               <button type="submit" disabled={isLoading} className="btn-login">
                 <span> {isLoading ? <Spinner /> : 'Login'} </span>
               </button>

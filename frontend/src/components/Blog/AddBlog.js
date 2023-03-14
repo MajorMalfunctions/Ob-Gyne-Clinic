@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import BlogService from "../../redux/services/blog.service";
 
+import "../../styles/blog.css";
+
 const AddBlog = () => {
   const initialBlogState = {
     id: null,
     title: "",
     description: "",
+    cover: "",
+    date: "",
     published: false
   };
 
@@ -20,7 +24,9 @@ const AddBlog = () => {
   const saveBlog = () => {
     var data = {
       title: blog.title,
-      description: blog.description
+      description: blog.description,
+      cover: blog.cover,
+      date: blog.date
     };
 
     BlogService.create(data)
@@ -29,6 +35,8 @@ const AddBlog = () => {
           id: response.data.id,
           title: response.data.title,
           description: response.data.description,
+          cover: response.data.cover,
+          date: response.data.date,
           published: response.data.published
         });
         setSubmitted(true);
@@ -45,7 +53,12 @@ const AddBlog = () => {
   };
 
   return (
-    <div className="submit-form">
+    <>
+
+        <div className="submit-form">
+        <div className="title">
+            <h5>Upload New Blog</h5>
+        </div>
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
@@ -55,6 +68,7 @@ const AddBlog = () => {
         </div>
       ) : (
         <div>
+
           <div className="form-group">
             <label htmlFor="title">Title</label>
             <input
@@ -81,12 +95,39 @@ const AddBlog = () => {
             />
           </div>
 
+          <div className="form-group">
+            <label htmlFor="title">Blog Cover</label>
+            <input
+              type="file"
+              className="form-control"
+              id="cover"
+              required
+              value={blog.cover}
+              onChange={handleInputChange}
+              name="cover"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="title">Event Date</label>
+            <input
+              type="date"
+              className="form-control"
+              id="date"
+              required
+              value={blog.date}
+              onChange={handleInputChange}
+              name="date"
+            />
+          </div>
+
           <button onClick={saveBlog} className="btn btn-success">
             Submit
           </button>
         </div>
       )}
-    </div>
+        </div>
+    </>
   );
 };
 

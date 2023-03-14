@@ -1,31 +1,32 @@
-import http from "../http-common";
+import axios from "axios";
+const API_URL = "http://localhost:5050/api/blog";
 
 const getAll = () => {
-  return http.get("/blogs");
+  return axios.get(API_URL + "/findAll");
 };
 
 const get = id => {
-  return http.get(`/blogs/${id}`);
+  return axios.get(API_URL + "/:id");
 };
 
 const create = data => {
-  return http.post("/blogs", data);
+  return axios.post(API_URL + "/create", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/blogs/${id}`, data);
+  return axios.put(API_URL + "/:id", data);
 };
 
 const remove = id => {
-  return http.delete(`/blogs/${id}`);
+  return axios.delete(API_URL + "/:id");
 };
 
 const removeAll = () => {
-  return http.delete(`/blogs`);
+  return axios.delete(API_URL + "/blogs");
 };
 
 const findByTitle = title => {
-  return http.get(`/blogs?title=${title}`);
+  return axios.get(API_URL + "/published=true");
 };
 
 const BlogService = {

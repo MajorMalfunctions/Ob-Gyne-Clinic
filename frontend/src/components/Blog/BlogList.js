@@ -114,6 +114,12 @@ const BlogsList = () => {
             <h4>Blog</h4>
             <div>
               <label>
+                <strong>Image:</strong>
+              </label>{" "}
+              {currentBlog.cover}
+            </div>
+            <div>
+              <label>
                 <strong>Title:</strong>
               </label>{" "}
               {currentBlog.title}
