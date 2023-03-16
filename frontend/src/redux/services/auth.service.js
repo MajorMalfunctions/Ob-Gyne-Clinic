@@ -24,6 +24,9 @@ const login = (email, password, cover, ip) => {
         localStorage.setItem('accessToken', resp.data.accessToken);
         localStorage.setItem('refreshToken', resp.data.refreshToken);
         localStorage.setItem('roles', resp.data.roles);
+        sessionStorage.setItem("name", resp.name);
+        sessionStorage.setItem("name", resp.data.name);
+        sessionStorage.setItem("user", JSON.stringify(resp.data));
         console.log(resp.message);
         // localStorage.setItem('isLoggedin', resp.data.isLoggedin);
         // localStorage.setItem('isAuth', resp.data.isAuth);
@@ -37,6 +40,8 @@ const login = (email, password, cover, ip) => {
 const logout = () => {
   localStorage.removeItem("user");
   localStorage.clear();
+  sessionStorage.removeItem("user");
+  sessionStorage.clear();
 };
 
 // const logout = () => {

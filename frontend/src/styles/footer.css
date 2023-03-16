@@ -1,8 +1,12 @@
 .footer {
     padding: 4rem 6rem;
-    background: #000;
+    /* background: #000; */
+    background: linear-gradient(to left, red, violet);
     color: #fff;
+    /* background: orchid;
+    color: #000 */
     height: 100%;
+    opacity: 1.5;
 }
 
 .top h1 {
@@ -27,13 +31,16 @@ iframe {
 }
 
 .top i {
+    /* width: 100px; */
+    /* height: 50px; */
     color: #fff;
     font-size: 2rem;
     margin-left: 1rem;
 }
 
 .top i:hover {
-    color: #01959a;
+    cursor: pointer;
+    color: orchid;
 }
 
 .bottom {

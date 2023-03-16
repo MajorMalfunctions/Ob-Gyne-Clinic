@@ -1,5 +1,5 @@
 .container {
-    margin-top: 3rem;
+    /* margin-top: 45rem; */
 }
 
 .jumbotron {
@@ -28,8 +28,4 @@ button:hover {
     background-color: #000;
     color: #fff;
     border-radius: 3px solid orchid;
-    -webkit-border-radius: 3px solid orchid;
-    -moz-border-radius: 3px solid orchid;
-    -ms-border-radius: 3px solid orchid;
-    -o-border-radius: 3px solid orchid;
 }

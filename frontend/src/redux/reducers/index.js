@@ -5,6 +5,8 @@ import booking from "./booking";
 import blog from "./blog";
 import message from "./message";
 import patient from "./patient";
+import likes from "./likes";
+
 
 export default combineReducers({
     auth,
@@ -13,4 +15,5 @@ export default combineReducers({
     booking,
     patient,
     message,
+    likes
 });

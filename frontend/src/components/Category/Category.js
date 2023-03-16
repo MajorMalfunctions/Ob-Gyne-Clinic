@@ -1,8 +1,8 @@
 import React from "react"
 import "../../styles/category.css";
 import { category } from "./categoryData"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+// import "slick-carousel/slick/slick.css"
+// import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick"
 
 import { GrFormPrevious } from "react-icons/gr"

@@ -9,6 +9,7 @@ Breakpoints - css
 Spinner
 Loader
 Notifier
+Modal
 Notifications
 Page Access
 Calendar Events
@@ -19,6 +20,9 @@ Sidebar
 Dashboard
 Chatbot
 React-Redux-Hooks Forgot/Reset Password
+Likes (counter)
+Hero Slider
+Forgot / Reset / Verify User Email
                      toast.success('Success');
 
 **Backend**

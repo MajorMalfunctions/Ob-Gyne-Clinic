@@ -11,7 +11,6 @@ import Navbar from '../components/Navbar/Navbar';
 // import Header from '../components/Header/Header';
 
 import Faq from '../components/Faq/Faq';
-// import Consult from '../components/Consult/Consult';
 import '../styles/hero.css';
 
 const Home = () => {
@@ -27,7 +26,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {/* <Header /> */}
       <Hero
         cName="hero"
         heroImg="https://images.unsplash.com/flagged/photo-1551049215-23fd6d2ac3f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"

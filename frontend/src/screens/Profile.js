@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate, Navigate, Link } from 'react-router-dom';
 import '../styles/profile.css';
 
-import Navbar from "../components/Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logout } from "../redux/actions/auth";
@@ -15,6 +14,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   console.log(state);
+
   const user = useSelector((state) => state.auth);
 
   const handleSignOut = () => {
@@ -34,7 +34,6 @@ const Profile = () => {
 
   return (
     <>
-    <Navbar />
           <div className="container">
           <br />
       <br />
@@ -45,9 +44,12 @@ const Profile = () => {
           Welcome: <strong>{currentUser.name}</strong>
         </h2>
 
-      <div>
-          {currentUser.cover}
-      </div>
+        <div>
+            <img src={currentUser.cover} alt="profile" />
+        </div>
+
+      
+      
       </header>
       <br />
       <p>

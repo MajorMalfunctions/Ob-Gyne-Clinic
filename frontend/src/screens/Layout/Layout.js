@@ -15,6 +15,7 @@ import Register from "../Register";
 import Profile from "../Profile";
 import Forgot from "../Forgot";
 import Reset from "../Reset";
+
 import Dashboard from "../../pages/Dashboard/Dashboard";
 
 import Booking from '../../components/Booking/Booking';
@@ -28,12 +29,18 @@ import BookingList from '../../components/Booking/BookingList';
 import NotFound from "../NotFound";
 import Protected from '../../routes/Protected';
 
-import AddPatient from '../../components/Patient/AddPatient';
-import EditPatient from '../../components/Patient/EditPatient';
-import PatientList from '../../components/Patient/PatientList';
-import Patient from '../../components/Patient/Patient';
+// import AddPatient from '../../components/Patient/AddPatient';
+// import EditPatient from '../../components/Patient/EditPatient';
+// import PatientList from '../../components/Patient/PatientList';
+// import Patient from '../../components/Patient/Patient';
 
 import Create from '../../components/Create/Create';
+
+import PatientLists from '../../pages/Patients/PatientLists';
+import PatientCreate from '../../pages/Patients/patientCreate';
+import PatientDetail from '../../pages/Patients/PatientDetail';
+import PatientEdit from '../../pages/Patients/PatientEdit';
+
 
 export default function Layout() {
   return (
@@ -63,18 +70,22 @@ export default function Layout() {
 
           <Route path="/blog" element={<Blog />} />
 
-
           {/* <Route path="/blog/findAll" element={<BlogList />} />
           <Route path="/blog/create" element={<AddBlog />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<Blog />} /> */}
 
-          <Route path="/patient/findAll" element={<PatientList />} />
+          {/* <Route path="/patient/findAll" element={<PatientList />} />
           <Route path="/patient/create" element={<AddPatient />} />
           <Route path="/patient/:id" element={<EditPatient />} />
-          <Route path="/patient" element={<Patient />} />
+          <Route path="/patient" element={<Patient />} /> */}
 
           <Route path="/create" element={<Create />} />
+
+            <Route path="/patient" element={<PatientLists />}> </Route>
+            <Route path="/patient/createNew" element={<PatientCreate />}> </Route>
+            <Route path="/patient/updateSingle/:id" element={<PatientDetail />}> </Route>
+            <Route path="/patient/singlePatient/:id" element={<PatientEdit />}> </Route>
 
           <Route path="/Profile" element={
             <Protected>

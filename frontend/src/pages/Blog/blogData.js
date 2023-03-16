@@ -3,9 +3,11 @@ export const blog = [
       id: 1,
       title: "National Women's Month",
       desc: "Hello Mommies...Come & Join us as we the Philippine Obstetrical and Gynecological Society-Region 8 Chapter (POGS-R8) celebrates the NATIONAL BUNTIS Day on March 10, 2023, Friday, @ the Mayor Hall, Palo Leyte @ 7:00AM to 12:00 PMSearch for Ginang Buntis Tiktoker is open to all low risk pregnant moms. Registration is free and on site.Lots of prizes and freebies await...See you there!",
-      category: "Women's",
+      category: "Womens",
       cover: "../images/blogs/b1.jpg",
       date: "APRIL 05, 2018",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
 
     {
@@ -15,6 +17,8 @@ export const blog = [
       category: "Nature",
       cover: "../images/blogs/b2.jpg",
       date: "MARCH 15, 2018",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
     {
       id: 3,
@@ -23,6 +27,8 @@ export const blog = [
       category: "Pregnancy",
       cover: "../images/blogs/b3.jpg",
       date: "Jan 25, 2023 ",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
     {
       id: 4,
@@ -31,6 +37,8 @@ export const blog = [
       category: "Disease",
       cover: "../images/blogs/b4.jpg",
       date: "Oct 1st, 2022",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
     {
       id: 5,
@@ -39,14 +47,18 @@ export const blog = [
       category: "Health",
       cover: "../images/blogs/b5.png",
       date: "Feb 11, 2021",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
     {
       id: 6,
       title: "The Importance of a Support System When Dealing with Infertility",
-      desc: "When youre struggling with infertility, it can feel like everyone around you is getting pregnant and starting their family, but you’re not alone. About 6.1 million women struggle to get pregnant or carry a pregnancy to term in the United States.   While it can be comforting to know that you aren’t the only one going through it,",
+      desc: "When you’re struggling with infertility, it can feel like everyone around you is getting pregnant and starting their family, but you’re not alone. About 6.1 million women struggle to get pregnant or carry a pregnancy to term in the United States.   While it can be comforting to know that you aren’t the only one going through it,",
       category: "Family",
       cover: "../images/blogs/b6.jpg",
       date: "July 26, 2021",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
     {
       id: 7,
@@ -55,6 +67,8 @@ export const blog = [
       category: "Checkup",
       cover: "../images/blogs/b7.jpg",
       date: "January 3, 2022",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
     {
       id: 8,
@@ -63,6 +77,8 @@ export const blog = [
       category: "Cancer",
       cover: "../images/blogs/b8.jpg",
       date: "October 1-31, 2022",
+      link: "https://drsusanloveresearch.org/get-involved/?cmp_id=12552500098&adg_id=118223596486&kwd=support%20breast%20cancer&device=c",
+      url: "https://drsusanloveresearch.org/get-involved/?cmp_id=12552500098&adg_id=118223596486&kwd=support%20breast%20cancer&device=c"
     },
     {
       id: 9,
@@ -71,12 +87,14 @@ export const blog = [
       category: "Fashion",
       cover: "../images/blogs/b9.jpg",
       date: "February 20, 2018",
+      link: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-",
+      url: "https://www.contemporaryobgyn.net/view/happy-and-healthy-heart-month-"
     },
 
     {
       id: 10,
-      title: "Five Common Symptoms of STDs Women Shouldnt Ignore",
-      desc: "Its 2019—women are breaking barriers and shattering glass ceilings like never before. With each woman that steps forward as the first to pave the way for later generations, we are opening doors and challenging social limitations. Yet when it comes to",
+      title: "Five Common Symptoms of STDs Women Shouldn’t Ignore",
+      desc: "It’s 2019—women are breaking barriers and shattering glass ceilings like never before. With each woman that steps forward as the first to pave the way for later generations, we are opening doors and challenging social limitations. Yet when it comes to",
       category: "Fashion",
       cover: "../images/blogs/b10.jpg",
       date: "October 24, 2018",
@@ -96,5 +114,6 @@ export const blog = [
       category: "Fashion",
       cover: "../images/blogs/b12.jpg",
       date: "March 10, 2013",
-    }
+      link: "https://cityofvalencia.gov.ph/11-pressreleases/192-valencia-city-launches-buntis-day-in-celebration-of-42nd-nutrition-month,/11-pressreleases/192-valencia-city-launches-buntis-day-in-celebration-of-42nd-nutrition-month"
+    },
 ]

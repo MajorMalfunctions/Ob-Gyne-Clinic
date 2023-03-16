@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const App = () => {
   return (
     <>
-      <Layout />
+        <Layout />
     </>
   );
 }

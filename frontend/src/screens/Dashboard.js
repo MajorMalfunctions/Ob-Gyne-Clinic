@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
+import Sidebar from "../components/Sidebar/Sidebar";
+
 const Dashboard = () => {
   const navigate = useNavigate()
 
@@ -10,6 +12,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Sidebar />
       <h1>Welcome To Dashboard</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
