@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 
-import Header from '../components/Header/Header';
 import Hero from '../components/Hero/Hero';
 import img from '../assets/images/service.jpg';
 
 import '../styles/services.css';
-import Footer from '../components/Footer/Footer';
 import Service from '../components/Services/Services';
 import ServiceArea from '../pages/Services/Services';
-
 
 function Services () {
   const navigate = useNavigate();
@@ -23,7 +20,6 @@ function Services () {
 
   return (
     <>
-      <Header />
       <Hero
         cName="hero-mid"
         heroImg={img}
@@ -32,7 +28,6 @@ function Services () {
       />
       <Service />
       <ServiceArea />
-      <Footer />
     </>
   )
 }

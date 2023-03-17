@@ -4,10 +4,8 @@ import React from 'react'
 import Hero from '../components/Hero/Hero';
 import Experience from '../components/Experience/Experience';
 import Recent from '../components/Recent/Recent';
-import Footer from '../components/Footer/Footer';
 import Testimonials from '../components/Testimonials/Testimonial';
 import ScrollUp from '../components/ScrollUp/ScrollUp';
-import Navbar from '../components/Navbar/Navbar';
 import Consult from '../components/Consult/Consult';
 
 // import Header from '../components/Header/Header';
@@ -27,7 +25,6 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
       <Hero
         cName="hero"
         heroImg="https://images.unsplash.com/flagged/photo-1551049215-23fd6d2ac3f1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80"
@@ -45,7 +42,6 @@ const Home = () => {
       <Testimonials />
       <Faq />
       <ScrollUp />
-      <Footer />
     </>
   )
 }

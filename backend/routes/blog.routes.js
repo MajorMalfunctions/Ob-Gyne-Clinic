@@ -12,6 +12,8 @@ module.exports = function(app) {
 
   app.post("/api/blog/create", [authJwt.verifyToken, authJwt.isAdmin], controller.create);
 
+  app.get("/api/blog/:id/like", controller.likePost);
+
   app.get("/api/blog/findAll", controller.findAll);
 
   app.get("/api/blog/:id", [authJwt.verifyToken, authJwt.isAdmin], controller.findOne);

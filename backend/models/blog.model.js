@@ -11,23 +11,30 @@ const BlogSchema = new Schema({
     type: String,
     required: true
   },
+  category: {
+    type: String,
+    enum: ["women", "parenting", "event", "health", "disease", "wealth"],
+    default: "women",
+    ref: "Category"
+  },
   cover: {
     type: String,
   },
   date: {
-    type: Date
+    type: Date,
+    default: Date.now()
   },
-//   roles: [
-//     {
-//       type: Schema.Types.ObjectId,
-//       enum: ["pending", "approved", "rejected"],
-//       default: "pending",
-//       ref: "Patient",
-//     }
-//   ],
   published: {
     type: Boolean,
     default: false
+  },
+  likes: {
+    type: Map,
+    of: Boolean,
+  },
+  comments: {
+    type: Array,
+    default: [],
   },
 }, {
   timestamps: true,

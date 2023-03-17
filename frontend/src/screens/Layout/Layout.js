@@ -14,6 +14,9 @@ import Profile from "../Profile";
 import Forgot from "../Forgot";
 import Reset from "../Reset";
 
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
+
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import Consult from "../../components/Consult/Consult";
 
@@ -39,7 +42,6 @@ import Create from '../../components/Create/Create';
 import Details from '../../components/Details/Details';
 import Account from '../../components/Account/Account';
 
-
 import PatientLists from '../../pages/Patients/PatientLists';
 import PatientCreate from '../../pages/Patients/patientCreate';
 import PatientDetail from '../../pages/Patients/PatientDetail';
@@ -49,6 +51,7 @@ import PatientEdit from '../../pages/Patients/PatientEdit';
 export default function Layout() {
   return (
     <>
+    <Navbar />
         <Routes>
           <Route exact path="/home" element={
             <Protected>
@@ -112,6 +115,7 @@ export default function Layout() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       <ToastContainer />
+      <Footer />
     </>
   )
 }

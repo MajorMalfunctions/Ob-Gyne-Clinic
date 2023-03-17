@@ -1,13 +1,24 @@
 const db = require("../models");
 const { user: User, blog: Blog, role: Role, refreshToken: RefreshToken,   } = db;
 
+const jwt = require ("jsonwebtoken");
+
 
 // CREATE NEW Blog
 exports.create = (req, res) => {
+
+  const token = req.cookies.accessToken;
+  if (!token) return res.status(401).json("Not authenticated!");
+
+  // jwt.verify(token, "jwtKey", (err, userInfo) => {
+  //   if (err) return res.status(403).json("Token is not valid!");
+  // }
+
   const blog = new Blog({
       title: req.body.title || "Untitled Blog",
-      cover: req.body.cover,
       description: req.body.description,
+      category: req.body.category,
+      cover: req.body.cover,
       date: req.body.date,
       published: req.body.published ? req.body.published : false
   });
@@ -60,12 +71,13 @@ exports.findOne = (req, res) => {
       });
 };
 
+
 // UPDATE SINGLE Blog BY ID
 exports.update = (req, res) => {
     Blog.findByIdAndUpdate(req.params.id)
     .then((blog) => {
       blog.title = req.body.title;
-      blog.subtitle = req.body.subtitle;
+      blog.category = req.body.category;
       blog.description = req.body.description;
       blog.published = req.body.published ? req.body.published : false
       blog
@@ -95,4 +107,30 @@ exports.findAllPublished = (req, res) => {
           err.message || "Some error occurred while retrieving Blog."
       });
     });
+};
+
+/* UPDATE */
+exports.likePost = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { userId } = req.body;
+    const blog = await Blog.findById(id);
+    const isLiked = blog.likes.get(userId);
+
+    if (isLiked) {
+      blog.likes.delete(userId);
+    } else {
+      blog.likes.set(userId, true);
+    }
+
+    const updatedBlog = await Blog.findByIdAndUpdate(
+      id,
+      { likes: blog.likes },
+      { new: true }
+    );
+
+    res.status(200).json(updatedBLog);
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
 };

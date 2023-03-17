@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
 import AboutMe from '../assets/images/about.jpg';
 import AboutUs from '../pages/About/AboutUs';
@@ -23,7 +21,6 @@ function About () {
 
   return (
     <>
-      <Header />
       <Hero
         cName="hero-mid"
         heroImg={AboutMe}
@@ -31,7 +28,6 @@ function About () {
         btnClass="hide"
       />
       <AboutUs />
-      <Footer />
     </>
   )
 }
