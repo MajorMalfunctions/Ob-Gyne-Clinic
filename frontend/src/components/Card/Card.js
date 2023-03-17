@@ -24,10 +24,10 @@ const Card = () => {
                 </Link>
                 <p>{item.description.slice(0, 180)}...</p>
                 <div className='date'>
-                  <AiOutlineCalendar className='icon' /> <label htmlFor=''>{item.date}</label>
                   <AiOutlineLike className='icon' /> <label htmlFor=''>{item.liked}</label>
                   <AiOutlineComment className='icon' /> <label htmlFor=''>27</label>
                   <AiOutlineShareAlt className='icon' /> <label htmlFor=''>SHARE</label>
+                  <AiOutlineCalendar className='icon' /> <label htmlFor=''>{item.date}</label>
                 </div>
               </div>
             </div>

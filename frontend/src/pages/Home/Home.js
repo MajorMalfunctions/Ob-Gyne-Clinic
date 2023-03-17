@@ -6,7 +6,6 @@ import Destination from '../components/Destination/Destination';
 import Trip from '../components/Recent/Trip';
 import Footer from '../components/Footer/Footer';
 import Testimonials from '../components/Testimonials/Testimonial';
-import ScrollUp from '../components/ScrollUp/ScrollUp';
 import Navbar from '../components/Navbar/Navbar';
 import Faq from '../components/Faq/Faq';
 import '../styles/hero.css';
@@ -37,7 +36,6 @@ const Home = () => {
       <Testimonials />
       <Faq />
       <Footer />
-      <ScrollUp />
     </>
   )
 }

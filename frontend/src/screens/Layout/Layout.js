@@ -16,6 +16,7 @@ import Reset from "../Reset";
 
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import ScrollUp from "../../components/ScrollUp/ScrollUp";
 
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import Consult from "../../components/Consult/Consult";
@@ -116,6 +117,7 @@ export default function Layout() {
         </Routes>
       <ToastContainer />
       <Footer />
+      <ScrollUp />
     </>
   )
 }
