@@ -8,8 +8,6 @@ import Home from "../Home";
 import Service from "../Service";
 import Contact from "../Contact";
 
-import Blog from "../Blog";
-
 import Login from "../Login";
 import Register from "../Register";
 import Profile from "../Profile";
@@ -17,6 +15,8 @@ import Forgot from "../Forgot";
 import Reset from "../Reset";
 
 import Dashboard from "../../pages/Dashboard/Dashboard";
+import Consult from "../../components/Consult/Consult";
+
 
 import Booking from '../../components/Booking/Booking';
 import AddBooking from '../../components/Booking/AddBooking';
@@ -34,7 +34,11 @@ import Protected from '../../routes/Protected';
 // import PatientList from '../../components/Patient/PatientList';
 // import Patient from '../../components/Patient/Patient';
 
+import Blog from "../Blog";
 import Create from '../../components/Create/Create';
+import Details from '../../components/Details/Details';
+import Account from '../../components/Account/Account';
+
 
 import PatientLists from '../../pages/Patients/PatientLists';
 import PatientCreate from '../../pages/Patients/patientCreate';
@@ -69,6 +73,11 @@ export default function Layout() {
           <Route path="/booking/:id" element={<BookingList />} />
 
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/create" element={<Create />} />
+          <Route path="/blog/details/:id" element={<Details />} />
+          <Route path="/blog/account" element={<Account />} />
+
+          <Route path="/consult" element={<Consult />} />
 
           {/* <Route path="/blog/findAll" element={<BlogList />} />
           <Route path="/blog/create" element={<AddBlog />} />
@@ -80,7 +89,6 @@ export default function Layout() {
           <Route path="/patient/:id" element={<EditPatient />} />
           <Route path="/patient" element={<Patient />} /> */}
 
-          <Route path="/create" element={<Create />} />
 
             <Route path="/patient" element={<PatientLists />}> </Route>
             <Route path="/patient/createNew" element={<PatientCreate />}> </Route>

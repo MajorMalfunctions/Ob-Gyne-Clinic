@@ -8,6 +8,8 @@ import Footer from '../components/Footer/Footer';
 import Testimonials from '../components/Testimonials/Testimonial';
 import ScrollUp from '../components/ScrollUp/ScrollUp';
 import Navbar from '../components/Navbar/Navbar';
+import Consult from '../components/Consult/Consult';
+
 // import Header from '../components/Header/Header';
 
 import Faq from '../components/Faq/Faq';
@@ -32,11 +34,12 @@ const Home = () => {
         title="Caring Women's Health & Wellness For All Stages Of Life"
         text="Fellow, Philippine Obstetrical and Gynecological Society"
         buttonText="Online Consultation"
-        url="/book"
+        // url="/booking/create"
+        url="/consult"
         btnClass="show"
       />
       <br />
-      {/* <Consult /> */}
+      <Consult />
       <Experience />
       <Recent />
       <Testimonials />

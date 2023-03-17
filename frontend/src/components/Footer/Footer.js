@@ -10,7 +10,8 @@ import Foot from  './Foot';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <>
+          <div className="footer">
       <div className="top">
         <div className="top-desc">
           <h1>Clinica Baltazar</h1>
@@ -127,8 +128,9 @@ const Footer = () => {
           <a href="/">Troubleshooting</a>
         </div>
       </div>
-      {/* <Foot /> */}
     </div>
+      <Foot />
+    </>
   )
 }
 

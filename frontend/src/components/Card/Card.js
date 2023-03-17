@@ -1,10 +1,10 @@
 import React from "react"
 import "./blog.css"
 import { blog } from "./blogData"
-import { AiOutlineTags, AiOutlineClockCircle, AiOutlineComment, AiOutlineShareAlt } from "react-icons/ai"
+import { AiOutlineTags, AiOutlineCalendar, AiOutlineLike, AiOutlineDislike, AiOutlineComment, AiOutlineShareAlt } from "react-icons/ai"
 import { Link } from "react-router-dom"
 
-export const Card = () => {
+const Card = () => {
   return (
     <>
       <section className='blog'>
@@ -22,9 +22,10 @@ export const Card = () => {
                 <Link to={`/details/${item.id}`} className='link'>
                   <h3>{item.title}</h3>
                 </Link>
-                <p>{item.desc.slice(0, 180)}...</p>
+                <p>{item.description.slice(0, 180)}...</p>
                 <div className='date'>
-                  <AiOutlineClockCircle className='icon' /> <label htmlFor=''>{item.date}</label>
+                  <AiOutlineCalendar className='icon' /> <label htmlFor=''>{item.date}</label>
+                  <AiOutlineLike className='icon' /> <label htmlFor=''>{item.liked}</label>
                   <AiOutlineComment className='icon' /> <label htmlFor=''>27</label>
                   <AiOutlineShareAlt className='icon' /> <label htmlFor=''>SHARE</label>
                 </div>
@@ -36,3 +37,5 @@ export const Card = () => {
     </>
   )
 }
+
+export default Card;

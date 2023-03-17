@@ -1,3 +1,8 @@
+.foot_note {
+    text-align: center;
+    align-items: center;
+}
+
 .footer {
     padding: 4rem 6rem;
     /* background: #000; */

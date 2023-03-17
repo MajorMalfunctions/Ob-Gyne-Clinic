@@ -4,6 +4,8 @@ import '../styles/profile.css';
 
 import { useDispatch, useSelector } from "react-redux";
 
+// import SliderHero from "../components/HeroSlider/SliderHero";
+
 import { logout } from "../redux/actions/auth";
 
 const Profile = () => {
@@ -34,6 +36,7 @@ const Profile = () => {
 
   return (
     <>
+    {/* <SliderHero /> */}
           <div className="container">
           <br />
       <br />

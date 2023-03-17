@@ -47,7 +47,7 @@ function Faq() {
             No, but you do need an extra 200-300 calories per day – this equals to an extra glass of milk. Do not eat swordfish, shark, raw oysters, mackerel, limit tuna consumption to 2-3 servings per week. Limit caffeine intake to 300 mg per day –which is a cup of coffee or a can of soda a day.
             </Accordion>
 
-            <Accordion title="What are symptoms of a bladder infection?">
+            {/* <Accordion title="What are symptoms of a bladder infection?">
             Stinging or burning with urination, pelvic pressure, backache or flank pain, mild fever.
             </Accordion>
 
@@ -58,7 +58,7 @@ function Faq() {
 
             <Accordion title="What is the 4-D ultrasound?">
             This is an ultrasound that provides a clear look at the baby. 4-D just means that the scan is in real time.
-            </Accordion>
+            </Accordion> */}
           </div>
 
       </div>
