@@ -2,6 +2,17 @@
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
 
+        <IconButton
+        onClick={() => patchFriend()}
+        sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
+      >
+        {isFriend ? (
+          <PersonRemoveOutlined sx={{ color: primaryDark }} />
+        ) : (
+          <PersonAddOutlined sx={{ color: primaryDark }} />
+        )}
+      </IconButton>
+
 **Specific date range**
 () => {
   const [startDate, setStartDate] = useState(null);
