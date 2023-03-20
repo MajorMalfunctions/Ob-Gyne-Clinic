@@ -5,6 +5,9 @@ import Hero from '../components/Hero/Hero';
 import Contact from '../assets/images/contact.png';
 import ContactUs from  '../pages/Contact/Contact';
 
+import Navbar from  '../components/Navbar/Navbar';
+import Footer from  '../components/Footer/Footer';
+
 const ContactMe = () => {
   const navigate = useNavigate();
 
@@ -17,6 +20,7 @@ const ContactMe = () => {
 
   return (
     <>
+      <Navbar />
       <Hero
         cName="hero-mid"
         heroImg={Contact}
@@ -24,6 +28,7 @@ const ContactMe = () => {
         btnClass="hide"
       />
       <ContactUs />
+      <Footer />
     </>
   )
 }

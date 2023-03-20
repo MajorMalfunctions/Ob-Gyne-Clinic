@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   retrieveBookings,
   findBookingsByName,
+  deleteBooking,
   deleteAllBookings,
 } from "../../redux/actions/booking";
-import { Link } from "react-router-dom";
+import BookService from "../../redux/services/booking.service";
 
 import "../../styles/booking.css";
 
@@ -34,6 +35,17 @@ const BookingList = () => {
   const setActiveBooking = (booking, index) => {
     setCurrentBooking(booking);
     setCurrentIndex(index);
+  };
+  
+  const removeBooking = () => {
+    dispatch(deleteBooking())
+      .then(response => {
+        console.log(response);
+        refreshData();
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 
   const removeAllBookings = () => {
@@ -136,13 +148,19 @@ const BookingList = () => {
               </label>{" "}
               {currentBooking.published ? "Published" : "Pending"}
             </div>
-
-            <Link
-              to={"/bookings/" + currentBooking.id}
-              className="badge badge-warning"
+            <button
+              to={"/booking/:id" + currentBooking._id}
+              className=""
+              onClick={removeBooking}
+            >
+              Delete
+            </button>
+            <button
+              to={"/booking/:id" + currentBooking._id}
+              className=""
             >
               Edit
-            </Link>
+            </button>
           </div>
         ) : (
           <div>

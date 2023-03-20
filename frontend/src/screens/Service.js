@@ -8,6 +8,9 @@ import '../styles/services.css';
 import Service from '../components/Services/Services';
 import ServiceArea from '../pages/Services/Services';
 
+import Navbar from  '../components/Navbar/Navbar';
+import Footer from  '../components/Footer/Footer';
+
 function Services () {
   const navigate = useNavigate();
 
@@ -20,14 +23,15 @@ function Services () {
 
   return (
     <>
+      <Navbar />
       <Hero
         cName="hero-mid"
         heroImg={img}
         title="Offered Services"
         btnClass="hide"
       />
-      <Service />
       <ServiceArea />
+      <Footer />
     </>
   )
 }

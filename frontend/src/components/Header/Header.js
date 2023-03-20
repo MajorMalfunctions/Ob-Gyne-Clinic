@@ -19,7 +19,6 @@ class Header extends Component{
         toast.success('Logout Success', { position: toast.POSITION.TOP_CENTER})
         localStorage.clear();
         window.location.reload();
-        // localStorage.removeItem('roles')
     }
 
     render(){
@@ -51,7 +50,6 @@ class Header extends Component{
                     })}
                     <button onClick={this.handleLogout} className="header_button" to="/">
                         <i class="fa fa-sign-out">{" "}{" "}Logout</i>
-                        {/* <AiOutlineLogout />{" "}{" "}{" "}Logout */}
                     </button>
                 </ul>
             </nav>

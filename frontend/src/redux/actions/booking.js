@@ -50,13 +50,13 @@ import {
     }
   };
 
-  export const deleteBooking = (id) => async (dispatch) => {
+  export const deleteBooking = (_id) => async (dispatch) => {
     try {
-      await BookService.remove(id);
+      await BookService.remove(_id);
 
       dispatch({
         type: DELETE_BOOKING,
-        payload: { id },
+        payload: { _id },
       });
     } catch (err) {
       console.log(err);

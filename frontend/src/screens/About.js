@@ -8,6 +8,9 @@ import AboutUs from '../pages/About/AboutUs';
 import '../styles/hero.css'
 import '../styles/about.css';
 
+import Navbar from  '../components/Navbar/Navbar';
+import Footer from  '../components/Footer/Footer';
+
 function About () {
   const navigate = useNavigate();
 
@@ -21,6 +24,7 @@ function About () {
 
   return (
     <>
+      <Navbar />
       <Hero
         cName="hero-mid"
         heroImg={AboutMe}
@@ -28,6 +32,7 @@ function About () {
         btnClass="hide"
       />
       <AboutUs />
+      <Footer />
     </>
   )
 }

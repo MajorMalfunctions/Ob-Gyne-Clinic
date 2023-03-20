@@ -14,21 +14,16 @@ import Profile from "../../pages/Profile/Profile.js";
 import Forgot from "../Forgot";
 import Reset from "../Reset";
 
-import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
-import ScrollUp from "../../components/ScrollUp/ScrollUp";
+// import Navbar from "../../components/Navbar/Navbar";
+// import Footer from "../../components/Footer/Footer";
+// import ScrollUp from "../../components/ScrollUp/ScrollUp";
 
 import Dashboard from "../../pages/Dashboard/Dashboard";
-import Consult from "../../components/Consult/Consult";
 // import User from "../../components/User/User";
 
 import Booking from '../../components/Booking/Booking';
 import AddBooking from '../../components/Booking/AddBooking';
 import BookingList from '../../components/Booking/BookingList';
-
-// import Blog from '../../components/Blog/Blog';
-// import AddBlog from '../../components/Blog/AddBlog';
-// import BlogList from '../../components/Blog/BlogList';
 
 import NotFound from "../NotFound";
 import Protected from '../../routes/Protected';
@@ -47,16 +42,25 @@ import PatientCreate from '../../pages/Patients/patientCreate';
 import PatientDetail from '../../pages/Patients/PatientDetail';
 import PatientEdit from '../../pages/Patients/PatientEdit';
 
+import Todo from  '../../components/Todo/Todo';
+import AddTodo from  '../../components/Todo/AddTodo';
+import ListTodos from  '../../components/Todo/ListTodos';
+
+
 export default function Layout() {
   return (
     <>
-    <Navbar />
+    {/* <Navbar /> */}
         <Routes>
           <Route exact path="/home" element={
             <Protected>
               <Home />
             </Protected>
           }/>
+
+          <Route path="/todo" element={<Todo />} />
+          <Route path="/addTodo" element={<addTodo />} />
+          <Route path="/todo-list" element={<ListTodos />} />
 
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
@@ -66,7 +70,7 @@ export default function Layout() {
           <Route path="/register" element={<Register />} />
 
           <Route path="/forgot-password" element={<Forgot />} />
-          <Route path="/reset-password" element={<Reset />} />
+          <Route path="/reset-password/:resetToken" element={<Reset />} />
       {/* <Route path="/reset-password/:${resetToken}" element={<Reset />} /> */}
 
           <Route path="/booking/findAll" element={<BookingList />} />
@@ -74,29 +78,30 @@ export default function Layout() {
           <Route path="/booking" element={<Booking />} />
           <Route path="/booking/:id" element={<BookingList />} />
 
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/create" element={<Create />} />
-          <Route path="/blog/:id" element={<Details />} />
           <Route path="/profile" element={<Profile />} />
 
-          <Route path="/consult" element={<Consult />} />
+          <Route path="/blogs" element={
+            <Protected>
+              <Blog />
+            </Protected>
+          } />
 
-          {/* <Route path="/blog/findAll" element={<BlogList />} />
-          <Route path="/blog/create" element={<AddBlog />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Blog />} /> */}
+          <Route path="/blog/:id" element={
+            <Protected>
+              <Details />
+            </Protected>
+          } />
 
-          {/* <Route path="/patient/findAll" element={<PatientList />} />
-          <Route path="/patient/create" element={<AddPatient />} />
-          <Route path="/patient/:id" element={<EditPatient />} />
-          <Route path="/patient" element={<Patient />} /> */}
+          <Route path="/blog/create" element={
+            <Protected>
+              <Create />
+            </Protected>
+          } />
 
-            {/* <Route path="/user" element={<User />}> </Route> */}
-
-            <Route path="/patient" element={<PatientLists />}> </Route>
-            <Route path="/patient/createNew" element={<PatientCreate />}> </Route>
-            <Route path="/patient/updateSingle/:id" element={<PatientDetail />}> </Route>
-            <Route path="/patient/singlePatient/:id" element={<PatientEdit />}> </Route>
+          <Route path="/patient" element={<PatientLists />}> </Route>
+          <Route path="/patient/createNew" element={<PatientCreate />}> </Route>
+          <Route path="/patient/updateSingle/:id" element={<PatientDetail />}> </Route>
+          <Route path="/patient/singlePatient/:id" element={<PatientEdit />}> </Route>
 
           <Route path="/Profile" element={
             <Protected>
@@ -115,8 +120,8 @@ export default function Layout() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       <ToastContainer />
-      <Footer />
-      <ScrollUp />
+      {/* <Footer />
+      <ScrollUp /> */}
     </>
   )
 }

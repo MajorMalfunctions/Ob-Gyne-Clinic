@@ -8,7 +8,8 @@ const getAll = () => {
 };
 
 const get = id => {
-  return axios.get(API_URL + `/${id}`);
+  // return axios.get(API_URL + `/${id}`);
+  return axios.get(API_URL + "/:id");
 };
 
 const create = data => {
@@ -16,11 +17,13 @@ const create = data => {
 };
 
 const update = (id, data) => {
-  return axios.put(API_URL + `/${id}`, data);
+  // return axios.put(API_URL + `/${id}`, data);
+  return axios.put(API_URL + "/:id", data);
 };
 
 const remove = id => {
-  return axios.delete(API_URL + `/${id}`);
+  return axios.delete(API_URL + "/:id");
+  // return axios.delete(API_URL + "/:id");
 };
 
 const removeAll = () => {

@@ -8,9 +8,9 @@ import {
 
   import BlogService from "../services/blog.service";
 
-  export const createBlog = (title, description, cover, published, date) => async (dispatch) => {
+  export const createBlog = (title, description, cover, category, published, date) => async (dispatch) => {
     try {
-      const res = await BlogService.create({ title, description, cover, date, published });
+      const res = await BlogService.create({ title, description, category, cover, date, published });
 
       dispatch({
         type: CREATE_BLOG,

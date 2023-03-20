@@ -3,10 +3,13 @@ import { useDispatch } from "react-redux";
 import { createBooking } from "../../redux/actions/booking";
 import { toast } from 'react-toastify';
 import Spinner from "../../utils/Spinner";
+import { useNavigate } from "react-router-dom";
 
 import '../../styles/booking.css';
 
 const AddBooking = () => {
+  const navigate = useNavigate();
+
   const initialBookingState = {
     id: null,
     name: "",
@@ -43,6 +46,7 @@ const AddBooking = () => {
         // setPublished(true);
         console.log(data);
         setIsLoading(false);
+        navigate('/booking/findAll');
       })
       .catch(e => {
         toast.error('Booking Error!', { position: toast.POSITION.TOP_CENTER })

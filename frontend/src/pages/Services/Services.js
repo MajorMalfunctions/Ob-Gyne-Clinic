@@ -13,7 +13,7 @@ import services9 from  '../../assets/images/services/services9.jpg';
 import services10 from  '../../assets/images/services/services10.jpg';
 
 
-function Trip() {
+function Services() {
     return (
         <div className="services">
             <h1>Services Offered</h1>
@@ -34,6 +34,7 @@ function Trip() {
                   image={services3}
                   heading="Ultrasound"
                 />
+
                 <ServicesData
                   image={services4}
                   heading="Menopause"
@@ -78,4 +79,4 @@ function Trip() {
     )
 }
 
-export default Trip;
+export default Services;

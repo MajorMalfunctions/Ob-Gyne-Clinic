@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import { Form, Button, Label, Input, FormGroup } from "reactstrap";
 import { v4 as uuid } from "uuid";
-import { addPatient } from "../../redux/actions";
+import { createPatient } from "../../redux/actions/patient";
 
 const AddPatient = () => {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ const AddPatient = () => {
   };
 
   const onSubmitHandler = () => {
-    dispatch(addPatient(name));
+    dispatch(createPatient(name));
     navigate('/');
   };
 

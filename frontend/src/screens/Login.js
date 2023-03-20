@@ -32,7 +32,7 @@ const Login = (props) => {
   const [ password, setPassword ] = useState("");
   const [ checked, setChecked ] = useState(false);
   const [ isLoading, setIsLoading ] = useState(false);
-  const [ isLoggedin, setIsLoggedin ] = useState(false);
+  // const [ isLoggedIn, setIsLoggedIn ] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -63,7 +63,7 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       dispatch(login(email, password))
         .then((res) => {
-          setIsLoggedin(true);
+          isLoggedIn(true);
           toast.success('success', { position: toast.POSITION.TOP_CENTER})
           navigate("/home");
           window.location.reload();
@@ -89,7 +89,7 @@ const Login = (props) => {
   return (
     <>
       <div className="login-screen">
-        {!isLoggedin ? (
+        {!isLoggedIn ? (
         <>
           <Form onSubmit={handleLogin}  ref={form} className="login-screen_form">
 

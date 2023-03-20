@@ -11,7 +11,6 @@ import {
     USER_SET_DETAILS
   } from "./types";
 
-
   import { API_URL } from '../commonData';
   import axios from "axios";
   import AuthService from "../services/auth.service";
