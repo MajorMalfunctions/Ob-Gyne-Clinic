@@ -104,7 +104,6 @@ const Login = (props) => {
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
-              className="input-field"
               required
               name="email"
               type="email"
@@ -120,7 +119,6 @@ const Login = (props) => {
           <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
-              className="input-field"
               required
               name="password"
               type="password"
@@ -141,8 +139,8 @@ const Login = (props) => {
                     checked={checked}
                     class="form-check-input"
                     id="checkbox"
-                /> {" "} {" "} {" "} {" "}
-                {" "} {" "} <label className="checkbox-label" for="checkbox">Remember Me</label>
+                />
+               <label className="checkbox-label" for="checkbox">Remember Me</label>
 
               <button type="submit" disabled={isLoading} className="btn-login">
                 <span> {isLoading ? <Spinner /> : 'Login'} </span>

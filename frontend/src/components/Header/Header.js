@@ -5,6 +5,7 @@ import '../../styles/header.css';
 import Clinic from "../../assets/images/clinic.png"
 import { toast } from 'react-toastify';
 
+import { AiOutlineLogout } from "react-icons/ai"
 
 class Header extends Component{
     state = { clicked: false};
@@ -25,7 +26,9 @@ class Header extends Component{
         return (
             <nav className="NavbarItems">
                 <div className="navbar-logo">
-                    <img className="navbar-image" src={Clinic} alt="clinica-baltazar" />
+                    <a>
+                        <img className="navbar-image" src={Clinic} alt="clinica-baltazar" />
+                    </a>
                 </div>
 
                 <div className="menu-icons" onClick={this.handleClick}>
@@ -46,10 +49,13 @@ class Header extends Component{
                         </li>
                         );
                     })}
-                    <button onClick={this.handleLogout} className="log-button" to="/">Logout</button>
+                    <button onClick={this.handleLogout} className="header_button" to="/">
+                        <i class="fa fa-sign-out">{" "}{" "}Logout</i>
+                        {/* <AiOutlineLogout />{" "}{" "}{" "}Logout */}
+                    </button>
                 </ul>
             </nav>
-          )
+        )
     }
 }
 

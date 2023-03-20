@@ -1,9 +1,19 @@
-// import counterActions from './counterActions'
-// import userActions from './userActions'
+import alertActions from './alert';
+import messageActions from './message';
+import authActions from './auth';
+import blogActions from './blog';
+import bookingActions from './booking';
+import patientActions from './patient';
+import userActions from './user';
 
-// const allActions = {
-//     counterActions,
-//     userActions
-// }
+const allActions = {
+    alertActions,
+    authActions,
+    blogActions,
+    bookingActions,
+    patientActions,
+    userActions,
+    messageActions
+}
 
-// export default allActions
+export default allActions

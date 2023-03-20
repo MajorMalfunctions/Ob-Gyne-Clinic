@@ -7,7 +7,7 @@ import { BiLogOut } from "react-icons/bi"
 import { RiImageAddLine } from "react-icons/ri"
 import { Link } from "react-router-dom"
 
-export const User = () => {
+const User = () => {
   const user = true
   const [profileOpen, setProfileOpen] = useState(false)
 
@@ -73,3 +73,5 @@ export const User = () => {
     </>
   )
 }
+
+export default User;

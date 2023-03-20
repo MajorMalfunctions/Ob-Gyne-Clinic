@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { createBooking } from "../../redux/actions/booking";
+import { toast } from 'react-toastify';
+import Spinner from "../../utils/Spinner";
+
+import '../../styles/booking.css';
 
 const AddBooking = () => {
   const initialBookingState = {
@@ -12,6 +16,7 @@ const AddBooking = () => {
   };
   const [ booking, setBooking ] = useState(initialBookingState);
   const [ submitted, setSubmitted ] = useState(false);
+  const [ isLoading, setIsLoading ] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -33,12 +38,16 @@ const AddBooking = () => {
           // description: data.description,
           published: data.published
         });
+        toast.success('Booking Success', { position: toast.POSITION.TOP_CENTER})
         setSubmitted(true);
-
+        // setPublished(true);
         console.log(data);
+        setIsLoading(false);
       })
       .catch(e => {
+        toast.error('Booking Error!', { position: toast.POSITION.TOP_CENTER })
         console.log(e);
+        setIsLoading(false);
       });
   };
 
@@ -48,7 +57,8 @@ const AddBooking = () => {
   };
 
   return (
-    <div className="submit-form">
+    <div className="booking_container">
+      <div className="submit-form">
       {submitted ? (
         <div>
           <h4>You submitted successfully!</h4>
@@ -97,11 +107,15 @@ const AddBooking = () => {
             />
           </div>
 
-          <button onClick={saveBooking} className="btn btn-success">
-            Submit
-          </button>
+          <div className="button-wrapper">
+            <button onClick={saveBooking} disabled={isLoading} className="button-booking">
+              {/* Submit */}
+              <span> {isLoading ? <Spinner /> : 'Submit'} </span>
+            </button>
+          </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

@@ -1,45 +1,139 @@
 .booking_container {
-    border: 2px solid #000;
-    width: 95%;
+    margin: 0 auto;
+    margin-top: 10rem;
+    height: 90%;
+}
+
+.top {
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.book-list {
+    margin: 0 auto;
+}
+
+.book-list h4 {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.submit-form {
+    /* border: 5px solid red;     */
+    width: 40%;
     height: 100%;
-    display: flex;
+    margin-top: 10rem;
+    margin: auto;
     align-items: center;
-    margin: 0 auto;
-    top: 0;
-    left: 0;
-    margin-top: 1rem;
-}
-
-.form-control {
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    margin-left: 800px;
-    margin-top: 1rem;
-}
-
-.btn {
-    margin-top: 1rem;
-}
-
-h4 {
-    text-align: center;
-}
-.list-group {
-    margin-left: 80px;
-    /* align-items: center; */
-    /* justify-content: center; */
-}
-
-#del-btn {
-    width: 50%;
-    /* align-items: center;
     justify-content: center;
-    margin: 0 auto; */
-    float: right;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    box-shadow:0 0 4px rgba(0,0,0,0.6);
 }
 
-button {
-    margin-right: 200px;
+.form-control{
+
+    /* width: 50%; */
+   /* border: 1px solid red; */
+}
+
+.form-group {
+    margin-top: 15rem;
+    width: 50%;
+    margin: 3rem 6rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.form-control input {
+    margin-top: 10rem;
+}
+
+.form-group label {
+    /* text-align: left; */
+    font-size: 1.2rem;
+    margin-top: 4rem;
+}
+
+.form-group input {
+    justify-content: center;
+    align-items: center;
+}
+
+.button-wrapper {
+    margin-top: 5rem;
+    /* box-shadow:0 0 4px rgba(0,0,0,0.6); */
+
+}
+
+.button-booking {
+    /* border: 1px solid green; */
+    width: 40%;
+    margin-top: 15rem;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-left: 20rem;
+    box-shadow:0 0 4px rgba(0,0,0,0.6);
+}
+
+.output_box {
+    height: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .button-booking{
+        margin-left: 16rem;
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .button-booking{
+        margin-left: 12rem;
+        width: 30%;
+    }
+    
+    .booking_container {
+        height: 80%;
+    }
+}
+
+@media screen and  (max-width: 555px){
+    .button-booking{
+        margin-left: 5rem;
+        font-size: .8rem;
+        width: 45%;
+    }
+
+}
+
+.button-booking1 {
+    background-color: red;
+    color: #fff;
+    /* border: 1px solid green; */
+    width: 30%;
+    margin-top: 15rem;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-left: 25rem;
+    margin-bottom: 2rem;
+}
+
+.search_bar {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.search_button {
+    margin-top: 2rem;
+    margin-right: 20rem;
 }

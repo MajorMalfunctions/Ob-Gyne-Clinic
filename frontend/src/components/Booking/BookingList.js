@@ -54,33 +54,31 @@ const BookingList = () => {
 
   return (
     <div className="booking_container">
-      <div className="list row">
+      <div className="top list row">
       <div className="col-md-8">
         <div className="input-group mb-3">
           <input
-            // className="search_bar"
+            className="search_bar"
             type="text"
-            className="form-control"
+            // className="form-control"
             placeholder="Search Name"
             value={searchName}
             onChange={onChangeSearchName}
           />
-          <div className="input-group-append">
             <button
-              className="btn btn-outline-secondary"
+              className="search_button"
               type="button"
               onClick={findByName}
             >
               Search
             </button>
-          </div>
         </div>
       </div>
 
-      <div className="col-md-6">
+      <div className="book-list col-md-6">
         <h4>Bookings List</h4>
         <ul className="list-group">
-          {booking &&
+          {booking   &&
             booking.map((booking, index) => (
               <li
                 className={
@@ -89,6 +87,7 @@ const BookingList = () => {
                 onClick={() => setActiveBooking(booking, index)}
                 key={index}
               >
+                {/* {booking._id} */}
                 {booking.name}
               </li>
             ))}
@@ -96,17 +95,23 @@ const BookingList = () => {
 
         <button
           id="del-btn"
-          className="m-4 btn btn-sm btn-danger"
+          className="button-booking1"
           onClick={removeAllBookings}
         >
           Remove All
         </button>
       </div>
 
-      <div className="col-md-5">
+      <div className="output_box col-md-5">
         {currentBooking ? (
           <div>
-            <h4>Name</h4>
+            <h4>Result</h4>
+            <div>
+              <label>
+                <strong>Booking ID:</strong>
+              </label>{" "}
+              {currentBooking._id}
+            </div>
             <div>
               <label>
                 <strong>Name:</strong>

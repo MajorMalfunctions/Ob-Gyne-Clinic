@@ -45,7 +45,7 @@ const Footer = () => {
 
       <div className="bottom">
         <div>
-          <h4>Location</h4>
+          <h4>Clinic Location:</h4>
           <p>Justice Romualdez St </p>
           <p>Tacloban City, 6500 Leyte</p>
           <a href="/">Rm 9 Maternity Compound </a>
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4>Affiliations:</h4>
+          <h4>Hospital Affiliations:</h4>
             <a href="https://www.facebook.com/acemc.tac/">
               Ace Medical Center
               {' '}

@@ -83,11 +83,6 @@ const Profile = () => {
         </ul>
       </div>
 
-      {/* <p>
-        <strong>User IP:</strong> {currentUser.ip.address().substring(0, 20)} ...{" "}
-        {currentUser.ip.address().substr(currentUser.ip.address().length - 20)}
-      </p> */}
-
       <p>
         <strong>User IP:</strong> {currentUser.ip}
       </p>
@@ -107,7 +102,7 @@ const Profile = () => {
                   <Link to="/">
                     SignOut
                   </Link>
-                </button>
+        </button>
 
     </div>
     </>

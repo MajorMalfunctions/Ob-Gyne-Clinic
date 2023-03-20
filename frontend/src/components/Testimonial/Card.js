@@ -6,7 +6,7 @@ const Card = (props) => {
       <div className='box'>
         <i className='fa fa-quote-left'></i>
         <div className='para'>
-          <p>{props.desc}</p>
+          <p>{props.description}</p>
         </div>
         <hr />
         <div className='details flex '>

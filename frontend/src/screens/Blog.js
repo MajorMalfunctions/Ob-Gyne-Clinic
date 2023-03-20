@@ -2,17 +2,14 @@ import React from "react";
 import Category from '../components/Category/Category'
 import Card from '../components/Card/Card'
 
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   return (
     <>
-      <Navbar />
       <Category />
+        <Link to="/blog/create">Create</Link>
       <Card />
-      <Footer />
     </>
   )
 }

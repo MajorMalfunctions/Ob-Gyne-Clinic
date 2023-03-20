@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10rem;
 }
 
 .login-screen_form {
@@ -29,7 +30,7 @@ body {
 
 .form-group,
 .form-group label,
-.form-group .input-field {
+.form-group input {
   width: 100%;
   text-align: left;
   margin-bottom: 0.5rem;
@@ -38,6 +39,11 @@ body {
 .form-group label {
   font-size: 0.8rem;
 }
+
+.form-group input {
+  width: 100%;
+}
+
 
 .form-group .input-field {
   padding: 10px 20px;
@@ -66,6 +72,7 @@ body {
   font-size: 1rem;
   padding: 16px;
   width: 220px;
+  height: 50%;
   transition: all 0.5s;
   cursor: pointer;
   margin: 36px;
@@ -183,8 +190,8 @@ body {
 .checkbox-label {
   font-size: .7rem;
   font-weight: 400;
-  align-items: flex-start;
-  text-align: left;
+  /* align-items: flex-start;
+  text-align: left; */
   color: orchid;
   /* font-weight: 600; */
   margin-right: 5.5rem;
@@ -240,7 +247,7 @@ body {
 .input-container input:focus{
  border:none;
  outline:none;
- border-bottom:1px solid #e74c3c;
+ border-bottom:1px solid orchid;
 }
 
 .input-container input:focus ~ label,

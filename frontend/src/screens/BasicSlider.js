@@ -1,7 +1,7 @@
 import React from "react";
 // JSX
 import HeroSlider, { Slide, Nav, OverlayContainer } from "hero-slider";
-import WrBasicSliderer from "../UI/WrBasicSliderer/WrBasicSliderer";
+import WrBasicSlider from "../UI/WrBasicSlider/WrBasicSlider";
 import Title from "../UI/Title/Title";
 import Subtitle from "../UI/Subtitle/Subtitle";
 
@@ -35,10 +35,10 @@ const BasicSlider = () => {
       }}
     >
       <OverlayContainer>
-        <WrBasicSliderer>
+        <WrBasicSlider>
           <Title>Basic Slider</Title>
           <Subtitle>Slides' background attachment set to fixed</Subtitle>
-        </WrBasicSliderer>
+        </WrBasicSlider>
       </OverlayContainer>
 
       <Slide

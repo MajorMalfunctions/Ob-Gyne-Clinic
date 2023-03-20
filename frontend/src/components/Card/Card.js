@@ -1,10 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import "./blog.css"
 import { blog } from "./blogData"
-import { AiOutlineTags, AiOutlineCalendar, AiOutlineLike, AiOutlineDislike, AiOutlineComment, AiOutlineShareAlt } from "react-icons/ai"
+import { AiOutlineTags, AiOutlineCalendar, AiOutlineLike, AiOutlineDislike, AiOutlineComment, AiFillDislike, AiOutlineShareAlt } from "react-icons/ai"
 import { Link } from "react-router-dom"
 
 const Card = () => {
+  const [count, setCount] = useState(0);
+
+  const [ clicked, setClicked ]  = useState(false);
+
+  const [ isActive, setIsActive ]  = useState(false);
+
   return (
     <>
       <section className='blog'>
@@ -19,13 +25,28 @@ const Card = () => {
                   <AiOutlineTags className='icon' />
                   <a href='/'>#{item.category}</a>
                 </div>
-                <Link to={`/details/${item.id}`} className='link'>
+                {/* <Link to={`/details/${item._id}`} className='link'> */}
+                <Link to={`/blog/${item.id}`} className='link'>
                   <h3>{item.title}</h3>
                 </Link>
                 <p>{item.description.slice(0, 180)}...</p>
                 <div className='date'>
-                  <AiOutlineLike className='icon' /> <label htmlFor=''>{item.liked}</label>
-                  <AiOutlineComment className='icon' /> <label htmlFor=''>27</label>
+                  { isActive ? <AiOutlineLike
+                      className='icon'
+                      onClick={() => {
+                        setIsActive(!isActive)
+                        setCount(count + 1)
+                      }}/>:
+                    <AiFillDislike
+                      className='icon'
+                      onClick={() => {
+                        setIsActive(!isActive)
+                        setCount(count - 1)
+                    }} />
+                  }
+                  <p>{count}</p>{" "}{" "}
+                  {/* <AiOutlineLike className='icon' /> <label htmlFor=''>{count}</label> */}
+                  {" "}<AiOutlineComment className='icon' /> <label htmlFor=''>27</label>
                   <AiOutlineShareAlt className='icon' /> <label htmlFor=''>SHARE</label>
                   <AiOutlineCalendar className='icon' /> <label htmlFor=''>{item.date}</label>
                 </div>

@@ -5,7 +5,7 @@ import { UPDATE_LIKES } from "./types";
 
 export const addLike = goalId => async dispatch => {
     try {
-      const res = await axios.put(`/api/goal/like/${goalId}`);
+      const res = await axios.put(`/api/blog/like/${goalId}`);
   
       dispatch({
         type: UPDATE_LIKES,
@@ -24,7 +24,7 @@ export const addLike = goalId => async dispatch => {
 export const removeLike = goalId => async dispatch => {
     try {
   
-      const res = await axios.put(`/api/goal/unlike/${goalId}`);
+      const res = await axios.put(`/api/blog/unlike/${goalId}`);
   
       dispatch({
         type: UPDATE_LIKES,

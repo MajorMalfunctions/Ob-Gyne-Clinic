@@ -10,10 +10,10 @@ import likes from "./likes";
 
 export default combineReducers({
     auth,
-    user,
     blog,
     booking,
-    patient,
+    likes,
     message,
-    likes
+    user,
+    patient
 });

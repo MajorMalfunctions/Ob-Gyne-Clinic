@@ -38,7 +38,7 @@
   animation: rotation 2s linear infinite;
 }
 .loader::after {
-  content: '';  
+  content: '';
   box-sizing: border-box;
   position: absolute;
   left: 0;
@@ -46,10 +46,10 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  border: 3px dotted #FF3D00;
+  border: 3px dotted orchid;
   border-style: solid solid dotted;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   animation: rotationBack 1s linear infinite;
   transform-origin: center center;

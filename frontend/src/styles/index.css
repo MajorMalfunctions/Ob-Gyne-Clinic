@@ -9,6 +9,15 @@ body {
   background-color: #f9f9f9;
 }
 
+/* .img {
+  height: 100%;
+}
+
+
+.image {
+  height: 100%;
+} */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -34,3 +43,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* footer {
+  background-color: yellow;
+} */

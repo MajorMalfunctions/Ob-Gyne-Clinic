@@ -115,3 +115,13 @@ iframe {
         font-size: .8rem;
     }
 }
+
+.foot_note {
+    background-color: orchid;
+}
+
+.foot_note p {
+    text-align: center;
+    margin-top: .5rem;
+    background-color: orchid;
+}

@@ -35,7 +35,7 @@ function Faq() {
             At the first obstetric visit, we like to perform ultrasound to evaluate the pregnancy and establish a due date. You will also meet with your provider. For obstetric care, we have physician providers and certified nurse midwives. Generally all providers care for patients with low risk conditions. For higher risk pregnancies, most women will see or at least consult with physician providers. Some examples are women who are carrying twins, have significant medical conditions during pregnancy such as thyroid disease, diabetes, high blood pressure, or history of previous cesarean deliveries or uterine surgery.Your provider will review your complete medical history, do an examination if needed, and review ultrasound results with you. Most of our patients have lots of questions, and we schedule time to answer them. You may find some of your questions are answered below in this information.
             </Accordion>
 
-            <Accordion title="How will I know if I am in labor?">
+            {/* <Accordion title="How will I know if I am in labor?">
             The thought of labor can bring anxiety to many parents, especially the first timers. The good news is, labor is hard to miss! If your pregnancy is full term, meaning 37 weeks or more, you should watch for contractions which are when your uterus slowly tightens and then releases over about 30 seconds to a minute. If the contractions are painful and recurring, start to time them from the start of one contraction to the start of the next. Once you have a contraction about every five minutes for at least an hour, then it is time to call your obstetrician!
             </Accordion>
 
@@ -45,7 +45,7 @@ function Faq() {
 
             <Accordion title="Do I need to be on a special diet during pregnancy?">
             No, but you do need an extra 200-300 calories per day – this equals to an extra glass of milk. Do not eat swordfish, shark, raw oysters, mackerel, limit tuna consumption to 2-3 servings per week. Limit caffeine intake to 300 mg per day –which is a cup of coffee or a can of soda a day.
-            </Accordion>
+            </Accordion> */}
 
             {/* <Accordion title="What are symptoms of a bladder infection?">
             Stinging or burning with urination, pelvic pressure, backache or flank pain, mild fever.
