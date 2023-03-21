@@ -69,7 +69,6 @@
 }
 
 .button-booking {
-    /* border: 1px solid green; */
     width: 40%;
     margin-top: 15rem;
     height: 50px;
@@ -116,7 +115,6 @@
 .button-booking1 {
     background-color: red;
     color: #fff;
-    /* border: 1px solid green; */
     width: 30%;
     margin-top: 15rem;
     height: 50px;

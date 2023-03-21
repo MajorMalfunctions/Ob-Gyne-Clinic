@@ -6,6 +6,7 @@ import blog from "./blog";
 import message from "./message";
 import patient from "./patient";
 import likes from "./likes";
+// import todo from "./todo";
 
 
 export default combineReducers({
@@ -16,4 +17,5 @@ export default combineReducers({
     message,
     user,
     patient
+    // todo
 });

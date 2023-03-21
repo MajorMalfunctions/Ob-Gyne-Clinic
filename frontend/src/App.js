@@ -1,9 +1,12 @@
 import Layout from  './screens/Layout/Layout';
-import "bootstrap/dist/css/bootstrap.min.css";
+// import Scroll from './components/SmoothScroll/SmoothScroll';
+
+// import './styles/scroll.css';
 
 const App = () => {
   return (
     <>
+      {/* <Scroll /> */}
       <Layout />
     </>
   );

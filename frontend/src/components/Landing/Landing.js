@@ -1,5 +1,4 @@
 import React from 'react';
-
 import videoBg from "../../assets/video/videoBg.mp4";
 import './landing.css';
 
@@ -10,6 +9,16 @@ function Landing (props) {
         <video src={videoBg} autoPlay loop muted />
         <div className="hero-text">
           <h1>{props.title}</h1>
+          {/* <h1>
+            <Typewriter
+              options={{
+                autoStart: true,
+                loop: true,
+                delay: 50,
+                strings: ['Hello', 'World'],
+              }}
+            />
+          </h1> */}
           <p>{props.text}</p>
           <a
             href={props.url}

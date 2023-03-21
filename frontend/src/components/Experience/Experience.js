@@ -1,5 +1,7 @@
 import React from 'react'
 import "../../styles/experience.css";
+import { motion } from "framer-motion";
+
 import ExperienceData from './ExperienceData';
 
 import Baby1 from "../../assets/images/baby1.jpg";
@@ -9,14 +11,36 @@ import Baby4 from "../../assets/images/baby4.jpg";
 import Baby9 from "../../assets/images/baby9.jpg";
 import Baby10 from "../../assets/images/baby10.jpg";
 
-
 const Experience = () => {
   return (
-    <div className="experience">
-      <h1>Healthcare Services</h1>
+    <motion.div
+    // layout
+    // animate={{ opacity: 0.5 }}
+    // transition={{
+    //   opacity: { ease: "linear" },
+    //   layout: { duration: 0.3 }
+    // }}
+    className="experience">
+      <motion.h1
+             initial = {{y: -300, opacity: 0}}
+             animate={{
+                opacity: 1,
+                fontSize: "3rem",
+                x: 20, y: -10
+          }}
+          whileHover={{ scale: 1.2 }}
+          
+          // initial= {{ x: 100, opacity: 0 }}
+          // animate= {{ x: 0, opacity: 1 }}
+          // whileHover={{ scale: 1.2 }}
+      >
+        Healthcare Services
+      </motion.h1>
+
       <p>Tours Give you opportunity to see a lot,
         within  a time frame.
       </p>
+
       <ExperienceData
         className="first-exp"
         heading="Gynecological Care"
@@ -144,7 +168,7 @@ const Experience = () => {
         img2={Baby4}
       />
 
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/category.css";
+import "./category.css";
 import { category } from "./categoryData"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -18,6 +18,7 @@ const SampleNextArrow = (props) => {
     </div>
   )
 }
+
 const SamplePrevArrow = (props) => {
   const { onClick } = props
   return (
@@ -28,6 +29,7 @@ const SamplePrevArrow = (props) => {
     </div>
   )
 }
+
 const Category = () => {
   const settings = {
     dots: false,

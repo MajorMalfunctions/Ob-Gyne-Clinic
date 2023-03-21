@@ -40,16 +40,24 @@ class Header extends Component{
                     {NavItems.map((item, index) => {
                         return(
                             <li key={index}>
-                                <Link className={item.cName} to={item.url}>
+                                <Link
+                                     className={item.cName}
+                                     to={item.url}
+                                     smooth={true}
+                                     offset={-200}
+                                     duration={300}
+                                >
                                     <i className={item.icon}>
+                                        {" "}{item.title}
                                     </i>
-                                    {item.title}
                                 </Link>
                         </li>
                         );
                     })}
                     <button onClick={this.handleLogout} className="header_button" to="/">
-                        <i class="fa fa-sign-out">{" "}{" "}Logout</i>
+                        <i class="fa fa-sign-out">
+                           {" "} {" "}{" "}Logout
+                        </i>
                     </button>
                 </ul>
             </nav>

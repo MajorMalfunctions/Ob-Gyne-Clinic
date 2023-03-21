@@ -33,7 +33,7 @@ const Testimonials = () => {
             }}
             modules={[Pagination]}
         >
-    {Data.map(({ id, image, star, title, description }) => {
+    {Data.map(({ id, image, star, title, description,  postedAt }) => {
       return (
           <SwiperSlide className="testimonial_card" key={id}>
             <img src={image} alt=""
@@ -43,7 +43,7 @@ const Testimonials = () => {
             <span className="testimonial_star">{star}</span>
             <p className="testimonial_description">{description}
             </p>
-            <p>Posted At:</p>
+            <p>Posted At: {postedAt} </p>
           </SwiperSlide>
       );
     })}

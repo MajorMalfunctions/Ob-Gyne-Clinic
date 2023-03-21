@@ -5,16 +5,16 @@ import { FaqData } from './FaqData';
 
 function Faq() {
     return (
-      <div className="faq-container">
+      <div className="faq_container">
           <h1> Pregnancy FAQs </h1>
-          <h6> Most Recent Questions </h6>
+          <p className="faq_subtitle"> Most Recent Questions </p>
+          {/* <p className="faq_subtitle"> Most Recent Questions </p> */}
 
           <div className="accordion">
-              <Accordion className="accordion" title="What should I do if I think I am pregnant?">
-              If you think you are pregnant, give us a call to make your first appointment. We usually recommend that you come to see us at around eight weeks following your last menstrual period.  An exception would be for serious symptoms noted sooner, such as significant bleeding or pain.
-            </Accordion>
+              <Accordion isExpand={false} className="accordion" title="What should I do if I think I am pregnant?">
+                If you think you are pregnant, give us a call to make your first appointment. We usually recommend that you come to see us at around eight weeks following your last menstrual period.  An exception would be for serious symptoms noted sooner, such as significant bleeding or pain.
+             </Accordion>
 
-            {/* <Accordion isExpand={true} title="Why do we use it?"> */}
             <Accordion isExpand={false} title="Where does my doctor or midwife deliver babies?">
             We are affiliated with Legacy Good Samaritan Hospital and Providence St. Vincent’s Medical Center. These are the two facilities that we can deliver your baby. Your insurance may determine which one if not both are covered for your delivery.
             </Accordion>
@@ -72,7 +72,7 @@ function Faq() {
         <div className="title-box" onClick={() => setExpand(expand => !expand)}>
           <span className="title">{title}</span>
           <span className="icon"><i className={`fa fa-play-circle${!expand ? ' down' : ''}`}></i></span>
-          <div className="clearfix"></div>
+          <div className="clearFix"></div>
         </div>
         {expand && <div className="content">{children}</div>}
       </div>

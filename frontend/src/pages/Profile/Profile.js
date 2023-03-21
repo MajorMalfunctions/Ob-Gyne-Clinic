@@ -44,7 +44,6 @@ const Profile = () => {
             <div className='left'>
               <div className='img flexCenter'>
                 <input type='file' accept='image/*' src={image} alt='img' />
-                    {/* <img src={currentUser.cover} alt="avatar" /> */}
                 <img src={image} alt='image' class='image-preview' />
               </div>
             </div>

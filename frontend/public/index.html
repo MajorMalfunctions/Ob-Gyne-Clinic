@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <!-- This make sures that forms inputs and textareas are not zooming in on iPhone/IOS Devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1"
       maximum-scale=1.0, user-scalable="0" shrink-to-fit=no
     />
@@ -26,7 +25,7 @@
 
     <link rel="stylesheet" type="text/css" charset="UTF-8"  href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-
+    <script> Scrollbar.initAll(); </script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
@@ -41,14 +40,20 @@
   <body style="margin: 0">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <script src="dist/bundle.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.1/smooth-scrollbar.js" integrity="sha512-yn9N2uBs4OocMUaJ9wZK6ELv+qXIULoRa7IvOsGz2wqWQRt8mNqU1L2I9Fau24PPxEKlGxuEDkRKvsanwAWUYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    <script>
+      window.addEventListener('load', (event) => {
+      
+      });
     </script>
-    <script type="text/javascript">
-      (function(){
-          emailjs.init("K8EeZRf2xpsTZdcrN");
-      })();
+
+    <!-- <script src="dist/smooth-scrollbar.js"></script>
+    <script>
+      var Scrollbar = window.Scrollbar;
+
+      Scrollbar.init(document.querySelector('#my-scrollbar'));
     </script> -->
   </body>
 </html>

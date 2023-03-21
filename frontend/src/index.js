@@ -12,13 +12,13 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </Provider>
-  </StrictMode>
+  </React.StrictMode>
 );
 
 
